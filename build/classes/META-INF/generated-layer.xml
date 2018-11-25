@@ -1,0 +1,1060 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE filesystem PUBLIC "-//NetBeans//DTD Filesystem 1.2//EN"
+                            "http://www.netbeans.org/dtds/filesystem-1_2.dtd">
+<filesystem>
+    <folder name="Menu">
+        <folder name="Window">
+            <file name="systems-tech247-prl-AssignCodesTopComponent.shadow">
+                <!--systems.tech247.prl.AssignCodesTopComponent-->
+                <attr name="originalFile" stringvalue="Actions/Window/systems-tech247-prl-AssignCodesTopComponent.instance"/>
+            </file>
+            <file name="systems-tech247-prl-EmployeePayslipInfoTopComponent.shadow">
+                <!--systems.tech247.prl.EmployeePayslipInfoTopComponent-->
+                <attr name="originalFile" stringvalue="Actions/Window/systems-tech247-prl-EmployeePayslipInfoTopComponent.instance"/>
+            </file>
+            <file name="systems-tech247-prl-EmployeePeriodTransactionsTopComponent.shadow">
+                <!--systems.tech247.prl.EmployeePeriodTransactionsTopComponent-->
+                <attr name="originalFile" stringvalue="Actions/Window/systems-tech247-prl-EmployeePeriodTransactionsTopComponent.instance"/>
+            </file>
+            <file name="systems-tech247-prl-LSTTopComponent.shadow">
+                <!--systems.tech247.prl.LSTTopComponent-->
+                <attr name="originalFile" stringvalue="Actions/Window/systems-tech247-prl-LSTTopComponent.instance"/>
+            </file>
+            <file name="systems-tech247-prl-NSSFTopComponent.shadow">
+                <!--systems.tech247.prl.NSSFTopComponent-->
+                <attr name="originalFile" stringvalue="Actions/Window/systems-tech247-prl-NSSFTopComponent.instance"/>
+            </file>
+            <file name="systems-tech247-prl-PAYETopComponent.shadow">
+                <!--systems.tech247.prl.PAYETopComponent-->
+                <attr name="originalFile" stringvalue="Actions/Window/systems-tech247-prl-PAYETopComponent.instance"/>
+            </file>
+            <file name="systems-tech247-prl-PCodeGroupsTopComponent.shadow">
+                <!--systems.tech247.prl.PCodeGroupsTopComponent-->
+                <attr name="originalFile" stringvalue="Actions/Window/systems-tech247-prl-PCodeGroupsTopComponent.instance"/>
+            </file>
+            <file name="systems-tech247-prl-PayrollDashBoardTopComponent.shadow">
+                <!--systems.tech247.prl.PayrollDashBoardTopComponent-->
+                <attr name="originalFile" stringvalue="Actions/Window/systems-tech247-prl-PayrollDashBoardTopComponent.instance"/>
+            </file>
+            <file name="systems-tech247-prl-PayrollEditorTopComponent.shadow">
+                <!--systems.tech247.prl.PayrollEditorTopComponent-->
+                <attr name="originalFile" stringvalue="Actions/Window/systems-tech247-prl-PayrollEditorTopComponent.instance"/>
+            </file>
+            <file name="systems-tech247-prl-PayrollSetupTopComponent.shadow">
+                <!--systems.tech247.prl.PayrollSetupTopComponent-->
+                <attr name="originalFile" stringvalue="Actions/Window/systems-tech247-prl-PayrollSetupTopComponent.instance"/>
+            </file>
+            <file name="systems-tech247-prl-ReportEditorTopComponent.shadow">
+                <!--systems.tech247.prl.ReportEditorTopComponent-->
+                <attr name="originalFile" stringvalue="Actions/Window/systems-tech247-prl-ReportEditorTopComponent.instance"/>
+            </file>
+            <file name="systems-tech247-prl-SalaryCalculatorTopComponent.shadow">
+                <!--systems.tech247.prl.SalaryCalculatorTopComponent-->
+                <attr name="originalFile" stringvalue="Actions/Window/systems-tech247-prl-SalaryCalculatorTopComponent.instance"/>
+            </file>
+            <file name="systems-tech247-prl-TransactionEditorTopComponent.shadow">
+                <!--systems.tech247.prl.TransactionEditorTopComponent-->
+                <attr name="originalFile" stringvalue="Actions/Window/systems-tech247-prl-TransactionEditorTopComponent.instance"/>
+            </file>
+        </folder>
+        <folder name="Payroll">
+            <file name="systems-tech247-prl-PayrollCodesComponent.shadow">
+                <!--systems.tech247.prl.PayrollCodesTopComponent-->
+                <attr name="originalFile" stringvalue="Actions/Payroll/systems-tech247-prl-PayrollCodesComponent.instance"/>
+            </file>
+            <file name="systems-tech247-prl-PeriodsTopComponent.shadow">
+                <!--systems.tech247.prl.PeriodsTopComponent-->
+                <attr name="originalFile" stringvalue="Actions/Payroll/systems-tech247-prl-PeriodsTopComponent.instance"/>
+            </file>
+            <file name="systems-tech247-prl-YearsTopComponent.shadow">
+                <!--systems.tech247.prl.YearsTopComponent-->
+                <attr name="originalFile" stringvalue="Actions/Payroll/systems-tech247-prl-YearsTopComponent.instance"/>
+            </file>
+        </folder>
+    </folder>
+    <folder name="xml">
+        <folder name="entities">
+            <folder name="systems_tech247_prl">
+                <file name="AssignCodes" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--systems.tech247.prl.AssignCodesTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//AssignCodes//EN"/>
+                </file>
+                <file name="EmployeePayrollCodeEditor" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--systems.tech247.prl.EmployeePayrollCodeEditorTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//EmployeePayrollCodeEditor//EN"/>
+                </file>
+                <file name="EmployeePayslipInfo" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--systems.tech247.prl.EmployeePayslipInfoTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//EmployeePayslipInfo//EN"/>
+                </file>
+                <file name="EmployeePeriodTransactions" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--systems.tech247.prl.EmployeePeriodTransactionsTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//EmployeePeriodTransactions//EN"/>
+                </file>
+                <file name="EmployeeTransactionEditor" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--systems.tech247.prl.EmployeeTransactionEditorTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//EmployeeTransactionEditor//EN"/>
+                </file>
+                <file name="LSTTierEditor" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--systems.tech247.prl.LSTTierEditorTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//LSTTierEditor//EN"/>
+                </file>
+                <file name="LST" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--systems.tech247.prl.LSTTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//LST//EN"/>
+                </file>
+                <file name="NSSF" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--systems.tech247.prl.NSSFTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//NSSF//EN"/>
+                </file>
+                <file name="PAYETierEditor" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--systems.tech247.prl.PAYETierEditorTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//PAYETierEditor//EN"/>
+                </file>
+                <file name="PAYE" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--systems.tech247.prl.PAYETopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//PAYE//EN"/>
+                </file>
+                <file name="PCodeGroups" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--systems.tech247.prl.PCodeGroupsTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//PCodeGroups//EN"/>
+                </file>
+                <file name="PLREmployeeList" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--systems.tech247.prl.PLREmployeeListTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//PLREmployeeList//EN"/>
+                </file>
+                <file name="PayrollCodeEditor" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--systems.tech247.prl.PayrollCodeEditorTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//PayrollCodeEditor//EN"/>
+                </file>
+                <file name="PayrollCodeGroupEditor" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--systems.tech247.prl.PayrollCodeGroupEditorTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//PayrollCodeGroupEditor//EN"/>
+                </file>
+                <file name="PayrollCodes" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--systems.tech247.prl.PayrollCodesTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//PayrollCodes//EN"/>
+                </file>
+                <file name="PayrollDashBoard" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--systems.tech247.prl.PayrollDashBoardTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//PayrollDashBoard//EN"/>
+                </file>
+                <file name="PayrollEditor" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--systems.tech247.prl.PayrollEditorTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//PayrollEditor//EN"/>
+                </file>
+                <file name="PayrollSetup" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--systems.tech247.prl.PayrollSetupTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//PayrollSetup//EN"/>
+                </file>
+                <file name="Payroll" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--systems.tech247.prl.PayrollTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//Payroll//EN"/>
+                </file>
+                <file name="Periods" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--systems.tech247.prl.PeriodsTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//Periods//EN"/>
+                </file>
+                <file name="ReportEditor" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--systems.tech247.prl.ReportEditorTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//ReportEditor//EN"/>
+                </file>
+                <file name="SalaryCalculator" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--systems.tech247.prl.SalaryCalculatorTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//SalaryCalculator//EN"/>
+                </file>
+                <file name="TransactionEditor" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--systems.tech247.prl.TransactionEditorTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//TransactionEditor//EN"/>
+                </file>
+                <file name="Years" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--systems.tech247.prl.YearsTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//Years//EN"/>
+                </file>
+            </folder>
+        </folder>
+        <folder name="memory">
+            <folder name="systems">
+                <folder name="tech247">
+                    <folder name="prl">
+                        <file name="AssignCodesTopComponent">
+                            <!--systems.tech247.prl.AssignCodesTopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/AssignCodes.instance"/>
+                        </file>
+                        <file name="EmployeePayrollCodeEditorTopComponent">
+                            <!--systems.tech247.prl.EmployeePayrollCodeEditorTopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/EmployeePayrollCodeEditor.instance"/>
+                        </file>
+                        <file name="EmployeePayslipInfoTopComponent">
+                            <!--systems.tech247.prl.EmployeePayslipInfoTopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/EmployeePayslipInfo.instance"/>
+                        </file>
+                        <file name="EmployeePeriodTransactionsTopComponent">
+                            <!--systems.tech247.prl.EmployeePeriodTransactionsTopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/EmployeePeriodTransactions.instance"/>
+                        </file>
+                        <file name="EmployeeTransactionEditorTopComponent">
+                            <!--systems.tech247.prl.EmployeeTransactionEditorTopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/EmployeeTransactionEditor.instance"/>
+                        </file>
+                        <file name="LSTTierEditorTopComponent">
+                            <!--systems.tech247.prl.LSTTierEditorTopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/LSTTierEditor.instance"/>
+                        </file>
+                        <file name="LSTTopComponent">
+                            <!--systems.tech247.prl.LSTTopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/LST.instance"/>
+                        </file>
+                        <file name="NSSFTopComponent">
+                            <!--systems.tech247.prl.NSSFTopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/NSSF.instance"/>
+                        </file>
+                        <file name="PAYETierEditorTopComponent">
+                            <!--systems.tech247.prl.PAYETierEditorTopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/PAYETierEditor.instance"/>
+                        </file>
+                        <file name="PAYETopComponent">
+                            <!--systems.tech247.prl.PAYETopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/PAYE.instance"/>
+                        </file>
+                        <file name="PCodeGroupsTopComponent">
+                            <!--systems.tech247.prl.PCodeGroupsTopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/PCodeGroups.instance"/>
+                        </file>
+                        <file name="PLREmployeeListTopComponent">
+                            <!--systems.tech247.prl.PLREmployeeListTopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/PLREmployeeList.instance"/>
+                        </file>
+                        <file name="PayrollCodeEditorTopComponent">
+                            <!--systems.tech247.prl.PayrollCodeEditorTopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/PayrollCodeEditor.instance"/>
+                        </file>
+                        <file name="PayrollCodeGroupEditorTopComponent">
+                            <!--systems.tech247.prl.PayrollCodeGroupEditorTopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/PayrollCodeGroupEditor.instance"/>
+                        </file>
+                        <file name="PayrollCodesTopComponent">
+                            <!--systems.tech247.prl.PayrollCodesTopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/PayrollCodes.instance"/>
+                        </file>
+                        <file name="PayrollDashBoardTopComponent">
+                            <!--systems.tech247.prl.PayrollDashBoardTopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/PayrollDashBoard.instance"/>
+                        </file>
+                        <file name="PayrollEditorTopComponent">
+                            <!--systems.tech247.prl.PayrollEditorTopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/PayrollEditor.instance"/>
+                        </file>
+                        <file name="PayrollSetupTopComponent">
+                            <!--systems.tech247.prl.PayrollSetupTopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/PayrollSetup.instance"/>
+                        </file>
+                        <file name="PayrollTopComponent">
+                            <!--systems.tech247.prl.PayrollTopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/Payroll.instance"/>
+                        </file>
+                        <file name="PeriodsTopComponent">
+                            <!--systems.tech247.prl.PeriodsTopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/Periods.instance"/>
+                        </file>
+                        <file name="ReportEditorTopComponent">
+                            <!--systems.tech247.prl.ReportEditorTopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/ReportEditor.instance"/>
+                        </file>
+                        <file name="SalaryCalculatorTopComponent">
+                            <!--systems.tech247.prl.SalaryCalculatorTopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/SalaryCalculator.instance"/>
+                        </file>
+                        <file name="TransactionEditorTopComponent">
+                            <!--systems.tech247.prl.TransactionEditorTopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/TransactionEditor.instance"/>
+                        </file>
+                        <file name="YearsTopComponent">
+                            <!--systems.tech247.prl.YearsTopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/Years.instance"/>
+                        </file>
+                    </folder>
+                </folder>
+            </folder>
+        </folder>
+        <folder name="lookups">
+            <folder name="systems_tech247_prl">
+                <file name="AssignCodes.instance">
+                    <!--systems.tech247.prl.AssignCodesTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.AssignCodesTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.AssignCodesTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+                <file name="EmployeePayrollCodeEditor.instance">
+                    <!--systems.tech247.prl.EmployeePayrollCodeEditorTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.EmployeePayrollCodeEditorTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.EmployeePayrollCodeEditorTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+                <file name="EmployeePayslipInfo.instance">
+                    <!--systems.tech247.prl.EmployeePayslipInfoTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.EmployeePayslipInfoTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.EmployeePayslipInfoTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+                <file name="EmployeePeriodTransactions.instance">
+                    <!--systems.tech247.prl.EmployeePeriodTransactionsTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.EmployeePeriodTransactionsTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.EmployeePeriodTransactionsTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+                <file name="EmployeeTransactionEditor.instance">
+                    <!--systems.tech247.prl.EmployeeTransactionEditorTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.EmployeeTransactionEditorTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.EmployeeTransactionEditorTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+                <file name="LSTTierEditor.instance">
+                    <!--systems.tech247.prl.LSTTierEditorTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.LSTTierEditorTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.LSTTierEditorTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+                <file name="LST.instance">
+                    <!--systems.tech247.prl.LSTTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.LSTTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.LSTTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+                <file name="NSSF.instance">
+                    <!--systems.tech247.prl.NSSFTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.NSSFTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.NSSFTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+                <file name="PAYETierEditor.instance">
+                    <!--systems.tech247.prl.PAYETierEditorTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.PAYETierEditorTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.PAYETierEditorTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+                <file name="PAYE.instance">
+                    <!--systems.tech247.prl.PAYETopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.PAYETopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.PAYETopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+                <file name="PCodeGroups.instance">
+                    <!--systems.tech247.prl.PCodeGroupsTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.PCodeGroupsTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.PCodeGroupsTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+                <file name="PLREmployeeList.instance">
+                    <!--systems.tech247.prl.PLREmployeeListTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.PLREmployeeListTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.PLREmployeeListTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+                <file name="PayrollCodeEditor.instance">
+                    <!--systems.tech247.prl.PayrollCodeEditorTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.PayrollCodeEditorTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.PayrollCodeEditorTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+                <file name="PayrollCodeGroupEditor.instance">
+                    <!--systems.tech247.prl.PayrollCodeGroupEditorTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.PayrollCodeGroupEditorTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.PayrollCodeGroupEditorTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+                <file name="PayrollCodes.instance">
+                    <!--systems.tech247.prl.PayrollCodesTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.PayrollCodesTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.PayrollCodesTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+                <file name="PayrollDashBoard.instance">
+                    <!--systems.tech247.prl.PayrollDashBoardTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.PayrollDashBoardTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.PayrollDashBoardTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+                <file name="PayrollEditor.instance">
+                    <!--systems.tech247.prl.PayrollEditorTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.PayrollEditorTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.PayrollEditorTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+                <file name="PayrollSetup.instance">
+                    <!--systems.tech247.prl.PayrollSetupTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.PayrollSetupTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.PayrollSetupTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+                <file name="Payroll.instance">
+                    <!--systems.tech247.prl.PayrollTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.PayrollTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.PayrollTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+                <file name="Periods.instance">
+                    <!--systems.tech247.prl.PeriodsTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.PeriodsTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.PeriodsTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+                <file name="ReportEditor.instance">
+                    <!--systems.tech247.prl.ReportEditorTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.ReportEditorTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.ReportEditorTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+                <file name="SalaryCalculator.instance">
+                    <!--systems.tech247.prl.SalaryCalculatorTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.SalaryCalculatorTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.SalaryCalculatorTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+                <file name="TransactionEditor.instance">
+                    <!--systems.tech247.prl.TransactionEditorTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.TransactionEditorTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.TransactionEditorTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+                <file name="Years.instance">
+                    <!--systems.tech247.prl.YearsTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.YearsTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.YearsTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+            </folder>
+        </folder>
+    </folder>
+    <folder name="Windows2">
+        <folder name="Components">
+            <file name="AssignCodesTopComponent.settings">
+                <!--systems.tech247.prl.AssignCodesTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE settings PUBLIC "-//NetBeans//DTD Session settings 1.0//EN" "http://www.netbeans.org/dtds/sessionsettings-1_0.dtd">
+<settings version="1.0">
+  <instance class="systems.tech247.prl.AssignCodesTopComponent"/>
+</settings>
+]]></file>
+            <file name="EmployeePayrollCodeEditorTopComponent.settings">
+                <!--systems.tech247.prl.EmployeePayrollCodeEditorTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE settings PUBLIC "-//NetBeans//DTD Session settings 1.0//EN" "http://www.netbeans.org/dtds/sessionsettings-1_0.dtd">
+<settings version="1.0">
+  <instance class="systems.tech247.prl.EmployeePayrollCodeEditorTopComponent"/>
+</settings>
+]]></file>
+            <file name="EmployeePayslipInfoTopComponent.settings">
+                <!--systems.tech247.prl.EmployeePayslipInfoTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE settings PUBLIC "-//NetBeans//DTD Session settings 1.0//EN" "http://www.netbeans.org/dtds/sessionsettings-1_0.dtd">
+<settings version="1.0">
+  <instance class="systems.tech247.prl.EmployeePayslipInfoTopComponent"/>
+</settings>
+]]></file>
+            <file name="EmployeePeriodTransactionsTopComponent.settings">
+                <!--systems.tech247.prl.EmployeePeriodTransactionsTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE settings PUBLIC "-//NetBeans//DTD Session settings 1.0//EN" "http://www.netbeans.org/dtds/sessionsettings-1_0.dtd">
+<settings version="1.0">
+  <instance class="systems.tech247.prl.EmployeePeriodTransactionsTopComponent"/>
+</settings>
+]]></file>
+            <file name="EmployeeTransactionEditorTopComponent.settings">
+                <!--systems.tech247.prl.EmployeeTransactionEditorTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE settings PUBLIC "-//NetBeans//DTD Session settings 1.0//EN" "http://www.netbeans.org/dtds/sessionsettings-1_0.dtd">
+<settings version="1.0">
+  <instance class="systems.tech247.prl.EmployeeTransactionEditorTopComponent"/>
+</settings>
+]]></file>
+            <file name="LSTTierEditorTopComponent.settings">
+                <!--systems.tech247.prl.LSTTierEditorTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE settings PUBLIC "-//NetBeans//DTD Session settings 1.0//EN" "http://www.netbeans.org/dtds/sessionsettings-1_0.dtd">
+<settings version="1.0">
+  <instance class="systems.tech247.prl.LSTTierEditorTopComponent"/>
+</settings>
+]]></file>
+            <file name="LSTTopComponent.settings">
+                <!--systems.tech247.prl.LSTTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE settings PUBLIC "-//NetBeans//DTD Session settings 1.0//EN" "http://www.netbeans.org/dtds/sessionsettings-1_0.dtd">
+<settings version="1.0">
+  <instance class="systems.tech247.prl.LSTTopComponent"/>
+</settings>
+]]></file>
+            <file name="NSSFTopComponent.settings">
+                <!--systems.tech247.prl.NSSFTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE settings PUBLIC "-//NetBeans//DTD Session settings 1.0//EN" "http://www.netbeans.org/dtds/sessionsettings-1_0.dtd">
+<settings version="1.0">
+  <instance class="systems.tech247.prl.NSSFTopComponent"/>
+</settings>
+]]></file>
+            <file name="PAYETierEditorTopComponent.settings">
+                <!--systems.tech247.prl.PAYETierEditorTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE settings PUBLIC "-//NetBeans//DTD Session settings 1.0//EN" "http://www.netbeans.org/dtds/sessionsettings-1_0.dtd">
+<settings version="1.0">
+  <instance class="systems.tech247.prl.PAYETierEditorTopComponent"/>
+</settings>
+]]></file>
+            <file name="PAYETopComponent.settings">
+                <!--systems.tech247.prl.PAYETopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE settings PUBLIC "-//NetBeans//DTD Session settings 1.0//EN" "http://www.netbeans.org/dtds/sessionsettings-1_0.dtd">
+<settings version="1.0">
+  <instance class="systems.tech247.prl.PAYETopComponent"/>
+</settings>
+]]></file>
+            <file name="PCodeGroupsTopComponent.settings">
+                <!--systems.tech247.prl.PCodeGroupsTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE settings PUBLIC "-//NetBeans//DTD Session settings 1.0//EN" "http://www.netbeans.org/dtds/sessionsettings-1_0.dtd">
+<settings version="1.0">
+  <instance class="systems.tech247.prl.PCodeGroupsTopComponent"/>
+</settings>
+]]></file>
+            <file name="PLREmployeeListTopComponent.settings">
+                <!--systems.tech247.prl.PLREmployeeListTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE settings PUBLIC "-//NetBeans//DTD Session settings 1.0//EN" "http://www.netbeans.org/dtds/sessionsettings-1_0.dtd">
+<settings version="1.0">
+  <instance class="systems.tech247.prl.PLREmployeeListTopComponent"/>
+</settings>
+]]></file>
+            <file name="PayrollCodeEditorTopComponent.settings">
+                <!--systems.tech247.prl.PayrollCodeEditorTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE settings PUBLIC "-//NetBeans//DTD Session settings 1.0//EN" "http://www.netbeans.org/dtds/sessionsettings-1_0.dtd">
+<settings version="1.0">
+  <instance class="systems.tech247.prl.PayrollCodeEditorTopComponent"/>
+</settings>
+]]></file>
+            <file name="PayrollCodeGroupEditorTopComponent.settings">
+                <!--systems.tech247.prl.PayrollCodeGroupEditorTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE settings PUBLIC "-//NetBeans//DTD Session settings 1.0//EN" "http://www.netbeans.org/dtds/sessionsettings-1_0.dtd">
+<settings version="1.0">
+  <instance class="systems.tech247.prl.PayrollCodeGroupEditorTopComponent"/>
+</settings>
+]]></file>
+            <file name="PayrollCodesTopComponent.settings">
+                <!--systems.tech247.prl.PayrollCodesTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE settings PUBLIC "-//NetBeans//DTD Session settings 1.0//EN" "http://www.netbeans.org/dtds/sessionsettings-1_0.dtd">
+<settings version="1.0">
+  <instance class="systems.tech247.prl.PayrollCodesTopComponent"/>
+</settings>
+]]></file>
+            <file name="PayrollDashBoardTopComponent.settings">
+                <!--systems.tech247.prl.PayrollDashBoardTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE settings PUBLIC "-//NetBeans//DTD Session settings 1.0//EN" "http://www.netbeans.org/dtds/sessionsettings-1_0.dtd">
+<settings version="1.0">
+  <instance class="systems.tech247.prl.PayrollDashBoardTopComponent"/>
+</settings>
+]]></file>
+            <file name="PayrollEditorTopComponent.settings">
+                <!--systems.tech247.prl.PayrollEditorTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE settings PUBLIC "-//NetBeans//DTD Session settings 1.0//EN" "http://www.netbeans.org/dtds/sessionsettings-1_0.dtd">
+<settings version="1.0">
+  <instance class="systems.tech247.prl.PayrollEditorTopComponent"/>
+</settings>
+]]></file>
+            <file name="PayrollSetupTopComponent.settings">
+                <!--systems.tech247.prl.PayrollSetupTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE settings PUBLIC "-//NetBeans//DTD Session settings 1.0//EN" "http://www.netbeans.org/dtds/sessionsettings-1_0.dtd">
+<settings version="1.0">
+  <instance class="systems.tech247.prl.PayrollSetupTopComponent"/>
+</settings>
+]]></file>
+            <file name="PeriodsTopComponent.settings">
+                <!--systems.tech247.prl.PeriodsTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE settings PUBLIC "-//NetBeans//DTD Session settings 1.0//EN" "http://www.netbeans.org/dtds/sessionsettings-1_0.dtd">
+<settings version="1.0">
+  <instance class="systems.tech247.prl.PeriodsTopComponent"/>
+</settings>
+]]></file>
+            <file name="ReportEditorTopComponent.settings">
+                <!--systems.tech247.prl.ReportEditorTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE settings PUBLIC "-//NetBeans//DTD Session settings 1.0//EN" "http://www.netbeans.org/dtds/sessionsettings-1_0.dtd">
+<settings version="1.0">
+  <instance class="systems.tech247.prl.ReportEditorTopComponent"/>
+</settings>
+]]></file>
+            <file name="SalaryCalculatorTopComponent.settings">
+                <!--systems.tech247.prl.SalaryCalculatorTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE settings PUBLIC "-//NetBeans//DTD Session settings 1.0//EN" "http://www.netbeans.org/dtds/sessionsettings-1_0.dtd">
+<settings version="1.0">
+  <instance class="systems.tech247.prl.SalaryCalculatorTopComponent"/>
+</settings>
+]]></file>
+            <file name="TransactionEditorTopComponent.settings">
+                <!--systems.tech247.prl.TransactionEditorTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE settings PUBLIC "-//NetBeans//DTD Session settings 1.0//EN" "http://www.netbeans.org/dtds/sessionsettings-1_0.dtd">
+<settings version="1.0">
+  <instance class="systems.tech247.prl.TransactionEditorTopComponent"/>
+</settings>
+]]></file>
+            <file name="YearsTopComponent.settings">
+                <!--systems.tech247.prl.YearsTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE settings PUBLIC "-//NetBeans//DTD Session settings 1.0//EN" "http://www.netbeans.org/dtds/sessionsettings-1_0.dtd">
+<settings version="1.0">
+  <instance class="systems.tech247.prl.YearsTopComponent"/>
+</settings>
+]]></file>
+        </folder>
+        <folder name="Modes">
+            <folder name="editor">
+                <file name="AssignCodesTopComponent.wstcref">
+                    <!--systems.tech247.prl.AssignCodesTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tc-ref PUBLIC "-//NetBeans//DTD Top Component in Mode Properties 2.0//EN" "http://www.netbeans.org/dtds/tc-ref2_0.dtd">
+<tc-ref version="2.0">
+  <tc-id id="AssignCodesTopComponent"/>
+  <state opened="false"/>
+</tc-ref>
+]]></file>
+                <file name="EmployeePayrollCodeEditorTopComponent.wstcref">
+                    <!--systems.tech247.prl.EmployeePayrollCodeEditorTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tc-ref PUBLIC "-//NetBeans//DTD Top Component in Mode Properties 2.0//EN" "http://www.netbeans.org/dtds/tc-ref2_0.dtd">
+<tc-ref version="2.0">
+  <tc-id id="EmployeePayrollCodeEditorTopComponent"/>
+  <state opened="false"/>
+</tc-ref>
+]]></file>
+                <file name="EmployeePayslipInfoTopComponent.wstcref">
+                    <!--systems.tech247.prl.EmployeePayslipInfoTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tc-ref PUBLIC "-//NetBeans//DTD Top Component in Mode Properties 2.0//EN" "http://www.netbeans.org/dtds/tc-ref2_0.dtd">
+<tc-ref version="2.0">
+  <tc-id id="EmployeePayslipInfoTopComponent"/>
+  <state opened="false"/>
+</tc-ref>
+]]></file>
+                <file name="EmployeePeriodTransactionsTopComponent.wstcref">
+                    <!--systems.tech247.prl.EmployeePeriodTransactionsTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tc-ref PUBLIC "-//NetBeans//DTD Top Component in Mode Properties 2.0//EN" "http://www.netbeans.org/dtds/tc-ref2_0.dtd">
+<tc-ref version="2.0">
+  <tc-id id="EmployeePeriodTransactionsTopComponent"/>
+  <state opened="false"/>
+</tc-ref>
+]]></file>
+                <file name="EmployeeTransactionEditorTopComponent.wstcref">
+                    <!--systems.tech247.prl.EmployeeTransactionEditorTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tc-ref PUBLIC "-//NetBeans//DTD Top Component in Mode Properties 2.0//EN" "http://www.netbeans.org/dtds/tc-ref2_0.dtd">
+<tc-ref version="2.0">
+  <tc-id id="EmployeeTransactionEditorTopComponent"/>
+  <state opened="false"/>
+</tc-ref>
+]]></file>
+                <file name="LSTTierEditorTopComponent.wstcref">
+                    <!--systems.tech247.prl.LSTTierEditorTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tc-ref PUBLIC "-//NetBeans//DTD Top Component in Mode Properties 2.0//EN" "http://www.netbeans.org/dtds/tc-ref2_0.dtd">
+<tc-ref version="2.0">
+  <tc-id id="LSTTierEditorTopComponent"/>
+  <state opened="false"/>
+</tc-ref>
+]]></file>
+                <file name="LSTTopComponent.wstcref">
+                    <!--systems.tech247.prl.LSTTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tc-ref PUBLIC "-//NetBeans//DTD Top Component in Mode Properties 2.0//EN" "http://www.netbeans.org/dtds/tc-ref2_0.dtd">
+<tc-ref version="2.0">
+  <tc-id id="LSTTopComponent"/>
+  <state opened="false"/>
+</tc-ref>
+]]></file>
+                <file name="NSSFTopComponent.wstcref">
+                    <!--systems.tech247.prl.NSSFTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tc-ref PUBLIC "-//NetBeans//DTD Top Component in Mode Properties 2.0//EN" "http://www.netbeans.org/dtds/tc-ref2_0.dtd">
+<tc-ref version="2.0">
+  <tc-id id="NSSFTopComponent"/>
+  <state opened="false"/>
+</tc-ref>
+]]></file>
+                <file name="PAYETierEditorTopComponent.wstcref">
+                    <!--systems.tech247.prl.PAYETierEditorTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tc-ref PUBLIC "-//NetBeans//DTD Top Component in Mode Properties 2.0//EN" "http://www.netbeans.org/dtds/tc-ref2_0.dtd">
+<tc-ref version="2.0">
+  <tc-id id="PAYETierEditorTopComponent"/>
+  <state opened="false"/>
+</tc-ref>
+]]></file>
+                <file name="PAYETopComponent.wstcref">
+                    <!--systems.tech247.prl.PAYETopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tc-ref PUBLIC "-//NetBeans//DTD Top Component in Mode Properties 2.0//EN" "http://www.netbeans.org/dtds/tc-ref2_0.dtd">
+<tc-ref version="2.0">
+  <tc-id id="PAYETopComponent"/>
+  <state opened="false"/>
+</tc-ref>
+]]></file>
+                <file name="PayrollCodeEditorTopComponent.wstcref">
+                    <!--systems.tech247.prl.PayrollCodeEditorTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tc-ref PUBLIC "-//NetBeans//DTD Top Component in Mode Properties 2.0//EN" "http://www.netbeans.org/dtds/tc-ref2_0.dtd">
+<tc-ref version="2.0">
+  <tc-id id="PayrollCodeEditorTopComponent"/>
+  <state opened="false"/>
+</tc-ref>
+]]></file>
+                <file name="PayrollCodeGroupEditorTopComponent.wstcref">
+                    <!--systems.tech247.prl.PayrollCodeGroupEditorTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tc-ref PUBLIC "-//NetBeans//DTD Top Component in Mode Properties 2.0//EN" "http://www.netbeans.org/dtds/tc-ref2_0.dtd">
+<tc-ref version="2.0">
+  <tc-id id="PayrollCodeGroupEditorTopComponent"/>
+  <state opened="false"/>
+</tc-ref>
+]]></file>
+                <file name="PayrollEditorTopComponent.wstcref">
+                    <!--systems.tech247.prl.PayrollEditorTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tc-ref PUBLIC "-//NetBeans//DTD Top Component in Mode Properties 2.0//EN" "http://www.netbeans.org/dtds/tc-ref2_0.dtd">
+<tc-ref version="2.0">
+  <tc-id id="PayrollEditorTopComponent"/>
+  <state opened="false"/>
+</tc-ref>
+]]></file>
+                <file name="ReportEditorTopComponent.wstcref">
+                    <!--systems.tech247.prl.ReportEditorTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tc-ref PUBLIC "-//NetBeans//DTD Top Component in Mode Properties 2.0//EN" "http://www.netbeans.org/dtds/tc-ref2_0.dtd">
+<tc-ref version="2.0">
+  <tc-id id="ReportEditorTopComponent"/>
+  <state opened="false"/>
+</tc-ref>
+]]></file>
+                <file name="SalaryCalculatorTopComponent.wstcref">
+                    <!--systems.tech247.prl.SalaryCalculatorTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tc-ref PUBLIC "-//NetBeans//DTD Top Component in Mode Properties 2.0//EN" "http://www.netbeans.org/dtds/tc-ref2_0.dtd">
+<tc-ref version="2.0">
+  <tc-id id="SalaryCalculatorTopComponent"/>
+  <state opened="false"/>
+</tc-ref>
+]]></file>
+                <file name="TransactionEditorTopComponent.wstcref">
+                    <!--systems.tech247.prl.TransactionEditorTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tc-ref PUBLIC "-//NetBeans//DTD Top Component in Mode Properties 2.0//EN" "http://www.netbeans.org/dtds/tc-ref2_0.dtd">
+<tc-ref version="2.0">
+  <tc-id id="TransactionEditorTopComponent"/>
+  <state opened="false"/>
+</tc-ref>
+]]></file>
+            </folder>
+            <folder name="explorer">
+                <file name="PCodeGroupsTopComponent.wstcref">
+                    <!--systems.tech247.prl.PCodeGroupsTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tc-ref PUBLIC "-//NetBeans//DTD Top Component in Mode Properties 2.0//EN" "http://www.netbeans.org/dtds/tc-ref2_0.dtd">
+<tc-ref version="2.0">
+  <tc-id id="PCodeGroupsTopComponent"/>
+  <state opened="false"/>
+</tc-ref>
+]]></file>
+                <file name="PLREmployeeListTopComponent.wstcref">
+                    <!--systems.tech247.prl.PLREmployeeListTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tc-ref PUBLIC "-//NetBeans//DTD Top Component in Mode Properties 2.0//EN" "http://www.netbeans.org/dtds/tc-ref2_0.dtd">
+<tc-ref version="2.0">
+  <tc-id id="PLREmployeeListTopComponent"/>
+  <state opened="false"/>
+</tc-ref>
+]]></file>
+                <file name="PayrollCodesTopComponent.wstcref">
+                    <!--systems.tech247.prl.PayrollCodesTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tc-ref PUBLIC "-//NetBeans//DTD Top Component in Mode Properties 2.0//EN" "http://www.netbeans.org/dtds/tc-ref2_0.dtd">
+<tc-ref version="2.0">
+  <tc-id id="PayrollCodesTopComponent"/>
+  <state opened="false"/>
+</tc-ref>
+]]></file>
+                <file name="PayrollSetupTopComponent.wstcref">
+                    <!--systems.tech247.prl.PayrollSetupTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tc-ref PUBLIC "-//NetBeans//DTD Top Component in Mode Properties 2.0//EN" "http://www.netbeans.org/dtds/tc-ref2_0.dtd">
+<tc-ref version="2.0">
+  <tc-id id="PayrollSetupTopComponent"/>
+  <state opened="false"/>
+</tc-ref>
+]]></file>
+                <file name="PeriodsTopComponent.wstcref">
+                    <!--systems.tech247.prl.PeriodsTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tc-ref PUBLIC "-//NetBeans//DTD Top Component in Mode Properties 2.0//EN" "http://www.netbeans.org/dtds/tc-ref2_0.dtd">
+<tc-ref version="2.0">
+  <tc-id id="PeriodsTopComponent"/>
+  <state opened="false"/>
+</tc-ref>
+]]></file>
+                <file name="YearsTopComponent.wstcref">
+                    <!--systems.tech247.prl.YearsTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tc-ref PUBLIC "-//NetBeans//DTD Top Component in Mode Properties 2.0//EN" "http://www.netbeans.org/dtds/tc-ref2_0.dtd">
+<tc-ref version="2.0">
+  <tc-id id="YearsTopComponent"/>
+  <state opened="false"/>
+</tc-ref>
+]]></file>
+            </folder>
+            <folder name="leftSlidingSide">
+                <file name="PayrollDashBoardTopComponent.wstcref">
+                    <!--systems.tech247.prl.PayrollDashBoardTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tc-ref PUBLIC "-//NetBeans//DTD Top Component in Mode Properties 2.0//EN" "http://www.netbeans.org/dtds/tc-ref2_0.dtd">
+<tc-ref version="2.0">
+  <tc-id id="PayrollDashBoardTopComponent"/>
+  <state opened="false"/>
+</tc-ref>
+]]></file>
+            </folder>
+        </folder>
+        <folder name="Roles">
+            <folder name="Payroll">
+                <folder name="Components">
+                    <file name="PayrollTopComponent.settings">
+                        <!--systems.tech247.prl.PayrollTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE settings PUBLIC "-//NetBeans//DTD Session settings 1.0//EN" "http://www.netbeans.org/dtds/sessionsettings-1_0.dtd">
+<settings version="1.0">
+  <instance class="systems.tech247.prl.PayrollTopComponent"/>
+</settings>
+]]></file>
+                </folder>
+                <folder name="Modes">
+                    <folder name="editor">
+                        <file name="PayrollTopComponent.wstcref">
+                            <!--systems.tech247.prl.PayrollTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tc-ref PUBLIC "-//NetBeans//DTD Top Component in Mode Properties 2.0//EN" "http://www.netbeans.org/dtds/tc-ref2_0.dtd">
+<tc-ref version="2.0">
+  <tc-id id="PayrollTopComponent"/>
+  <state opened="true"/>
+</tc-ref>
+]]></file>
+                    </folder>
+                </folder>
+            </folder>
+        </folder>
+    </folder>
+    <folder name="Actions">
+        <folder name="Window">
+            <file name="systems-tech247-prl-AssignCodesTopComponent.instance">
+                <!--systems.tech247.prl.AssignCodesTopComponent-->
+                <attr
+                    methodvalue="org.openide.windows.TopComponent.openAction" name="instanceCreate"/>
+                <attr name="component" newvalue="systems.tech247.prl.AssignCodesTopComponent"/>
+                <attr name="preferredID" stringvalue="AssignCodesTopComponent"/>
+                <attr
+                    bundlevalue="systems.tech247.prl.Bundle#CTL_AssignCodesAction" name="displayName"/>
+            </file>
+            <file name="systems-tech247-prl-EmployeePayslipInfoTopComponent.instance">
+                <!--systems.tech247.prl.EmployeePayslipInfoTopComponent-->
+                <attr
+                    methodvalue="org.openide.windows.TopComponent.openAction" name="instanceCreate"/>
+                <attr name="component" newvalue="systems.tech247.prl.EmployeePayslipInfoTopComponent"/>
+                <attr name="preferredID" stringvalue="EmployeePayslipInfoTopComponent"/>
+                <attr
+                    bundlevalue="systems.tech247.prl.Bundle#CTL_EmployeePayslipInfoAction" name="displayName"/>
+            </file>
+            <file name="systems-tech247-prl-EmployeePeriodTransactionsTopComponent.instance">
+                <!--systems.tech247.prl.EmployeePeriodTransactionsTopComponent-->
+                <attr
+                    methodvalue="org.openide.windows.TopComponent.openAction" name="instanceCreate"/>
+                <attr name="component" newvalue="systems.tech247.prl.EmployeePeriodTransactionsTopComponent"/>
+                <attr name="preferredID" stringvalue="EmployeePeriodTransactionsTopComponent"/>
+                <attr
+                    bundlevalue="systems.tech247.prl.Bundle#CTL_EmployeePeriodTransactionsAction" name="displayName"/>
+            </file>
+            <file name="systems-tech247-prl-LSTTopComponent.instance">
+                <!--systems.tech247.prl.LSTTopComponent-->
+                <attr
+                    methodvalue="org.openide.windows.TopComponent.openAction" name="instanceCreate"/>
+                <attr name="component" newvalue="systems.tech247.prl.LSTTopComponent"/>
+                <attr name="preferredID" stringvalue="LSTTopComponent"/>
+                <attr
+                    bundlevalue="systems.tech247.prl.Bundle#CTL_LSTAction" name="displayName"/>
+            </file>
+            <file name="systems-tech247-prl-NSSFTopComponent.instance">
+                <!--systems.tech247.prl.NSSFTopComponent-->
+                <attr
+                    methodvalue="org.openide.windows.TopComponent.openAction" name="instanceCreate"/>
+                <attr name="component" newvalue="systems.tech247.prl.NSSFTopComponent"/>
+                <attr name="preferredID" stringvalue="NSSFTopComponent"/>
+                <attr
+                    bundlevalue="systems.tech247.prl.Bundle#CTL_NSSFAction" name="displayName"/>
+            </file>
+            <file name="systems-tech247-prl-PAYETopComponent.instance">
+                <!--systems.tech247.prl.PAYETopComponent-->
+                <attr
+                    methodvalue="org.openide.windows.TopComponent.openAction" name="instanceCreate"/>
+                <attr name="component" newvalue="systems.tech247.prl.PAYETopComponent"/>
+                <attr name="preferredID" stringvalue="PAYETopComponent"/>
+                <attr
+                    bundlevalue="systems.tech247.prl.Bundle#CTL_PAYEAction" name="displayName"/>
+            </file>
+            <file name="systems-tech247-prl-PCodeGroupsTopComponent.instance">
+                <!--systems.tech247.prl.PCodeGroupsTopComponent-->
+                <attr
+                    methodvalue="org.openide.windows.TopComponent.openAction" name="instanceCreate"/>
+                <attr name="component" newvalue="systems.tech247.prl.PCodeGroupsTopComponent"/>
+                <attr name="preferredID" stringvalue="PCodeGroupsTopComponent"/>
+                <attr
+                    bundlevalue="systems.tech247.prl.Bundle#CTL_PCodeGroupsAction" name="displayName"/>
+            </file>
+            <file name="systems-tech247-prl-PayrollDashBoardTopComponent.instance">
+                <!--systems.tech247.prl.PayrollDashBoardTopComponent-->
+                <attr
+                    methodvalue="org.openide.windows.TopComponent.openAction" name="instanceCreate"/>
+                <attr name="component" newvalue="systems.tech247.prl.PayrollDashBoardTopComponent"/>
+                <attr name="preferredID" stringvalue="PayrollDashBoardTopComponent"/>
+                <attr
+                    bundlevalue="systems.tech247.prl.Bundle#CTL_PayrollDashBoardAction" name="displayName"/>
+            </file>
+            <file name="systems-tech247-prl-PayrollEditorTopComponent.instance">
+                <!--systems.tech247.prl.PayrollEditorTopComponent-->
+                <attr
+                    methodvalue="org.openide.windows.TopComponent.openAction" name="instanceCreate"/>
+                <attr name="component" newvalue="systems.tech247.prl.PayrollEditorTopComponent"/>
+                <attr name="preferredID" stringvalue="PayrollEditorTopComponent"/>
+                <attr
+                    bundlevalue="systems.tech247.prl.Bundle#CTL_PayrollEditorAction" name="displayName"/>
+            </file>
+            <file name="systems-tech247-prl-PayrollSetupTopComponent.instance">
+                <!--systems.tech247.prl.PayrollSetupTopComponent-->
+                <attr
+                    methodvalue="org.openide.windows.TopComponent.openAction" name="instanceCreate"/>
+                <attr name="component" newvalue="systems.tech247.prl.PayrollSetupTopComponent"/>
+                <attr name="preferredID" stringvalue="PayrollSetupTopComponent"/>
+                <attr
+                    bundlevalue="systems.tech247.prl.Bundle#CTL_PayrollSetupAction" name="displayName"/>
+            </file>
+            <file name="systems-tech247-prl-ReportEditorTopComponent.instance">
+                <!--systems.tech247.prl.ReportEditorTopComponent-->
+                <attr
+                    methodvalue="org.openide.windows.TopComponent.openAction" name="instanceCreate"/>
+                <attr name="component" newvalue="systems.tech247.prl.ReportEditorTopComponent"/>
+                <attr name="preferredID" stringvalue="ReportEditorTopComponent"/>
+                <attr
+                    bundlevalue="systems.tech247.prl.Bundle#CTL_ReportEditorAction" name="displayName"/>
+            </file>
+            <file name="systems-tech247-prl-SalaryCalculatorTopComponent.instance">
+                <!--systems.tech247.prl.SalaryCalculatorTopComponent-->
+                <attr
+                    methodvalue="org.openide.windows.TopComponent.openAction" name="instanceCreate"/>
+                <attr name="component" newvalue="systems.tech247.prl.SalaryCalculatorTopComponent"/>
+                <attr name="preferredID" stringvalue="SalaryCalculatorTopComponent"/>
+                <attr
+                    bundlevalue="systems.tech247.prl.Bundle#CTL_SalaryCalculatorAction" name="displayName"/>
+            </file>
+            <file name="systems-tech247-prl-TransactionEditorTopComponent.instance">
+                <!--systems.tech247.prl.TransactionEditorTopComponent-->
+                <attr
+                    methodvalue="org.openide.windows.TopComponent.openAction" name="instanceCreate"/>
+                <attr name="component" newvalue="systems.tech247.prl.TransactionEditorTopComponent"/>
+                <attr name="preferredID" stringvalue="TransactionEditorTopComponent"/>
+                <attr
+                    bundlevalue="systems.tech247.prl.Bundle#CTL_TransactionEditorAction" name="displayName"/>
+            </file>
+        </folder>
+        <folder name="Payroll">
+            <file name="systems-tech247-prl-PayrollCodesComponent.instance">
+                <!--systems.tech247.prl.PayrollCodesTopComponent-->
+                <attr
+                    methodvalue="org.openide.windows.TopComponent.openAction" name="instanceCreate"/>
+                <attr name="component" newvalue="systems.tech247.prl.PayrollCodesTopComponent"/>
+                <attr name="preferredID" stringvalue="PayrollCodesTopComponent"/>
+                <attr
+                    bundlevalue="systems.tech247.prl.Bundle#CTL_PayrollCodesAction" name="displayName"/>
+                <attr name="iconBase" stringvalue="systems/tech247/util/icons/settings.png"/>
+            </file>
+            <file name="systems-tech247-prl-PeriodsTopComponent.instance">
+                <!--systems.tech247.prl.PeriodsTopComponent-->
+                <attr
+                    methodvalue="org.openide.windows.TopComponent.openAction" name="instanceCreate"/>
+                <attr name="component" newvalue="systems.tech247.prl.PeriodsTopComponent"/>
+                <attr name="preferredID" stringvalue="PeriodsTopComponent"/>
+                <attr
+                    bundlevalue="systems.tech247.prl.Bundle#CTL_PeriodsAction" name="displayName"/>
+                <attr name="iconBase" stringvalue="systems/tech247/util/icons/Calendar.png"/>
+            </file>
+            <file name="systems-tech247-prl-YearsTopComponent.instance">
+                <!--systems.tech247.prl.YearsTopComponent-->
+                <attr
+                    methodvalue="org.openide.windows.TopComponent.openAction" name="instanceCreate"/>
+                <attr name="component" newvalue="systems.tech247.prl.YearsTopComponent"/>
+                <attr name="preferredID" stringvalue="YearsTopComponent"/>
+                <attr
+                    bundlevalue="systems.tech247.prl.Bundle#CTL_YearsAction" name="displayName"/>
+                <attr name="iconBase" stringvalue="systems/tech247/util/icons/Calendar.png"/>
+            </file>
+        </folder>
+    </folder>
+</filesystem>

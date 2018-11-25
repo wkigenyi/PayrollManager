@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE filesystem PUBLIC "-//NetBeans//DTD Filesystem 1.2//EN" "http://www.netbeans.org/dtds/filesystem-1_2.dtd">
+<filesystem>
+    <folder name="Windows2">
+        <folder name="Groups">
+            <file name = "PLRGroup.wsgrp" url="groups/PLRGroupWsgroup.xml"/>
+            <folder name="PLRGroup">
+                <file name = "PLREmployeeListTopComponent.wstcgrp" url="groups/prlgroup/PLREmployeeListTopComponentWstcgrp.xml"/>
+                <file name = "PayrollSetupTopComponent.wstcgrp" url="groups/prlgroup/PayrollSetupTopComponentWstcgrp.xml"/>
+                <file name = "PeriodsTopComponent.wstcgrp" url="groups/prlgroup/PeriodsTopComponentWstcgrp.xml"/>
+            </folder>    
+        </folder>
+    </folder>
+</filesystem>
