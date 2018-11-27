@@ -17,6 +17,7 @@ import org.openide.util.lookup.AbstractLookup;
 import org.openide.util.lookup.InstanceContent;
 import org.openide.windows.TopComponent;
 import systems.tech247.hr.TblEmployeeTransactions;
+import systems.tech247.util.CapDeletable;
 import systems.tech247.util.CapEditable;
 
 /**
@@ -42,7 +43,15 @@ public class NodeEmployeePeriodTransaction extends  AbstractNode{
                 tc.open();
                 tc.requestActive();
             }
+            
         });
+        instanceContent.add(new CapDeletable() {
+            @Override
+            public void delete() {
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+        });
+                
         
         setDisplayName(trans.getPayrollCodeID().getPayrollCodeName());
     }

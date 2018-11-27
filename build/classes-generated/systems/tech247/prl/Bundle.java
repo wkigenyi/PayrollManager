@@ -31,6 +31,20 @@ class Bundle {
         return org.openide.util.NbBundle.getMessage(Bundle.class, "CTL_EmployeePayrollCodeEditorTopComponent");
     }
     /**
+     * @return <i>Employee Payroll Codes</i>
+     * @see EmployeePayrollCodesTopComponent
+     */
+    static String CTL_EmployeePayrollCodesAction() {
+        return org.openide.util.NbBundle.getMessage(Bundle.class, "CTL_EmployeePayrollCodesAction");
+    }
+    /**
+     * @return <i> Payroll Codes</i>
+     * @see EmployeePayrollCodesTopComponent
+     */
+    static String CTL_EmployeePayrollCodesTopComponent() {
+        return org.openide.util.NbBundle.getMessage(Bundle.class, "CTL_EmployeePayrollCodesTopComponent");
+    }
+    /**
      * @return <i>EmployeePayslipInfo</i>
      * @see EmployeePayslipInfoTopComponent
      */
@@ -351,6 +365,13 @@ class Bundle {
      */
     static String HINT_EmployeePayrollCodeEditorTopComponent() {
         return org.openide.util.NbBundle.getMessage(Bundle.class, "HINT_EmployeePayrollCodeEditorTopComponent");
+    }
+    /**
+     * @return <i> Payroll Codes</i>
+     * @see EmployeePayrollCodesTopComponent
+     */
+    static String HINT_EmployeePayrollCodesTopComponent() {
+        return org.openide.util.NbBundle.getMessage(Bundle.class, "HINT_EmployeePayrollCodesTopComponent");
     }
     /**
      * @return <i>This is a EmployeePayslipInfo window</i>

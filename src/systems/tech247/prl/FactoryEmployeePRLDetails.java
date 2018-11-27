@@ -47,16 +47,14 @@ public class FactoryEmployeePRLDetails extends ChildFactory<SetupItem> {
                 tc.requestActive();
             }
         });
-        toPopulate.add(new SetupItem("Employee Payroll Codes", Children.create(new FactoryEmployeePayrollCodes(emp, Boolean.TRUE), true), icp));
-        InstanceContent ictx = new InstanceContent();
-        ictx.add(new CapCreatable() {
+        toPopulate.add(new SetupItem("Payroll Codes",new AbstractAction() {
             @Override
-            public void create() {
-                TopComponent tc = new EmployeeTransactionEditorTopComponent(emp);
+            public void actionPerformed(ActionEvent e) {
+                TopComponent tc = new EmployeePayrollCodesTopComponent(emp);
                 tc.open();
                 tc.requestActive();
             }
-        });
+        }));
         
         toPopulate.add(new SetupItem("Period Transactions",new AbstractAction() {
             @Override

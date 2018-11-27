@@ -7,6 +7,9 @@ package systems.tech247.prl;
 
 import java.awt.event.ActionEvent;
 import java.beans.IntrospectionException;
+import java.lang.reflect.InvocationTargetException;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -100,28 +103,23 @@ public class NodeEmployeePayrollCode extends  AbstractNode implements LookupList
     
     @Override 
     protected Sheet createSheet(){
-        final PayrollCodeCover bean = getLookup().lookup(PayrollCodeCover.class);
+        final TblEmployeePayrollCode bean = getLookup().lookup(TblEmployeePayrollCode.class);
         Sheet basicPCode = super.createSheet();
         
         Sheet.Set set = Sheet.createExpertSet();
         set.setName("details");
         
         set.setDisplayName("Details");
+        final NumberFormat nf = new DecimalFormat("#,###.00");
         
         try{
-            Property codeProperty;
-            codeProperty = new PropertySupport.Reflection(
-                    bean, 
-                    String.class,
-                    "getCode", 
-                    null);
-            codeProperty.setDisplayName("Code");
             
-            /*Property formularProperty;
-            formularProperty = new PropertySupport("formular", String.class, "Formular", "Formular For Calculating this code", true, false) {
+            
+            Property code;
+            code = new PropertySupport("code", String.class, "Code Name", "Code", true, false) {
                 @Override
                 public Object getValue() throws IllegalAccessException, InvocationTargetException {
-                    return bean.getFormular();
+                    return bean.getPayrollCodeID().getPayrollCodeName();
                 }
                 
                 @Override
@@ -131,7 +129,7 @@ public class NodeEmployeePayrollCode extends  AbstractNode implements LookupList
             };
             
             Property activeProperty;
-            activeProperty = new PropertySupport("active", String.class, "Active", "Is this Code Active", true, false) {
+            activeProperty = new PropertySupport("active", Boolean.class, "Active", "Is this Code Active", true, false) {
                 @Override
                 public Object getValue() throws IllegalAccessException, InvocationTargetException {
                     return bean.getActive();
@@ -139,15 +137,15 @@ public class NodeEmployeePayrollCode extends  AbstractNode implements LookupList
                 
                 @Override
                 public void setValue(Object val) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
-                    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                    //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
                 }
             };
             
-            Property cashBasedProperty;
-            cashBasedProperty = new PropertySupport("cashbased", Boolean.class, "Cash Based", "Is this Code Cash Based", true, false) {
+            Property amount;
+            amount = new PropertySupport("amount", String.class, "Amount", "Amount", true, false) {
                 @Override
                 public Object getValue() throws IllegalAccessException, InvocationTargetException {
-                    return bean.getCashBased();
+                    return nf.format(bean.getAmount());
                 }
                 
                 @Override
@@ -156,125 +154,40 @@ public class NodeEmployeePayrollCode extends  AbstractNode implements LookupList
                 }
             };
             
-            Property debitProperty;
-            debitProperty = new PropertySupport("debit", String.class, "Debit", "Is this code a debit?", true, false) {
+            Property deduction;
+            deduction = new PropertySupport("deduction", Boolean.class, "Deduction", "Deduction", true, false) {
                 @Override
                 public Object getValue() throws IllegalAccessException, InvocationTargetException {
-                    return bean.getDebit();
+                    return bean.getPayrollCodeID().getDeduction();
                 }
                 
                 @Override
                 public void setValue(Object val) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
-                    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                    //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
                 }
             };
             
-            Property deductionProperty;
-            deductionProperty = new PropertySupport("deduction", Boolean.class, "Deduction", "Is this code a Deduction?", true, false) {
-                @Override
-                public Object getValue() throws IllegalAccessException, InvocationTargetException {
-                    return bean.getDeduction();
-                }
-                
-                @Override
-                public void setValue(Object val) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
-                    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-                }
-            };
+
             
-            Property infoPSProperty;
-            infoPSProperty = new PropertySupport("infops", Boolean.class, "Info On Payslip", "Display Code on Info Payslip?", true, false) {
-                @Override
-                public Object getValue() throws IllegalAccessException, InvocationTargetException {
-                    return bean.getCodeOnPaySlip();
-                }
-                
-                @Override
-                public void setValue(Object val) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
-                    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-                }
-            };
             
-            Property valuePSProperty;
-            valuePSProperty = new PropertySupport("valueps", Boolean.class, "Value On Payslip", "Display Code Value on Payslip?", true, false) {
-                @Override
-                public Object getValue() throws IllegalAccessException, InvocationTargetException {
-                    return bean.getValueOnPayslip();
-                }
-                
-                @Override
-                public void setValue(Object val) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
-                    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-                }
-            };
             
-            Property factorProperty;
-            factorProperty = new PropertySupport("factor", String.class, "Factor", "Factor", true, false) {
-                @Override
-                public Object getValue() throws IllegalAccessException, InvocationTargetException {
-                    return bean.getFactor();
-                }
-                
-                @Override
-                public void setValue(Object val) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
-                    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-                }
-            };
+           
             
-            Property fixedProperty;
-            fixedProperty = new PropertySupport("fixed", Boolean.class, "Fixed", "Fixed", true, false) {
-                @Override
-                public Object getValue() throws IllegalAccessException, InvocationTargetException {
-                    return bean.getFixed();
-                }
-                
-                @Override
-                public void setValue(Object val) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
-                    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-                }
-            };
+
             
-            Property fringeProperty;
-            fringeProperty = new PropertySupport("fringe", String.class, "Fringe Benefit", "Is this a fringe Benefit", true, false) {
-                @Override
-                public Object getValue() throws IllegalAccessException, InvocationTargetException {
-                    return bean.getFringeBenefit();
-                }
-                
-                @Override
-                public void setValue(Object val) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
-                    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-                }
-            };
+           
             
-            Property increasingProperty;
-            increasingProperty = new PropertySupport("increase", String.class, "Increasing", "Increasing", true, false) {
-                @Override
-                public Object getValue() throws IllegalAccessException, InvocationTargetException {
-                    return bean.getIncreasing();
-                }
-                
-                @Override
-                public void setValue(Object val) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
-                    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-                }
-            };
             
-            Property increasingBalanceLimitProperty;
-            increasingBalanceLimitProperty = new PropertySupport("increaseBal", String.class, "Increasing Balance Limit", "Increasing", true, false) {
-                @Override
-                public Object getValue() throws IllegalAccessException, InvocationTargetException {
-                    return bean.getIncreasingBalanceLimit();
-                }
-                
-                @Override
-                public void setValue(Object val) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
-                    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-                }
-            };
             
-            */
-            set.put(codeProperty);
+            
+            
+            
+            
+            
+            set.put(code);
+            set.put(deduction);
+            set.put(amount);
+            set.put(activeProperty);
             /*set.put(activeProperty);
             
             set.put(formularProperty);

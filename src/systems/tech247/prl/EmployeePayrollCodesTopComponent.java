@@ -32,27 +32,27 @@ import systems.tech247.util.CapCreatable;
  * Top component which displays something.
  */
 @ConvertAsProperties(
-        dtd = "-//systems.tech247.prl//EmployeePeriodTransactions//EN",
+        dtd = "-//systems.tech247.prl//EmployeePayrollCodes//EN",
         autostore = false
 )
 @TopComponent.Description(
-        preferredID = "EmployeePeriodTransactionsTopComponent",
+        preferredID = "EmployeePayrollCodesTopComponent",
         //iconBase="SET/PATH/TO/ICON/HERE", 
         persistenceType = TopComponent.PERSISTENCE_NEVER
 )
 @TopComponent.Registration(mode = "editor", openAtStartup = false)
-@ActionID(category = "Window", id = "systems.tech247.prl.EmployeePeriodTransactionsTopComponent")
+@ActionID(category = "Window", id = "systems.tech247.prl.EmployeePayrollCodesTopComponent")
 @ActionReference(path = "Menu/Window" /*, position = 333 */)
 @TopComponent.OpenActionRegistration(
-        displayName = "#CTL_EmployeePeriodTransactionsAction",
-        preferredID = "EmployeePeriodTransactionsTopComponent"
+        displayName = "#CTL_EmployeePayrollCodesAction",
+        preferredID = "EmployeePayrollCodesTopComponent"
 )
 @Messages({
-    "CTL_EmployeePeriodTransactionsAction=EmployeePeriods Transactions",
-    "CTL_EmployeePeriodTransactionsTopComponent=EmployeePeriods Transactions",
-    "HINT_EmployeePeriodTransactionsTopComponent=EmployeePeriods Transactions"
+    "CTL_EmployeePayrollCodesAction=Employee Payroll Codes",
+    "CTL_EmployeePayrollCodesTopComponent= Payroll Codes",
+    "HINT_EmployeePayrollCodesTopComponent= Payroll Codes"
 })
-public final class EmployeePeriodTransactionsTopComponent extends TopComponent implements ExplorerManager.Provider,LookupListener {
+public final class EmployeePayrollCodesTopComponent extends TopComponent implements ExplorerManager.Provider,LookupListener {
 
     Lookup.Result<TblPeriods> rslt = WindowManager.getDefault().findTopComponent("PeriodsTopComponent").getLookup().lookupResult(TblPeriods.class);
     ExplorerManager em = new ExplorerManager();
@@ -60,20 +60,21 @@ public final class EmployeePeriodTransactionsTopComponent extends TopComponent i
     InstanceContent content = new InstanceContent();
     TblPeriods period = DataAccess.getCurrentMonth();
     Lookup lookup = new AbstractLookup(content);
-    public EmployeePeriodTransactionsTopComponent() {
+    public EmployeePayrollCodesTopComponent() {
         this(null);
     }
-    public EmployeePeriodTransactionsTopComponent(final Employees emp) {
+    public EmployeePayrollCodesTopComponent(final Employees emp) {
         initComponents();
-        setName("Period Transactions ->"+ emp.getSurName()+" "+emp.getOtherNames());
-        setToolTipText(Bundle.HINT_EmployeePeriodTransactionsTopComponent());
+        setName("Payroll Codes ->"+ emp.getSurName()+" "+emp.getOtherNames());
+        setToolTipText(Bundle.HINT_EmployeePayrollCodesTopComponent());
         this.emp = emp;
         setLayout(new BorderLayout());
-        OutlineView ov = new OutlineView("Transactions");
-        ov.getOutline().setRootVisible(false);
+        OutlineView ov = new OutlineView("Code");
+        
         ov.addPropertyColumn("amount", "Amount");
+        ov.addPropertyColumn("active", "Active");
         ov.addPropertyColumn("deduction", "Deduction");
-        ov.addPropertyColumn("category", "Category");
+        ov.getOutline().setRootVisible(false);
         add(ov);
         //content.add();
         associateLookup(new ProxyLookup(lookup,ExplorerUtils.createLookup(em, getActionMap())));
@@ -81,7 +82,7 @@ public final class EmployeePeriodTransactionsTopComponent extends TopComponent i
         content.add(new CapCreatable() {
             @Override
             public void create() {
-                TopComponent tc = new EmployeeTransactionEditorTopComponent(emp);
+                TopComponent tc = new EmployeePayrollCodeEditorTopComponent(emp);
                 tc.open();
                 tc.requestActive();
             }
@@ -150,7 +151,7 @@ public final class EmployeePeriodTransactionsTopComponent extends TopComponent i
     }
     
     void reload(){
-        em.setRootContext(new AbstractNode(Children.create(new FactoryEmployeeTransactions(emp,period,false), true)));
+        em.setRootContext(new AbstractNode(Children.create(new FactoryEmployeePayrollCodes(emp,false), true)));
     }
     
     
