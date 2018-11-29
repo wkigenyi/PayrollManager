@@ -7,6 +7,8 @@ package systems.tech247.prl;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.Arrays;
@@ -128,38 +130,55 @@ public final class EmployeeTransactionEditorTopComponent extends TopComponent im
         currencyRslt.addLookupListener(this);
         
         
-        jtCurrency.addKeyListener(new KeyListener() {
+        jtCurrency.addMouseListener(new MouseListener() {
             @Override
-            public void keyTyped(KeyEvent e) {
-                
-                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-            }
-
-            @Override
-            public void keyPressed(KeyEvent e) {
-                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-            }
-
-            @Override
-            public void keyReleased(KeyEvent e) {
+            public void mouseClicked(MouseEvent e) {
                 DialogDisplayer.getDefault().notify(new DialogDescriptor(currencyTC, "Select A Currency"));
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
                 //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             }
         });
-        jtTransactionCode.addKeyListener(new KeyListener() {
+        jtTransactionCode.addMouseListener(new MouseListener() {
             @Override
-            public void keyTyped(KeyEvent e) {
-                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-            }
-
-            @Override
-            public void keyPressed(KeyEvent e) {
-                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-            }
-
-            @Override
-            public void keyReleased(KeyEvent e) {
+            public void mouseClicked(MouseEvent e) {
                 DialogDisplayer.getDefault().notify(new DialogDescriptor(codeSelect, "Select A Transaction Code"));
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
                 //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             }
         });
@@ -387,15 +406,23 @@ public final class EmployeeTransactionEditorTopComponent extends TopComponent im
     }
     
     public void modify(){
-        if( amount!=BigDecimal.ZERO && selectedCode!=null){
+        if(updateable == null){
+            if( amount!=BigDecimal.ZERO && selectedCode!=null){
+                if(getLookup().lookup(TransactionSavable.class)==null){
+                    ic.add(new TransactionSavable());
+                }
+            }else if(amount==BigDecimal.ZERO){
+                StatusDisplayer.getDefault().setStatusText("Amount is 0.0");
+            }else if(selectedCode==null){
+                StatusDisplayer.getDefault().setStatusText("Select A Transaction Code");
+            }
+        }else{
             if(getLookup().lookup(TransactionSavable.class)==null){
                 ic.add(new TransactionSavable());
             }
-        }else if(amount==BigDecimal.ZERO){
-            StatusDisplayer.getDefault().setStatusText("Amount is 0.0");
-        }else if(selectedCode==null){
-            StatusDisplayer.getDefault().setStatusText("Select A Transaction Code");
+            
         }
+        
     } 
     
     public void fillFields(){

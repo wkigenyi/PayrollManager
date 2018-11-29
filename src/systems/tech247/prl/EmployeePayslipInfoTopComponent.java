@@ -6,6 +6,8 @@
 package systems.tech247.prl;
 
 import java.awt.BorderLayout;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
@@ -24,7 +26,10 @@ import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.exception.DRException;
+import net.sf.jasperreports.engine.JRDataSource;
 import org.netbeans.api.settings.ConvertAsProperties;
+import org.openide.DialogDescriptor;
+import org.openide.DialogDisplayer;
 import org.openide.awt.ActionID;
 import org.openide.awt.ActionReference;
 import org.openide.awt.StatusDisplayer;
@@ -38,6 +43,7 @@ import org.openide.util.LookupEvent;
 import org.openide.util.LookupListener;
 import org.openide.windows.TopComponent;
 import org.openide.util.NbBundle.Messages;
+import org.openide.util.RequestProcessor;
 import org.openide.util.lookup.AbstractLookup;
 import org.openide.util.lookup.InstanceContent;
 import org.openide.windows.WindowManager;
@@ -77,12 +83,14 @@ import systems.tech247.util.NotifyUtil;
 })
 public final class EmployeePayslipInfoTopComponent extends TopComponent implements ExplorerManager.Provider,LookupListener {
 
-    Lookup.Result<TblPeriods> rslt = WindowManager.getDefault().findTopComponent("PeriodsTopComponent").getLookup().lookupResult(TblPeriods.class);
+    TopComponent tc = WindowManager.getDefault().findTopComponent("PeriodsTopComponent");
+    Lookup.Result<TblPeriods> rslt = tc.getLookup().lookupResult(TblPeriods.class);
     ExplorerManager em = new ExplorerManager();
     Employees emp;
     InstanceContent content = new InstanceContent();
     TblPeriods period = DataAccess.getCurrentMonth();
     Lookup lookup = new AbstractLookup(content);
+    JRDataSource payslipData;
     public EmployeePayslipInfoTopComponent() {
         this(null);
     }
@@ -91,14 +99,15 @@ public final class EmployeePayslipInfoTopComponent extends TopComponent implemen
         setName("Payroll Info ->"+ emp.getSurName()+" "+emp.getOtherNames());
         setToolTipText(Bundle.HINT_EmployeePayslipInfoTopComponent());
         this.emp = emp;
-        setLayout(new BorderLayout());
+        jpView.setLayout(new BorderLayout());
         OutlineView ov = new OutlineView("Payslip Info");
         ov.getOutline().setRootVisible(false);
         ov.addPropertyColumn("amount", "Amount");
         ov.addPropertyColumn("deduction", "Deduction");
         ov.addPropertyColumn("category", "Category");
-        add(ov);
+        jpView.add(ov);
         associateLookup(lookup);
+        jtPeriod.setText(period.getPeriodYear()+" "+period.getPeriodMonth());
         content.add(new CapEmail() {
             @Override
             public void email() {
@@ -115,7 +124,7 @@ public final class EmployeePayslipInfoTopComponent extends TopComponent implemen
                 
                 if(emails.size()>=1){
                     //Create the report
-                JasperReportBuilder report = (new ReportPaySlip(period, emp)).getReport();    
+                JasperReportBuilder report = (new ReportPaySlip(emp,payslipData,period)).getReport();    
                     // The smtp Server
                 String host ="smtp.gmail.com";
                 //Sender's email id
@@ -216,7 +225,7 @@ public final class EmployeePayslipInfoTopComponent extends TopComponent implemen
             @Override
             public void preview() {
                 //Preview
-                JasperReportBuilder report = (new ReportPaySlip(period, emp)).getReport();
+                JasperReportBuilder report = (new ReportPaySlip(emp,payslipData,period)).getReport();
                 try {
                     report.show(false);
                    
@@ -230,7 +239,7 @@ public final class EmployeePayslipInfoTopComponent extends TopComponent implemen
             public void print() {
                 //Print
                 //Preview
-                JasperReportBuilder report = (new ReportPaySlip(period, emp)).getReport();
+                JasperReportBuilder report = (new ReportPaySlip(emp,payslipData,period)).getReport();
                 try {
                     report.print(true);
                    
@@ -245,6 +254,33 @@ public final class EmployeePayslipInfoTopComponent extends TopComponent implemen
         });
         
         rslt.addLookupListener(this);
+        
+        jtPeriod.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                DialogDisplayer.getDefault().notify(new DialogDescriptor(tc, "Select Period"));
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+        });
 
     }
 
@@ -256,19 +292,59 @@ public final class EmployeePayslipInfoTopComponent extends TopComponent implemen
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jpView = new javax.swing.JPanel();
+        jtPeriod = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+
+        jpView.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        javax.swing.GroupLayout jpViewLayout = new javax.swing.GroupLayout(jpView);
+        jpView.setLayout(jpViewLayout);
+        jpViewLayout.setHorizontalGroup(
+            jpViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jpViewLayout.setVerticalGroup(
+            jpViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 250, Short.MAX_VALUE)
+        );
+
+        jtPeriod.setText(org.openide.util.NbBundle.getMessage(EmployeePayslipInfoTopComponent.class, "EmployeePayslipInfoTopComponent.jtPeriod.text")); // NOI18N
+
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel1, org.openide.util.NbBundle.getMessage(EmployeePayslipInfoTopComponent.class, "EmployeePayslipInfoTopComponent.jLabel1.text")); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jpView, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 136, Short.MAX_VALUE)
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jtPeriod, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jtPeriod)
+                    .addComponent(jLabel1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jpView, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jpView;
+    private javax.swing.JTextField jtPeriod;
     // End of variables declaration//GEN-END:variables
     @Override
     public void componentOpened() {
@@ -279,6 +355,20 @@ public final class EmployeePayslipInfoTopComponent extends TopComponent implemen
     public void componentClosed() {
         // TODO add custom code on component closing
     }
+
+    @Override
+    protected void componentActivated() {
+        super.componentActivated();
+        RequestProcessor.getDefault().post(new Runnable() {
+            @Override
+            public void run() {
+                payslipData = UtilityPLR.getInstance().generatePaySlipInfo(emp, period);
+            }
+        });
+//To change body of generated methods, choose Tools | Templates.
+    }
+    
+    
 
     void writeProperties(java.util.Properties p) {
         // better to version settings since initial version as advocated at
@@ -302,6 +392,7 @@ public final class EmployeePayslipInfoTopComponent extends TopComponent implemen
         Lookup.Result<TblPeriods> rslt = (Lookup.Result<TblPeriods>)ev.getSource();
         for(TblPeriods p: rslt.allInstances()){
             period = p;
+            jtPeriod.setText(period.getPeriodYear()+" "+period.getPeriodMonth());
             reload();
         }
     }

@@ -7,6 +7,8 @@ package systems.tech247.prl;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -36,6 +38,7 @@ import systems.tech247.hr.Currencies;
 import systems.tech247.hr.Employees;
 import systems.tech247.hr.TblPayrollCode;
 import systems.tech247.util.CetusUTL;
+import systems.tech247.view.CategoriesTopComponent;
 
 /**
  * Top component which displays something.
@@ -128,38 +131,55 @@ public final class TransactionEditorTopComponent extends TopComponent implements
         currencyRslt.addLookupListener(this);
         
         
-        jtCurrency.addKeyListener(new KeyListener() {
+            jtCurrency.addMouseListener(new MouseListener() {
             @Override
-            public void keyTyped(KeyEvent e) {
+            public void mouseClicked(MouseEvent e) {
                 DialogDisplayer.getDefault().notify(new DialogDescriptor(currencyTC, "Select A Currency"));
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
                 //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             }
 
             @Override
-            public void keyPressed(KeyEvent e) {
+            public void mouseReleased(MouseEvent e) {
                 //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             }
 
             @Override
-            public void keyReleased(KeyEvent e) {
-                
+            public void mouseEntered(MouseEvent e) {
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
                 //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             }
         });
-        jtTransactionCode.addKeyListener(new KeyListener() {
+        jtTransactionCode.addMouseListener(new MouseListener() {
             @Override
-            public void keyTyped(KeyEvent e) {
-                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-            }
-
-            @Override
-            public void keyPressed(KeyEvent e) {
-                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-            }
-
-            @Override
-            public void keyReleased(KeyEvent e) {
+            public void mouseClicked(MouseEvent e) {
                 DialogDisplayer.getDefault().notify(new DialogDescriptor(codeSelect, "Select A Transaction Code"));
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
                 //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             }
         });
@@ -191,6 +211,7 @@ public final class TransactionEditorTopComponent extends TopComponent implements
         jbEmployeeSelector = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jtReference = new javax.swing.JTextField();
+        jbCategorySelector = new javax.swing.JButton();
 
         org.openide.awt.Mnemonics.setLocalizedText(jLabel1, org.openide.util.NbBundle.getMessage(TransactionEditorTopComponent.class, "TransactionEditorTopComponent.jLabel1.text")); // NOI18N
 
@@ -217,6 +238,13 @@ public final class TransactionEditorTopComponent extends TopComponent implements
 
         jtReference.setText(org.openide.util.NbBundle.getMessage(TransactionEditorTopComponent.class, "TransactionEditorTopComponent.jtReference.text")); // NOI18N
 
+        org.openide.awt.Mnemonics.setLocalizedText(jbCategorySelector, org.openide.util.NbBundle.getMessage(TransactionEditorTopComponent.class, "TransactionEditorTopComponent.jbCategorySelector.text")); // NOI18N
+        jbCategorySelector.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbCategorySelectorActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -236,7 +264,8 @@ public final class TransactionEditorTopComponent extends TopComponent implements
                             .addComponent(jtTransactionCode, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jtAmount, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jtCurrency, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jtReference, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jtReference, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jbCategorySelector, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(131, Short.MAX_VALUE))
         );
 
@@ -247,6 +276,8 @@ public final class TransactionEditorTopComponent extends TopComponent implements
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jbEmployeeSelector)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jbCategorySelector)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
@@ -263,7 +294,7 @@ public final class TransactionEditorTopComponent extends TopComponent implements
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(jtReference, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(162, Short.MAX_VALUE))
+                .addContainerGap(133, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -274,11 +305,19 @@ public final class TransactionEditorTopComponent extends TopComponent implements
         CetusUTL.loadSelectableEmployees("SELECT e FROM Employees e WHERE e.isDisengaged = 0",false);
     }//GEN-LAST:event_jbEmployeeSelectorActionPerformed
 
+    private void jbCategorySelectorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCategorySelectorActionPerformed
+        DataAccess.resetSelectedEmployees();
+        
+        DialogDisplayer.getDefault().notify(new DialogDescriptor(new CategoriesTopComponent("multi"), "Select Categories"));
+        CetusUTL.loadSelectableEmployees("SELECT e FROM Employees e WHERE e.isDisengaged = 0",false);
+    }//GEN-LAST:event_jbCategorySelectorActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JButton jbCategorySelector;
     private javax.swing.JButton jbEmployeeSelector;
     private javax.swing.JFormattedTextField jtAmount;
     private javax.swing.JTextField jtCurrency;

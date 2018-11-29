@@ -3,74 +3,54 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package systems.tech247.prl;
+package systems.tech247.payrollreports;
 
 import java.awt.BorderLayout;
 import org.netbeans.api.settings.ConvertAsProperties;
 import org.openide.awt.ActionID;
 import org.openide.awt.ActionReference;
 import org.openide.explorer.ExplorerManager;
-import org.openide.explorer.ExplorerUtils;
 import org.openide.explorer.view.BeanTreeView;
 import org.openide.nodes.AbstractNode;
 import org.openide.nodes.Children;
 import org.openide.windows.TopComponent;
 import org.openide.util.NbBundle.Messages;
-import org.openide.util.RequestProcessor;
+import systems.tech247.prl.FactoryPLRReports;
 
 /**
  * Top component which displays something.
  */
 @ConvertAsProperties(
-        dtd = "-//systems.tech247.prl//Periods//EN",
+        dtd = "-//systems.tech247.payrollreports//PayrollReports//EN",
         autostore = false
 )
 @TopComponent.Description(
-        preferredID = "PeriodsTopComponent",
-        iconBase = "systems/tech247/util/icons/Calendar.png",
+        preferredID = "PayrollReportsTopComponent",
+        //iconBase="SET/PATH/TO/ICON/HERE", 
         persistenceType = TopComponent.PERSISTENCE_NEVER
 )
-@TopComponent.Registration(mode = "explorer", openAtStartup = false /*, roles = {"Payroll"}*/)
-@ActionID(category = "Payroll", id = "systems.tech247.prl.PeriodsTopComponent")
-@ActionReference(path = "Menu/Payroll" /*, position = 333 */)
+@TopComponent.Registration(mode = "explorer", openAtStartup = false)
+@ActionID(category = "Window", id = "systems.tech247.payrollreports.PayrollReportsTopComponent")
+@ActionReference(path = "Menu/Window" /*, position = 333 */)
 @TopComponent.OpenActionRegistration(
-        displayName = "#CTL_PeriodsAction",
-        preferredID = "PeriodsTopComponent"
+        displayName = "#CTL_PayrollReportsAction",
+        preferredID = "PayrollReportsTopComponent"
 )
 @Messages({
-    "CTL_PeriodsAction=Payroll Periods",
-    "CTL_PeriodsTopComponent=Payroll Periods",
-    "HINT_PeriodsTopComponent= "
+    "CTL_PayrollReportsAction=PayrollReports",
+    "CTL_PayrollReportsTopComponent=Payroll Reports",
+    "HINT_PayrollReportsTopComponent=This is a PayrollReports window"
 })
-public final class PeriodsTopComponent extends TopComponent implements ExplorerManager.Provider {
-    
-    ExplorerManager em = new ExplorerManager();
-   
-
-    
-    
-   
-    public PeriodsTopComponent() {
+public final class PayrollReportsTopComponent extends TopComponent implements ExplorerManager.Provider {
+    ExplorerManager em = new ExplorerManager();    
+    public PayrollReportsTopComponent() {
         initComponents();
-        setName(Bundle.CTL_PeriodsTopComponent());
-        setToolTipText(Bundle.HINT_PeriodsTopComponent());
-        BeanTreeView ov = new BeanTreeView();
-        ov.setRootVisible(false);
+        setName(Bundle.CTL_PayrollReportsTopComponent());
+        setToolTipText(Bundle.HINT_PayrollReportsTopComponent());
+        BeanTreeView btv = new BeanTreeView();
+        btv.setRootVisible(false);
         setLayout(new BorderLayout());
-        add(ov);
-        associateLookup(ExplorerUtils.createLookup(em, getActionMap()));
-        
-        RequestProcessor.getDefault().post(new Runnable() {
-            @Override
-            public void run() {
-                em.setRootContext(new AbstractNode(Children.create(new FactoryPayrollPeriod(), true)));
-                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-            }
-        });
-        
-        
-        
-      
+        add(btv);
 
     }
 
@@ -86,7 +66,7 @@ public final class PeriodsTopComponent extends TopComponent implements ExplorerM
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 514, Short.MAX_VALUE)
+            .addGap(0, 400, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -98,21 +78,13 @@ public final class PeriodsTopComponent extends TopComponent implements ExplorerM
     // End of variables declaration//GEN-END:variables
     @Override
     public void componentOpened() {
-        
+        em.setRootContext(new AbstractNode(Children.create(new FactoryPLRReports(), true)));
     }
 
     @Override
     public void componentClosed() {
         // TODO add custom code on component closing
     }
-
-    @Override
-    protected void componentShowing() {
-        super.componentShowing(); //To change body of generated methods, choose Tools | Templates.
-        
-    }
-    
-    
 
     void writeProperties(java.util.Properties p) {
         // better to version settings since initial version as advocated at
@@ -130,10 +102,5 @@ public final class PeriodsTopComponent extends TopComponent implements ExplorerM
     public ExplorerManager getExplorerManager() {
         return em;
     }
-
-   
     
-    
-    
-    
-  }
+}

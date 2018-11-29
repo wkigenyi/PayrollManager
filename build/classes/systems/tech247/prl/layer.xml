@@ -7,7 +7,8 @@
             <folder name="PLRGroup">
                 <file name = "PLREmployeeListTopComponent.wstcgrp" url="groups/prlgroup/PLREmployeeListTopComponentWstcgrp.xml"/>
                 <file name = "PayrollSetupTopComponent.wstcgrp" url="groups/prlgroup/PayrollSetupTopComponentWstcgrp.xml"/>
-                <file name = "PeriodsTopComponent.wstcgrp" url="groups/prlgroup/PeriodsTopComponentWstcgrp.xml"/>
+                <!--<file name = "PeriodsTopComponent.wstcgrp" url="groups/prlgroup/PeriodsTopComponentWstcgrp.xml"/>-->
+                <file name = "PayrollReportsTopComponent.wstcgrp" url="groups/prlgroup/PayrollReportsTopComponentWstcgrp.xml"/>
             </folder>    
         </folder>
     </folder>

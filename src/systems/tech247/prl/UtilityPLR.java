@@ -5,10 +5,14 @@
  */
 package systems.tech247.prl;
 
+import java.math.BigDecimal;
 import java.text.DateFormatSymbols;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import javax.persistence.Query;
+import net.sf.dynamicreports.report.datasource.DRDataSource;
+import net.sf.jasperreports.engine.JRDataSource;
 import org.openide.explorer.ExplorerManager;
 import org.openide.nodes.AbstractNode;
 import org.openide.nodes.Children;
@@ -17,8 +21,11 @@ import org.openide.util.LookupEvent;
 import org.openide.util.LookupListener;
 import org.openide.util.lookup.AbstractLookup;
 import org.openide.util.lookup.InstanceContent;
+import systems.tech247.dbaccess.DataAccess;
 import static systems.tech247.dbaccess.DataAccess.entityManager;
+import systems.tech247.hr.Employees;
 import systems.tech247.hr.HrsUsers;
+import systems.tech247.hr.TblPeriodTransactions;
 import systems.tech247.hr.TblPeriods;
 import systems.tech247.util.CetusUTL;
 import systems.tech247.util.NotifyUtil;
@@ -52,7 +59,6 @@ public class UtilityPLR implements Lookup.Provider,LookupListener {
         }
         return instance;
     }
-    
     
     //Next Period
     public static TblPeriods getNextPeriod(TblPeriods currentPeriod){
@@ -228,6 +234,16 @@ public class UtilityPLR implements Lookup.Provider,LookupListener {
     
     
     
-    
+    public JRDataSource generatePaySlipInfo(Employees e,TblPeriods p){
+        DRDataSource data = new DRDataSource("name","amount");
+        DataAccess da = new DataAccess();
+        List<TblPeriodTransactions> list = da.getTransactions(e.getEmployeeID(), p.getPeriodYear(), CetusUTL.covertMonthsToInt(p.getPeriodMonth()));
+        for(TblPeriodTransactions t: list){
+            if(t.getPayrollCodeID().getDisplayPostedPayrollCodeValueOnPaySlip()){
+                data.add(t.getPayrollCodeID().getPayrollCodeName(),new BigDecimal(t.getAmount()));
+            }
+        }    
+        return data;
+    }
     
 }
