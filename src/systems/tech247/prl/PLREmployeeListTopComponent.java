@@ -51,6 +51,7 @@ public final class PLREmployeeListTopComponent extends TopComponent implements E
         initComponents();
         setName(Bundle.CTL_PLREmployeeListTopComponent());
         setToolTipText(Bundle.HINT_PLREmployeeListTopComponent());
+        putClientProperty(TopComponent.PROP_CLOSING_DISABLED, Boolean.TRUE);
         vPanel.setLayout(new BorderLayout());
         BeanTreeView btv = new BeanTreeView();
         btv.setRootVisible(false);

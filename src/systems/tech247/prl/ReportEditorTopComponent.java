@@ -5,6 +5,10 @@
  */
 package systems.tech247.prl;
 
+import systems.tech247.payrollreports.ReportPayroll;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
@@ -13,6 +17,7 @@ import static net.sf.dynamicreports.report.builder.DynamicReports.sbt;
 import net.sf.dynamicreports.report.builder.column.ColumnBuilder;
 import net.sf.dynamicreports.report.builder.column.TextColumnBuilder;
 import net.sf.dynamicreports.report.builder.style.StyleBuilder;
+import net.sf.dynamicreports.report.builder.subtotal.AggregationSubtotalBuilder;
 import net.sf.dynamicreports.report.builder.subtotal.SubtotalBuilder;
 import net.sf.dynamicreports.report.constant.HorizontalTextAlignment;
 import net.sf.dynamicreports.report.datasource.DRDataSource;
@@ -33,6 +38,7 @@ import org.openide.windows.TopComponent;
 import org.openide.util.NbBundle.Messages;
 import org.openide.util.RequestProcessor;
 import org.openide.util.lookup.InstanceContent;
+import org.openide.windows.WindowManager;
 import systems.tech247.dbaccess.DataAccess;
 import systems.tech247.hr.Employees;
 import systems.tech247.hr.OrganizationUnits;
@@ -78,7 +84,10 @@ public final class ReportEditorTopComponent extends TopComponent implements Look
     
     Lookup.Result<TblPayrollCode> txCodeRslt = UtilityPLR.getInstance().getLookup().lookupResult(TblPayrollCode.class);
     List<TblPayrollCode> selectedCodes = new ArrayList<>();
+    TopComponent tc = WindowManager.getDefault().findTopComponent("PeriodsTopComponent");
+    Lookup.Result<TblPeriods> rslt = tc.getLookup().lookupResult(TblPeriods.class);
     public ReportEditorTopComponent(){
+        this (DataAccess.getCurrentMonth());
         
     }
     
@@ -89,13 +98,42 @@ public final class ReportEditorTopComponent extends TopComponent implements Look
         //String sql="SELECT e FROM Employees e WHERE e.isDisengaged =0";
         //empList = DataAccess.searchEmployees(sql);
         this.period = p;
-        
+        jtPeriod.setText(period.getPeriodYear()+" "+period.getPeriodMonth());
         
         
         
         
         resultChanged(new LookupEvent(txCodeRslt));
         txCodeRslt.addLookupListener(this);
+        
+        rslt.addLookupListener(this);
+        
+        jtPeriod.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                DialogDisplayer.getDefault().notify(new DialogDescriptor(tc, "Select Period"));
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+        });
         
         
         
@@ -119,6 +157,8 @@ public final class ReportEditorTopComponent extends TopComponent implements Look
         jcbSortByDept = new javax.swing.JCheckBox();
         jcbSubTotalPerDepartment = new javax.swing.JCheckBox();
         jcbSubTotalAtSummary = new javax.swing.JCheckBox();
+        jtPeriod = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
 
         org.openide.awt.Mnemonics.setLocalizedText(jbPayrollCodeSelector, org.openide.util.NbBundle.getMessage(ReportEditorTopComponent.class, "ReportEditorTopComponent.jbPayrollCodeSelector.text")); // NOI18N
         jbPayrollCodeSelector.addActionListener(new java.awt.event.ActionListener() {
@@ -158,6 +198,10 @@ public final class ReportEditorTopComponent extends TopComponent implements Look
             }
         });
 
+        jtPeriod.setText(org.openide.util.NbBundle.getMessage(ReportEditorTopComponent.class, "ReportEditorTopComponent.jtPeriod.text")); // NOI18N
+
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel1, org.openide.util.NbBundle.getMessage(ReportEditorTopComponent.class, "ReportEditorTopComponent.jLabel1.text")); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -167,13 +211,16 @@ public final class ReportEditorTopComponent extends TopComponent implements Look
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jbCodesCounter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jcbSortByDept)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jbReportRunner, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jbPayrollCodeSelector, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE))
+                            .addComponent(jbReportRunner, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jbPayrollCodeSelector, javax.swing.GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE)
                             .addComponent(jcbSubTotalPerDepartment)
-                            .addComponent(jcbSubTotalAtSummary))
+                            .addComponent(jcbSubTotalAtSummary)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jtPeriod)))
                         .addGap(0, 69, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -181,6 +228,10 @@ public final class ReportEditorTopComponent extends TopComponent implements Look
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jtPeriod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jbPayrollCodeSelector)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jbReportRunner)
@@ -190,7 +241,7 @@ public final class ReportEditorTopComponent extends TopComponent implements Look
                 .addComponent(jcbSubTotalPerDepartment)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jcbSubTotalAtSummary)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 144, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 118, Short.MAX_VALUE)
                 .addComponent(jbCodesCounter)
                 .addContainerGap())
         );
@@ -233,12 +284,14 @@ public final class ReportEditorTopComponent extends TopComponent implements Look
     }//GEN-LAST:event_jcbSubTotalAtSummaryActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jbCodesCounter;
     private javax.swing.JButton jbPayrollCodeSelector;
     private javax.swing.JButton jbReportRunner;
     private javax.swing.JCheckBox jcbSortByDept;
     private javax.swing.JCheckBox jcbSubTotalAtSummary;
     private javax.swing.JCheckBox jcbSubTotalPerDepartment;
+    private javax.swing.JTextField jtPeriod;
     // End of variables declaration//GEN-END:variables
     @Override
     public void componentOpened() {
@@ -264,19 +317,27 @@ public final class ReportEditorTopComponent extends TopComponent implements Look
 
     @Override
     public void resultChanged(LookupEvent le) {
-        Lookup.Result<TblPayrollCode> r = (Lookup.Result<TblPayrollCode>)le.getSource();
+        Lookup.Result r = (Lookup.Result)le.getSource();
         selectedCodes.clear();
-        for(TblPayrollCode code: r.allInstances()){
-            selectedCodes.add(code);
+        for(Object o: r.allInstances()){
+            if(o instanceof TblPayrollCode){
+                selectedCodes.add((TblPayrollCode)o);
+                if(selectedCodes.isEmpty()){
+                    jbCodesCounter.setText("Selected Codes");
+                    jbReportRunner.setEnabled(false);
+                }else{
+                    jbReportRunner.setEnabled(true);
+                    jbCodesCounter.setText(selectedCodes.size()+" Codes Selected");
+                }
+            }else if(o instanceof TblPeriods){
+                period = (TblPeriods)o;
+                jtPeriod.setText(period.getPeriodYear()+" "+period.getPeriodMonth());
+            }
         }
         
-        if(selectedCodes.isEmpty()){
-            jbCodesCounter.setText("Selected Codes");
-            jbReportRunner.setEnabled(false);
-        }else{
-            jbReportRunner.setEnabled(true);
-            jbCodesCounter.setText(selectedCodes.size()+" Codes Selected");
-        }
+        
+        
+        
         
         
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -314,9 +375,11 @@ public final class ReportEditorTopComponent extends TopComponent implements Look
                     columns[3] = dept;
                     //Also The SubTotal Columns
                     SubtotalBuilder[] subtotals = new SubtotalBuilder[selectedCodes.size()];
+                    AggregationSubtotalBuilder[] subtotalsG= new AggregationSubtotalBuilder[selectedCodes.size()];
                     for(int i=0;i<selectedCodes.size();i++){
                         columns[i+4] = DynamicReports.col.column(selectedCodes.get(i).getReportLabel(),selectedCodes.get(i).getPayrollCodeCode(),DynamicReports.type.bigDecimalType());
                         subtotals[i] = sbt.sum((TextColumnBuilder)columns[i+4]);
+                        subtotalsG[i] = sbt.sum((TextColumnBuilder)columns[i+4]);
                     }
                     
                     handle.progress("Creating Data Source");
@@ -371,7 +434,7 @@ public final class ReportEditorTopComponent extends TopComponent implements Look
                     
                     handle.progress("Finalising");
                     
-                    ReportPayroll design = new ReportPayroll(columns, columnNames,subtotals,dataSource,sortByDepartment,subTotalsAtGroup,subTotalsAtSummary,period);
+                    ReportPayroll design = new ReportPayroll(columns, columnNames,subtotals,subtotalsG,dataSource,sortByDepartment,subTotalsAtGroup,subTotalsAtSummary,period);
                     JasperReportBuilder report = design.getReport();
                     try {
                         report.show(false);

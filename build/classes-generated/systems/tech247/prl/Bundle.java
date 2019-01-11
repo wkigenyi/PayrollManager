@@ -17,6 +17,34 @@ class Bundle {
         return org.openide.util.NbBundle.getMessage(Bundle.class, "CTL_AssignCodesTopComponent");
     }
     /**
+     * @return <i>CostCenters</i>
+     * @see CostCentersTopComponent
+     */
+    static String CTL_CostCentersAction() {
+        return org.openide.util.NbBundle.getMessage(Bundle.class, "CTL_CostCentersAction");
+    }
+    /**
+     * @return <i>CostCenters Window</i>
+     * @see CostCentersTopComponent
+     */
+    static String CTL_CostCentersTopComponent() {
+        return org.openide.util.NbBundle.getMessage(Bundle.class, "CTL_CostCentersTopComponent");
+    }
+    /**
+     * @return <i>Emailer</i>
+     * @see EmailerTopComponent
+     */
+    static String CTL_EmailerAction() {
+        return org.openide.util.NbBundle.getMessage(Bundle.class, "CTL_EmailerAction");
+    }
+    /**
+     * @return <i>Emailer</i>
+     * @see EmailerTopComponent
+     */
+    static String CTL_EmailerTopComponent() {
+        return org.openide.util.NbBundle.getMessage(Bundle.class, "CTL_EmailerTopComponent");
+    }
+    /**
      * @return <i>EmployeePayrollCodeEditor</i>
      * @see EmployeePayrollCodeEditorTopComponent
      */
@@ -185,6 +213,34 @@ class Bundle {
         return org.openide.util.NbBundle.getMessage(Bundle.class, "CTL_PLREmployeeListTopComponent");
     }
     /**
+     * @return <i>PayPointEditor</i>
+     * @see PayPointEditorTopComponent
+     */
+    static String CTL_PayPointEditorAction() {
+        return org.openide.util.NbBundle.getMessage(Bundle.class, "CTL_PayPointEditorAction");
+    }
+    /**
+     * @return <i>PayPoint Editor</i>
+     * @see PayPointEditorTopComponent
+     */
+    static String CTL_PayPointEditorTopComponent() {
+        return org.openide.util.NbBundle.getMessage(Bundle.class, "CTL_PayPointEditorTopComponent");
+    }
+    /**
+     * @return <i>PayPoints</i>
+     * @see PayPointsTopComponent
+     */
+    static String CTL_PayPointsAction() {
+        return org.openide.util.NbBundle.getMessage(Bundle.class, "CTL_PayPointsAction");
+    }
+    /**
+     * @return <i>PayPoints Window</i>
+     * @see PayPointsTopComponent
+     */
+    static String CTL_PayPointsTopComponent() {
+        return org.openide.util.NbBundle.getMessage(Bundle.class, "CTL_PayPointsTopComponent");
+    }
+    /**
      * @return <i>Payroll</i>
      * @see PayrollTopComponent
      */
@@ -218,6 +274,20 @@ class Bundle {
      */
     static String CTL_PayrollCodeGroupEditorTopComponent() {
         return org.openide.util.NbBundle.getMessage(Bundle.class, "CTL_PayrollCodeGroupEditorTopComponent");
+    }
+    /**
+     * @return <i>PayrollCodeGroups</i>
+     * @see PayrollCodeGroupsTopComponent
+     */
+    static String CTL_PayrollCodeGroupsAction() {
+        return org.openide.util.NbBundle.getMessage(Bundle.class, "CTL_PayrollCodeGroupsAction");
+    }
+    /**
+     * @return <i>Payroll Code Groups</i>
+     * @see PayrollCodeGroupsTopComponent
+     */
+    static String CTL_PayrollCodeGroupsTopComponent() {
+        return org.openide.util.NbBundle.getMessage(Bundle.class, "CTL_PayrollCodeGroupsTopComponent");
     }
     /**
      * @return <i>Payroll Codes</i>
@@ -281,6 +351,20 @@ class Bundle {
      */
     static String CTL_PayrollTopComponent() {
         return org.openide.util.NbBundle.getMessage(Bundle.class, "CTL_PayrollTopComponent");
+    }
+    /**
+     * @return <i>Payrolls</i>
+     * @see PayrollsTopComponent
+     */
+    static String CTL_PayrollsAction() {
+        return org.openide.util.NbBundle.getMessage(Bundle.class, "CTL_PayrollsAction");
+    }
+    /**
+     * @return <i>Payrolls Window</i>
+     * @see PayrollsTopComponent
+     */
+    static String CTL_PayrollsTopComponent() {
+        return org.openide.util.NbBundle.getMessage(Bundle.class, "CTL_PayrollsTopComponent");
     }
     /**
      * @return <i>Payroll Periods</i>
@@ -358,6 +442,20 @@ class Bundle {
      */
     static String HINT_AssignCodesTopComponent() {
         return org.openide.util.NbBundle.getMessage(Bundle.class, "HINT_AssignCodesTopComponent");
+    }
+    /**
+     * @return <i>This is a CostCenters window</i>
+     * @see CostCentersTopComponent
+     */
+    static String HINT_CostCentersTopComponent() {
+        return org.openide.util.NbBundle.getMessage(Bundle.class, "HINT_CostCentersTopComponent");
+    }
+    /**
+     * @return <i>Emailer</i>
+     * @see EmailerTopComponent
+     */
+    static String HINT_EmailerTopComponent() {
+        return org.openide.util.NbBundle.getMessage(Bundle.class, "HINT_EmailerTopComponent");
     }
     /**
      * @return 
@@ -444,6 +542,20 @@ class Bundle {
         return org.openide.util.NbBundle.getMessage(Bundle.class, "HINT_PLREmployeeListTopComponent");
     }
     /**
+     * @return 
+     * @see PayPointEditorTopComponent
+     */
+    static String HINT_PayPointEditorTopComponent() {
+        return org.openide.util.NbBundle.getMessage(Bundle.class, "HINT_PayPointEditorTopComponent");
+    }
+    /**
+     * @return <i>This is a PayPoints window</i>
+     * @see PayPointsTopComponent
+     */
+    static String HINT_PayPointsTopComponent() {
+        return org.openide.util.NbBundle.getMessage(Bundle.class, "HINT_PayPointsTopComponent");
+    }
+    /**
      * @return <i>This is a PayrollCodeEditor window</i>
      * @see PayrollCodeEditorTopComponent
      */
@@ -456,6 +568,13 @@ class Bundle {
      */
     static String HINT_PayrollCodeGroupEditorTopComponent() {
         return org.openide.util.NbBundle.getMessage(Bundle.class, "HINT_PayrollCodeGroupEditorTopComponent");
+    }
+    /**
+     * @return <i>This is a PayrollCodeGroups window</i>
+     * @see PayrollCodeGroupsTopComponent
+     */
+    static String HINT_PayrollCodeGroupsTopComponent() {
+        return org.openide.util.NbBundle.getMessage(Bundle.class, "HINT_PayrollCodeGroupsTopComponent");
     }
     /**
      * @return <i> </i>
@@ -491,6 +610,13 @@ class Bundle {
      */
     static String HINT_PayrollTopComponent() {
         return org.openide.util.NbBundle.getMessage(Bundle.class, "HINT_PayrollTopComponent");
+    }
+    /**
+     * @return <i>This is a Payrolls window</i>
+     * @see PayrollsTopComponent
+     */
+    static String HINT_PayrollsTopComponent() {
+        return org.openide.util.NbBundle.getMessage(Bundle.class, "HINT_PayrollsTopComponent");
     }
     /**
      * @return <i> </i>

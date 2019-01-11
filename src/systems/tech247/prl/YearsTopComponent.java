@@ -32,11 +32,11 @@ import systems.tech247.hr.Employees;
 )
 @TopComponent.Registration(mode = "explorer", openAtStartup = false)
 @ActionID(category = "Payroll", id = "systems.tech247.prl.YearsTopComponent")
-@ActionReference(path = "Menu/Payroll" /*, position = 333 */)
-@TopComponent.OpenActionRegistration(
-        displayName = "#CTL_YearsAction",
-        preferredID = "YearsTopComponent"
-)
+//@ActionReference(path = "Menu/Payroll" /*, position = 333 */)
+//@TopComponent.OpenActionRegistration(
+//        displayName = "#CTL_YearsAction",
+//        preferredID = "YearsTopComponent"
+//)
 @Messages({
     "CTL_YearsAction=Payroll Years",
     "CTL_YearsTopComponent=Years Window",

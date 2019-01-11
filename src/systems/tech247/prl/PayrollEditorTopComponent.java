@@ -7,15 +7,20 @@ package systems.tech247.prl;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.Date;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import org.netbeans.api.settings.ConvertAsProperties;
 import org.netbeans.spi.actions.AbstractSavable;
 import org.openide.awt.ActionID;
 import org.openide.awt.ActionReference;
+import org.openide.awt.StatusDisplayer;
 import org.openide.windows.TopComponent;
 import org.openide.util.NbBundle.Messages;
 import org.openide.util.lookup.InstanceContent;
@@ -79,20 +84,9 @@ public final class PayrollEditorTopComponent extends TopComponent {
         }catch(NullPointerException ex){
             
         }
-        jtPayrollCode.addKeyListener(new KeyListener() {
+        jtPayrollCode.getDocument().addDocumentListener(new DocumentListener() {
             @Override
-            public void keyTyped(KeyEvent e) {
-                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-            }
-
-            @Override
-            public void keyPressed(KeyEvent e) {
-                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-            }
-
-            @Override
-            public void keyReleased(KeyEvent e) {
-                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            public void insertUpdate(DocumentEvent e) {
                 if(!"".equals(jtPayrollCode.getText())){
                     pCode = jtPayrollCode.getText();
                     try{
@@ -102,23 +96,38 @@ public final class PayrollEditorTopComponent extends TopComponent {
                     }
                     modify();
                 }
-                
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                                if(!"".equals(jtPayrollCode.getText())){
+                    pCode = jtPayrollCode.getText();
+                    try{
+                        updateable.setPayrollCode(pCode);
+                    }catch(NullPointerException ex){
+                        
+                    }
+                    modify();
+                }
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                                if(!"".equals(jtPayrollCode.getText())){
+                    pCode = jtPayrollCode.getText();
+                    try{
+                        updateable.setPayrollCode(pCode);
+                    }catch(NullPointerException ex){
+                        
+                    }
+                    modify();
+                }
             }
         });
         
-        jtPayrollName.addKeyListener(new KeyListener() {
+        jtPayrollName.getDocument().addDocumentListener(new DocumentListener() {
             @Override
-            public void keyTyped(KeyEvent e) {
-                //
-            }
-
-            @Override
-            public void keyPressed(KeyEvent e) {
-                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-            }
-
-            @Override
-            public void keyReleased(KeyEvent e) {
+            public void insertUpdate(DocumentEvent e) {
                 if(!jtPayrollName.getText().equals("")){
                     pName = jtPayrollName.getText();
                     try{
@@ -127,48 +136,88 @@ public final class PayrollEditorTopComponent extends TopComponent {
                         
                     }
                     modify();
-                } else {
                 }
-                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                if(!jtPayrollName.getText().equals("")){
+                    pName = jtPayrollName.getText();
+                    try{
+                        updateable.setPayrollName(pName);
+                    }catch(NullPointerException ex){
+                        
+                    }
+                    modify();
+                }
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                if(!jtPayrollName.getText().equals("")){
+                    pName = jtPayrollName.getText();
+                    try{
+                        updateable.setPayrollName(pName);
+                    }catch(NullPointerException ex){
+                        
+                    }
+                    modify();
+                }
             }
         });
+        
+        jftRounding.getDocument().addDocumentListener(new DocumentListener() {
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                try{
+                    rounding = new BigDecimal(jftRounding.getText());
+                    try{
+                        updateable.setRounding(rounding);
+                    }catch(Exception ex){
+                        
+                    }
+                }catch(Exception ex){
+                    
+                }
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                try{
+                    rounding = new BigDecimal(jftRounding.getText());
+                    try{
+                        updateable.setRounding(rounding);
+                    }catch(Exception ex){
+                        
+                    }
+                }catch(Exception ex){
+                    
+                }
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                try{
+                    rounding = new BigDecimal(jftRounding.getText());
+                    try{
+                        updateable.setRounding(rounding);
+                    }catch(Exception ex){
+                        
+                    }
+                }catch(Exception ex){
+                    
+                }
+            }
+        });
+        
         //jtCodeName.getDocument().putProperty("owner", jtCodeName);
         
         //jtFormular.getDocument().putProperty("owner", jtFormular);
        
         
-        if(null!=code){
         
-            try{
-            setName(code.getPayrollName());
-            jtPayrollName.setText(code.getPayrollName());
-            pCode = code.getPayrollCode();
             
-            
-            jtPayrollCode.setText(pCode);
-            criteria = code.getTaxCalculationCriteria();
-            jtCriteria.setText(criteria);
-            
-            isCasual = code.getIsCasual();
-            jcbCasual.setSelected(isCasual);
-            suspendTransactions = code.getSuspendTransactionPosting();
-            jcbSuspendTransactions.setSelected(suspendTransactions);
-            
-            date = code.getDateEntered();
-            jdcDateEntered.setDate(date);
-            
-            rounding = code.getRounding();
-            jftRounding.setValue(rounding);
-            
-            
-            
-                  
-            
-        }catch(NullPointerException ex){
-            //Creating new
-        }
-            
-        }
+        
         
         
         
@@ -287,10 +336,20 @@ public final class PayrollEditorTopComponent extends TopComponent {
 
     private void jcbSuspendTransactionsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbSuspendTransactionsActionPerformed
         suspendTransactions = jcbSuspendTransactions.isSelected();
+        try{
+            updateable.setSuspendTransactionPosting(suspendTransactions);
+        }catch(NullPointerException ex){
+            
+        }
     }//GEN-LAST:event_jcbSuspendTransactionsActionPerformed
 
     private void jcbCasualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbCasualActionPerformed
         isCasual = jcbCasual.isSelected();
+        try{
+            updateable.setIsCasual(isCasual);
+        }catch(NullPointerException ex){
+            
+        }
     }//GEN-LAST:event_jcbCasualActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -310,7 +369,7 @@ public final class PayrollEditorTopComponent extends TopComponent {
     // End of variables declaration//GEN-END:variables
     @Override
     public void componentOpened() {
-        // TODO add custom code on component opening
+        fillFields(updateable);
     }
 
     @Override
@@ -329,6 +388,7 @@ public final class PayrollEditorTopComponent extends TopComponent {
         String version = p.getProperty("version");
         // TODO read your settings according to their version
     }
+    
 
     
 
@@ -421,23 +481,31 @@ public final class PayrollEditorTopComponent extends TopComponent {
     public void modify(){
         
         
-        if(
-                    pCode.length()>1 && 
-                    pName.length()>1) 
+        if(pCode.length()>1 && pName.length()>1) 
              {
                
-            if(getLookup().lookup(PayrollSavable.class)==null){
-                ic.add(new PayrollSavable());
-            }
+                if(getLookup().lookup(PayrollSavable.class)==null){
+                    ic.add(new PayrollSavable());
+                }
             }else{
                 if(pCode.length()<=1){
-                    NotifyUtil.error("Payroll Code is Not Proper", "Rectify the Payroll Code", false);
+                    StatusDisplayer.getDefault().setStatusText("Payroll Code is Not Proper, Rectify the Payroll Code");
                 }else if(pName.length()<=1){
-                    NotifyUtil.error("Payroll Name is not proper", "Rectify The Payroll Name", false);
+                    StatusDisplayer.getDefault().setStatusText("Payroll Name is Not Proper, Rectify the Payroll Name");
                 }
             }
         
             
         
+    }
+    
+    void fillFields(TblPayroll code){
+        if(code!=null){
+            jtPayrollName.setText(code.getPayrollName());
+            jtPayrollCode.setText(code.getPayrollCode());
+            jdcDateEntered.setDate(code.getDateEntered());
+            jcbCasual.setSelected(code.getIsCasual());
+            jcbSuspendTransactions.setSelected(code.getSuspendTransactionPosting());
+        }
     }
 }

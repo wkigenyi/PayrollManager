@@ -65,6 +65,8 @@ public class NodePayrollCode extends  AbstractNode implements LookupListener{
         instanceContent = ic;
         
         instanceContent.add(p);
+        ic.add(p.getCode());
+                
         this.edit = edit;
         if(edit){
             instanceContent.add(new CapEditable() {
@@ -207,6 +209,19 @@ public class NodePayrollCode extends  AbstractNode implements LookupListener{
                 }
             };
             set.put(active);
+            
+            Property pcode = new PropertySupport("code", String.class, "CODE","CODE", true, false) {
+                @Override
+                public Object getValue() throws IllegalAccessException, InvocationTargetException {
+                    return bean.code.getPayrollCodeCode();
+                }
+                
+                @Override
+                public void setValue(Object val) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+                    //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                }
+            };
+            set.put(pcode);
             
             final PropertySupport.Reflection test;
             Property isSelected;

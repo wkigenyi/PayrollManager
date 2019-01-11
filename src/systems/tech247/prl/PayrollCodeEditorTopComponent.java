@@ -312,9 +312,9 @@ public final class PayrollCodeEditorTopComponent extends TopComponent implements
             
             jcbDisplayOnPayslip.setSelected(updateable.getDisplayPostedPayrollCodeInfoOnPaySlip());
             
-            jrbPayment.setSelected(updateable.getPayment());
+            jcbPayment.setSelected(updateable.getPayment());
             
-            jrbDeduction.setSelected(updateable.getDeduction());
+            //jrbDeduction.setSelected(updateable.getDeduction());
             
             jcbTable.setSelected(updateable.getTaxable());
             
@@ -354,13 +354,12 @@ public final class PayrollCodeEditorTopComponent extends TopComponent implements
         jtCodeCode = new javax.swing.JTextField();
         jcbIsActive = new javax.swing.JCheckBox();
         jLabel5 = new javax.swing.JLabel();
-        jrbPayment = new javax.swing.JRadioButton();
-        jrbDeduction = new javax.swing.JRadioButton();
         jLabel6 = new javax.swing.JLabel();
         jtCodeID = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jtReportLabel = new javax.swing.JTextField();
         jftFactor = new javax.swing.JFormattedTextField();
+        jcbPayment = new javax.swing.JCheckBox();
 
         org.openide.awt.Mnemonics.setLocalizedText(jLabel1, org.openide.util.NbBundle.getMessage(PayrollCodeEditorTopComponent.class, "PayrollCodeEditorTopComponent.jLabel1.text")); // NOI18N
 
@@ -404,18 +403,6 @@ public final class PayrollCodeEditorTopComponent extends TopComponent implements
 
         org.openide.awt.Mnemonics.setLocalizedText(jLabel5, org.openide.util.NbBundle.getMessage(PayrollCodeEditorTopComponent.class, "PayrollCodeEditorTopComponent.jLabel5.text")); // NOI18N
 
-        bgCodeType.add(jrbPayment);
-        jrbPayment.setSelected(true);
-        org.openide.awt.Mnemonics.setLocalizedText(jrbPayment, org.openide.util.NbBundle.getMessage(PayrollCodeEditorTopComponent.class, "PayrollCodeEditorTopComponent.jrbPayment.text")); // NOI18N
-        jrbPayment.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jrbPaymentActionPerformed(evt);
-            }
-        });
-
-        bgCodeType.add(jrbDeduction);
-        org.openide.awt.Mnemonics.setLocalizedText(jrbDeduction, org.openide.util.NbBundle.getMessage(PayrollCodeEditorTopComponent.class, "PayrollCodeEditorTopComponent.jrbDeduction.text")); // NOI18N
-
         org.openide.awt.Mnemonics.setLocalizedText(jLabel6, org.openide.util.NbBundle.getMessage(PayrollCodeEditorTopComponent.class, "PayrollCodeEditorTopComponent.jLabel6.text")); // NOI18N
 
         jtCodeID.setEditable(false);
@@ -427,6 +414,13 @@ public final class PayrollCodeEditorTopComponent extends TopComponent implements
 
         jftFactor.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0.00"))));
         jftFactor.setText(org.openide.util.NbBundle.getMessage(PayrollCodeEditorTopComponent.class, "PayrollCodeEditorTopComponent.jftFactor.text")); // NOI18N
+
+        org.openide.awt.Mnemonics.setLocalizedText(jcbPayment, org.openide.util.NbBundle.getMessage(PayrollCodeEditorTopComponent.class, "PayrollCodeEditorTopComponent.jcbPayment.text")); // NOI18N
+        jcbPayment.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcbPaymentActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -443,10 +437,6 @@ public final class PayrollCodeEditorTopComponent extends TopComponent implements
                     .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jrbPayment)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jrbDeduction))
                     .addComponent(jcbTable)
                     .addComponent(jtCodeName, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
                     .addComponent(jtCodeGroup, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
@@ -456,7 +446,8 @@ public final class PayrollCodeEditorTopComponent extends TopComponent implements
                     .addComponent(jcbProcessInPayment)
                     .addComponent(jcbDisplayOnPayslip)
                     .addComponent(jcbIsActive)
-                    .addComponent(jftFactor))
+                    .addComponent(jftFactor)
+                    .addComponent(jcbPayment))
                 .addContainerGap(110, Short.MAX_VALUE))
         );
 
@@ -493,11 +484,9 @@ public final class PayrollCodeEditorTopComponent extends TopComponent implements
                 .addComponent(jcbTable)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jcbProcessInPayment)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jcbPayment)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jrbPayment)
-                    .addComponent(jrbDeduction))
-                .addGap(6, 6, 6)
                 .addComponent(jcbDisplayOnPayslip)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jcbIsActive)
@@ -533,18 +522,6 @@ public final class PayrollCodeEditorTopComponent extends TopComponent implements
         modify();
     }//GEN-LAST:event_jcbDisplayOnPayslipActionPerformed
 
-    private void jrbPaymentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrbPaymentActionPerformed
-        payment = jrbPayment.isSelected();
-        deduction = !payment;
-        try{
-            updateable.setPayment(payment);
-            updateable.setDeduction(deduction);
-        }catch(Exception ex){
-            
-        }
-        modify();
-    }//GEN-LAST:event_jrbPaymentActionPerformed
-
     private void jcbProcessInPaymentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbProcessInPaymentActionPerformed
         processInPayroll = jcbProcessInPayment.isSelected();
         try{
@@ -565,6 +542,18 @@ public final class PayrollCodeEditorTopComponent extends TopComponent implements
         modify();
     }//GEN-LAST:event_jcbTableActionPerformed
 
+    private void jcbPaymentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbPaymentActionPerformed
+        payment = jcbPayment.isSelected();
+        deduction = !payment;
+        try{
+            updateable.setPayment(payment);
+            updateable.setDeduction(deduction);
+            modify();        
+        }catch(NullPointerException ex){
+            
+        }
+    }//GEN-LAST:event_jcbPaymentActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup bgCodeType;
     private javax.swing.JLabel jLabel1;
@@ -575,11 +564,10 @@ public final class PayrollCodeEditorTopComponent extends TopComponent implements
     private javax.swing.JLabel jLabel7;
     private javax.swing.JCheckBox jcbDisplayOnPayslip;
     private javax.swing.JCheckBox jcbIsActive;
+    private javax.swing.JCheckBox jcbPayment;
     private javax.swing.JCheckBox jcbProcessInPayment;
     private javax.swing.JCheckBox jcbTable;
     private javax.swing.JFormattedTextField jftFactor;
-    private javax.swing.JRadioButton jrbDeduction;
-    private javax.swing.JRadioButton jrbPayment;
     private javax.swing.JTextField jtCodeCode;
     private javax.swing.JTextField jtCodeGroup;
     private javax.swing.JTextField jtCodeID;

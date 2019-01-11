@@ -7,12 +7,16 @@ package systems.tech247.prl;
 
 import java.awt.event.ActionEvent;
 import java.beans.IntrospectionException;
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.AbstractAction;
 import javax.swing.Action;
 import org.openide.nodes.AbstractNode;
 import org.openide.nodes.Children;
+import org.openide.nodes.PropertySupport;
+import org.openide.nodes.Sheet;
+import org.openide.nodes.Sheet.Set;
 import org.openide.util.Lookup;
 import org.openide.util.LookupEvent;
 import org.openide.util.LookupListener;
@@ -44,7 +48,7 @@ public class NodePayrollCodeGroup extends  AbstractNode implements LookupListene
     }
     
     private NodePayrollCodeGroup(final TblPayrollCodeGroups p, InstanceContent ic) throws IntrospectionException{
-        super(Children.create(new FactoryPayrollCodes(p), true), new AbstractLookup(ic));
+        super(Children.LEAF, new AbstractLookup(ic));
         instanceContent = ic;
         instanceContent.add(p);
         this.p = p;
@@ -94,6 +98,30 @@ public class NodePayrollCodeGroup extends  AbstractNode implements LookupListene
         };
         return actions;
     }
+
+    @Override
+    protected Sheet createSheet() {
+        Sheet sheet = Sheet.createDefault();
+        Set set = Sheet.createPropertiesSet();
+        final TblPayrollCodeGroups group = getLookup().lookup(TblPayrollCodeGroups.class);
+        
+        Property number = new PropertySupport("number", String.class, "Number", "Number", true, false) {
+            @Override
+            public Object getValue() throws IllegalAccessException, InvocationTargetException {
+                return group.getTblPayrollCodeCollection().size();
+            }
+            
+            @Override
+            public void setValue(Object val) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+        };
+        set.put(number);
+        sheet.put(set);
+        return sheet; //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    
     
     
     

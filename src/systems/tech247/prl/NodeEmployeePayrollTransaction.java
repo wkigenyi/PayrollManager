@@ -83,6 +83,43 @@ public class NodeEmployeePayrollTransaction extends  AbstractNode{
                 //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             }
         };
+        
+        Property currency = new PropertySupport("currency", String.class, "Currency", "Currency", true, false) {
+            @Override
+            public Object getValue() throws IllegalAccessException, InvocationTargetException {
+                return trans.getCurrencyID().getCurrencyCode();
+            }
+            
+            @Override
+            public void setValue(Object val) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+        };
+        Property rate = new PropertySupport("rate", String.class, "Rate", "Rate", true, false) {
+            @Override
+            public Object getValue() throws IllegalAccessException, InvocationTargetException {
+                return nf.format(trans.getConversionRate());
+            }
+            
+            @Override
+            public void setValue(Object val) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+        };
+        Property converted = new PropertySupport("converted", String.class, "Converted", "Converted", true, false) {
+            @Override
+            public Object getValue() throws IllegalAccessException, InvocationTargetException {
+                return nf.format(trans.getConvertedAmount());
+            }
+            
+            @Override
+            public void setValue(Object val) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+        };
+        set.put(converted);
+        set.put(rate);
+        set.put(currency);
         set.put(category);
         set.put(deduction);
         set.put(amount);

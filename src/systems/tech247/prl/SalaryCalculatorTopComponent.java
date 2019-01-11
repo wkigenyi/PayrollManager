@@ -5,15 +5,26 @@
  */
 package systems.tech247.prl;
 
-import java.math.BigDecimal;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import javax.swing.JButton;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import org.netbeans.api.settings.ConvertAsProperties;
+import org.openide.DialogDescriptor;
+import org.openide.DialogDisplayer;
 import org.openide.awt.ActionID;
 import org.openide.awt.ActionReference;
+import org.openide.util.Lookup;
+import org.openide.util.LookupEvent;
+import org.openide.util.LookupListener;
 import org.openide.windows.TopComponent;
 import org.openide.util.NbBundle.Messages;
+import org.openide.windows.WindowManager;
 import systems.tech247.dbaccess.DataAccess;
+import systems.tech247.hr.Currencies;
 
 /**
  * Top component which displays something.
@@ -39,14 +50,51 @@ import systems.tech247.dbaccess.DataAccess;
     "CTL_SalaryCalculatorTopComponent=Salary Calculator",
     "HINT_SalaryCalculatorTopComponent="
 })
-public final class SalaryCalculatorTopComponent extends TopComponent implements ChangeListener {
-
+public final class SalaryCalculatorTopComponent extends TopComponent implements ChangeListener, LookupListener{
+    
+    TopComponent currencyTc = WindowManager.getDefault().findTopComponent("CurrenciesTopComponent");
+    Lookup.Result<Currencies> currencyRslt = currencyTc.getLookup().lookupResult(Currencies.class);
+    Currencies currency = DataAccess.getBaseCurrency();
+    Double rate = currency.getConversionRate().doubleValue();
+    NumberFormat nf = new DecimalFormat("#,###.00");
     public SalaryCalculatorTopComponent() {
         initComponents();
         setName(Bundle.CTL_SalaryCalculatorTopComponent());
         setToolTipText(Bundle.HINT_SalaryCalculatorTopComponent());
+        jtCurrency.setText(currency.getCurrencyName());
         jsBasic.addChangeListener(this);
         jsOtherPay.addChangeListener(this);
+        
+        currencyRslt.addLookupListener(this);
+        resultChanged(new LookupEvent(currencyRslt));
+        
+        jtCurrency.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                Object[] options = {new JButton("Close")};
+                DialogDisplayer.getDefault().notify(new DialogDescriptor(currencyTc, "Select Currency",true, options,null,DialogDescriptor.DEFAULT_ALIGN,null,null));
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+        });
 
     }
 
@@ -73,6 +121,9 @@ public final class SalaryCalculatorTopComponent extends TopComponent implements 
         jLabel2 = new javax.swing.JLabel();
         jsOtherPay = new javax.swing.JSpinner();
         jftNetPay = new javax.swing.JFormattedTextField();
+        jLabel8 = new javax.swing.JLabel();
+        jlInfo = new javax.swing.JLabel();
+        jtCurrency = new javax.swing.JTextField();
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
@@ -179,16 +230,33 @@ public final class SalaryCalculatorTopComponent extends TopComponent implements 
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jftEmployerNSSF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7))
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel8, org.openide.util.NbBundle.getMessage(SalaryCalculatorTopComponent.class, "SalaryCalculatorTopComponent.jLabel8.text")); // NOI18N
+
+        jlInfo.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jlInfo, org.openide.util.NbBundle.getMessage(SalaryCalculatorTopComponent.class, "SalaryCalculatorTopComponent.jlInfo.text")); // NOI18N
+
+        jtCurrency.setText(org.openide.util.NbBundle.getMessage(SalaryCalculatorTopComponent.class, "SalaryCalculatorTopComponent.jtCurrency.text")); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jlInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel8)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jtCurrency)))))
                 .addContainerGap(109, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -196,7 +264,13 @@ public final class SalaryCalculatorTopComponent extends TopComponent implements 
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(87, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(jtCurrency, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jlInfo)
+                .addContainerGap(36, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -208,14 +282,17 @@ public final class SalaryCalculatorTopComponent extends TopComponent implements 
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JFormattedTextField jftEmployeeNSSF;
     private javax.swing.JFormattedTextField jftEmployerNSSF;
     private javax.swing.JFormattedTextField jftGross;
     private javax.swing.JFormattedTextField jftNetPay;
     private javax.swing.JFormattedTextField jftPay;
+    private javax.swing.JLabel jlInfo;
     private javax.swing.JSpinner jsBasic;
     private javax.swing.JSpinner jsOtherPay;
+    private javax.swing.JTextField jtCurrency;
     // End of variables declaration//GEN-END:variables
     @Override
     public void componentOpened() {
@@ -241,19 +318,43 @@ public final class SalaryCalculatorTopComponent extends TopComponent implements 
 
     @Override
     public void stateChanged(ChangeEvent e) {
-       
+        
+        
             Double basic = new Double(jsBasic.getValue().toString());
             Double otherPay = new Double(jsOtherPay.getValue().toString());
-            Double gross = basic+otherPay;
+            Double gross = (basic+otherPay)*rate;
             Double nssf =  DataAccess.getNSSF().getGrossPercentage()*gross/100;
-            BigDecimal paye = new DataAccess().getPaye(gross);
+            Double paye = new DataAccess().getPaye(gross).doubleValue();
             Double netPay = gross - nssf- paye.doubleValue();
             Double employerNSSF = nssf * DataAccess.getNSSF().getEmployerFactor();
-            jftGross.setValue(gross);
-            jftPay.setValue(paye);
-            jftNetPay.setValue(netPay);
-            jftEmployeeNSSF.setValue(nssf);
-            jftEmployerNSSF.setValue(employerNSSF);
+            jftGross.setValue(gross/rate);
+            jftPay.setValue(paye/rate);
+            jftNetPay.setValue(netPay/rate);
+            jftEmployeeNSSF.setValue(nssf/rate);
+            jftEmployerNSSF.setValue(employerNSSF/rate);
         
     }
+
+    @Override
+    public void resultChanged(LookupEvent ev) {
+        Lookup.Result result = (Lookup.Result)ev.getSource();
+        for (Object e: result.allInstances()){
+            if(e instanceof Currencies){
+                
+                currency = (Currencies)e;
+                rate = currency.getConversionRate().doubleValue();
+                jtCurrency.setText(((Currencies) e).getCurrencyName());
+                if(currency.getIsBaseCurrency()){
+                    jlInfo.setText("This is the base currency");
+                }else{
+                    jlInfo.setText("Conversion Rate is: "+ nf.format(currency.getConversionRate()));
+                }
+                
+                stateChanged(new ChangeEvent(e));
+                
+            }
+        }
+    }
+    
+    
 }

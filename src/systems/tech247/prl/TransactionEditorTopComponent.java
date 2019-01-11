@@ -432,6 +432,8 @@ public final class TransactionEditorTopComponent extends TopComponent implements
             StatusDisplayer.getDefault().setStatusText("Amount is 0.0");
         }else if(selectedCode==null){
             StatusDisplayer.getDefault().setStatusText("Select A Transaction Code");
+        }else if(empList.isEmpty()){
+            StatusDisplayer.getDefault().setStatusText("Select Employee(s)");
         }
     } 
     

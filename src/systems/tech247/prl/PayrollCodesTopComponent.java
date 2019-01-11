@@ -10,7 +10,6 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import org.netbeans.api.settings.ConvertAsProperties;
 import org.openide.awt.ActionID;
-import org.openide.awt.ActionReference;
 import org.openide.explorer.ExplorerManager;
 import org.openide.explorer.ExplorerUtils;
 import org.openide.explorer.view.OutlineView;
@@ -29,15 +28,15 @@ import org.openide.util.NbBundle.Messages;
 @TopComponent.Description(
         preferredID = "PayrollCodesTopComponent",
         iconBase = "systems/tech247/util/icons/settings.png",
-        persistenceType = TopComponent.PERSISTENCE_ALWAYS
+        persistenceType = TopComponent.PERSISTENCE_NEVER
 )
 @TopComponent.Registration(mode = "explorer", openAtStartup = false)
 @ActionID(category = "Payroll", id = "systems.tech247.prl.PayrollCodesComponent")
-@ActionReference(path = "Menu/Payroll" /*, position = 333 */)
-@TopComponent.OpenActionRegistration(
-        displayName = "#CTL_PayrollCodesAction",
-        preferredID = "PayrollCodesTopComponent"
-)
+//@ActionReference(path = "Menu/Payroll" /*, position = 333 */)
+//@TopComponent.OpenActionRegistration(
+//        displayName = "#CTL_PayrollCodesAction",
+//        preferredID = "PayrollCodesTopComponent"
+//)
 @Messages({
     "CTL_PayrollCodesAction=Payroll Codes",
     "CTL_PayrollCodesTopComponent=Payroll Codes",
@@ -54,7 +53,7 @@ public final class PayrollCodesTopComponent extends TopComponent implements Expl
     Boolean select;
 
     public PayrollCodesTopComponent() {
-        this("",true,false);
+        this("",false,false);
         
     }
     
@@ -72,7 +71,8 @@ public final class PayrollCodesTopComponent extends TopComponent implements Expl
         this.edit = edit;
         this.select = select;
         if(edit){
-            ov.addPropertyColumn("id", "Code ID");
+            ov.addPropertyColumn("id", "ID");
+            ov.addPropertyColumn("code", "CODE");
             ov.addPropertyColumn("group", "Code Group");
             ov.addPropertyColumn("sops", "Show ON PS");
             ov.addPropertyColumn("active", "Process");
@@ -81,6 +81,7 @@ public final class PayrollCodesTopComponent extends TopComponent implements Expl
             ov.addPropertyColumn("group", "Code Group");
             ov.addPropertyColumn("isSelected", "Select");
         }else{
+            ov.addPropertyColumn("id", "ID");
             ov.addPropertyColumn("group", "Code Group");
         }
         if(type==""){
@@ -121,6 +122,10 @@ public final class PayrollCodesTopComponent extends TopComponent implements Expl
             }
         });
         
+        
+        sqlString = "SELECT * FROM TblPayrollCode";
+        query.setSqlString(sqlString);
+        em.setRootContext(new AbstractNode(Children.create(new FactoryPayrollCodes(query,true), true)));
         
         
       
@@ -168,8 +173,7 @@ public final class PayrollCodesTopComponent extends TopComponent implements Expl
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(search, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 89, Short.MAX_VALUE)))
+                        .addComponent(search, javax.swing.GroupLayout.DEFAULT_SIZE, 265, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(

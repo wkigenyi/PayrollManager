@@ -75,7 +75,7 @@ public class FactoryPayroll extends ChildFactory<Object> {
         Node node =  null;
         try {
             if(key instanceof TblPayroll){
-                node = new NodePayroll(new PayrollCover((TblPayroll)key));
+                node = new NodePayroll((TblPayroll)key);
             }else{
                 node = new NodeAddTool((AddTool)key);
             }

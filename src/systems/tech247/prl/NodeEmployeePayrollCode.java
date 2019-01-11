@@ -167,6 +167,18 @@ public class NodeEmployeePayrollCode extends  AbstractNode implements LookupList
                 }
             };
             
+            Property currency = new PropertySupport("currency", String.class, "Currency", "Currency", true, false) {
+                @Override
+                public Object getValue() throws IllegalAccessException, InvocationTargetException {
+                    return bean.getCurrencyID().getCurrencyCode();
+                }
+                
+                @Override
+                public void setValue(Object val) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+                    //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                }
+            };
+            
 
             
             
@@ -188,6 +200,7 @@ public class NodeEmployeePayrollCode extends  AbstractNode implements LookupList
             set.put(deduction);
             set.put(amount);
             set.put(activeProperty);
+            set.put(currency);
             /*set.put(activeProperty);
             
             set.put(formularProperty);

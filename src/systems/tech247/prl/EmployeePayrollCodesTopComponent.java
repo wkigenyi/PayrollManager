@@ -74,6 +74,7 @@ public final class EmployeePayrollCodesTopComponent extends TopComponent impleme
         ov.addPropertyColumn("amount", "Amount");
         ov.addPropertyColumn("active", "Active");
         ov.addPropertyColumn("deduction", "Deduction");
+        ov.addPropertyColumn("currency", "Currency");
         ov.getOutline().setRootVisible(false);
         add(ov);
         //content.add();

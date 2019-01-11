@@ -11,7 +11,7 @@ import org.openide.awt.ActionID;
 import org.openide.awt.ActionReference;
 import org.openide.explorer.ExplorerManager;
 import org.openide.explorer.ExplorerUtils;
-import org.openide.explorer.view.BeanTreeView;
+import org.openide.explorer.view.OutlineView;
 import org.openide.nodes.AbstractNode;
 import org.openide.nodes.Children;
 import org.openide.windows.TopComponent;
@@ -30,13 +30,13 @@ import org.openide.util.RequestProcessor;
         iconBase = "systems/tech247/util/icons/Calendar.png",
         persistenceType = TopComponent.PERSISTENCE_NEVER
 )
-@TopComponent.Registration(mode = "explorer", openAtStartup = false /*, roles = {"Payroll"}*/)
+@TopComponent.Registration(mode = "editor", openAtStartup = false /*, roles = {"Payroll"}*/)
 @ActionID(category = "Payroll", id = "systems.tech247.prl.PeriodsTopComponent")
-@ActionReference(path = "Menu/Payroll" /*, position = 333 */)
-@TopComponent.OpenActionRegistration(
-        displayName = "#CTL_PeriodsAction",
-        preferredID = "PeriodsTopComponent"
-)
+//@ActionReference(path = "Menu/Payroll" /*, position = 333 */)
+//@TopComponent.OpenActionRegistration(
+//        displayName = "#CTL_PeriodsAction",
+//        preferredID = "PeriodsTopComponent"
+//)
 @Messages({
     "CTL_PeriodsAction=Payroll Periods",
     "CTL_PeriodsTopComponent=Payroll Periods",
@@ -47,17 +47,27 @@ public final class PeriodsTopComponent extends TopComponent implements ExplorerM
     ExplorerManager em = new ExplorerManager();
    
 
-    
+    public PeriodsTopComponent(){
+        this("");
+    }
     
    
-    public PeriodsTopComponent() {
+    public PeriodsTopComponent(String view) {
         initComponents();
         setName(Bundle.CTL_PeriodsTopComponent());
         setToolTipText(Bundle.HINT_PeriodsTopComponent());
-        BeanTreeView ov = new BeanTreeView();
-        ov.setRootVisible(false);
+        OutlineView ov = new OutlineView();
+        ov.getOutline().setRootVisible(false);
         setLayout(new BorderLayout());
         add(ov);
+        if(!view.equals("")){
+            ov.addPropertyColumn("opendate", "Opened Date");
+            ov.addPropertyColumn("openby", "Opened By");
+            ov.addPropertyColumn("closeddate", "Close Date");
+            ov.addPropertyColumn("closedby", "Closed By");
+            ov.addPropertyColumn("status", "Status");
+            ov.addPropertyColumn("nextperiod", "Next Period");
+        }
         associateLookup(ExplorerUtils.createLookup(em, getActionMap()));
         
         RequestProcessor.getDefault().post(new Runnable() {

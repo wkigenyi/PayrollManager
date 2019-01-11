@@ -27,8 +27,13 @@ public class PeriodCover {
     public PeriodCover(TblPeriods p){
         period = p;
         periodname = period.getPeriodYear()+" "+period.getPeriodMonth();
+        
         openDate = sdf.format(period.getOpenDate());
-        closeDate=sdf.format(period.getCloseDate());
+        try{
+            closeDate=sdf.format(period.getCloseDate());
+        }catch(NullPointerException ex){
+            closeDate="Not Yet Closed";
+        }    
         status = period.getStatus();
         try{
         openedby = period.getOpenEmpID().getSurName()+" "+period.getOpenEmpID().getOtherNames();

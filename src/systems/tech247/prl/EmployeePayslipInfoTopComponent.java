@@ -5,6 +5,7 @@
  */
 package systems.tech247.prl;
 
+import systems.tech247.payrollreports.ReportPaySlip;
 import java.awt.BorderLayout;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -103,6 +104,9 @@ public final class EmployeePayslipInfoTopComponent extends TopComponent implemen
         OutlineView ov = new OutlineView("Payslip Info");
         ov.getOutline().setRootVisible(false);
         ov.addPropertyColumn("amount", "Amount");
+        ov.addPropertyColumn("currency", "Currency");
+        ov.addPropertyColumn("rate", "Ex. Rate");
+        ov.addPropertyColumn("converted", "Base Amount");
         ov.addPropertyColumn("deduction", "Deduction");
         ov.addPropertyColumn("category", "Category");
         jpView.add(ov);
@@ -393,6 +397,7 @@ public final class EmployeePayslipInfoTopComponent extends TopComponent implemen
         for(TblPeriods p: rslt.allInstances()){
             period = p;
             jtPeriod.setText(period.getPeriodYear()+" "+period.getPeriodMonth());
+            payslipData = UtilityPLR.getInstance().generatePaySlipInfo(emp, period);
             reload();
         }
     }

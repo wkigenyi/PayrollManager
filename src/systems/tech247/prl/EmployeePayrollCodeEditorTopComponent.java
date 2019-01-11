@@ -7,6 +7,8 @@ package systems.tech247.prl;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.io.IOException;
 import java.util.Arrays;
 import javax.swing.event.DocumentEvent;
@@ -98,7 +100,12 @@ public final class EmployeePayrollCodeEditorTopComponent extends TopComponent im
         codeResult.addLookupListener(this);
         resultChanged(new LookupEvent(currencyResult));
         currencyResult.addLookupListener(this);
-        
+        try{
+            updateable = DataAccess.entityManager.find(TblEmployeePayrollCode.class, code.getEmployeeCodeID());
+        }catch(NullPointerException ex){
+            
+        }        
+        fillTheFields();
        
         //jtFormular.getDocument().putProperty("owner", jtFormular);
         jftAmount.getDocument().addDocumentListener(new DocumentListener() {
@@ -144,7 +151,7 @@ public final class EmployeePayrollCodeEditorTopComponent extends TopComponent im
         }catch(NullPointerException ex){
             
         }
-        fillTheFields();
+        
         
         
         
@@ -176,11 +183,40 @@ public final class EmployeePayrollCodeEditorTopComponent extends TopComponent im
 
             @Override
             public void keyPressed(KeyEvent e) {
+                DialogDisplayer.getDefault().notify(new DialogDescriptor(currencyTC, "Select A Currency Code"));
                 //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             }
 
             @Override
             public void keyReleased(KeyEvent e) {
+                DialogDisplayer.getDefault().notify(new DialogDescriptor(currencyTC, "Select A Currency Code"));
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+        });
+        jtCurrency.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                DialogDisplayer.getDefault().notify(new DialogDescriptor(currencyTC, "Select A Currency Code"));
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
                 //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             }
         });
@@ -192,7 +228,7 @@ public final class EmployeePayrollCodeEditorTopComponent extends TopComponent im
             setName(updateable.getPayrollCodeID().getPayrollCodeName()+"->"+updateable.getEmployeeID().getSurName()+" "+updateable.getEmployeeID().getOtherNames());
             jtCodeName.setText(updateable.getPayrollCodeID().getPayrollCodeName());
             
-            
+            jtCurrency.setText(updateable.getCurrencyID().getCurrencyName());
             
             jftAmount.setValue(updateable.getAmount());
             
@@ -356,7 +392,7 @@ public final class EmployeePayrollCodeEditorTopComponent extends TopComponent im
                 curr = (Currencies)o;
                 try{
                     jtCurrency.setText(curr.getCurrencySymbol());
-                updateable.setCurrencyID(curr.getCurrencyID());
+                updateable.setCurrencyID(curr);
                 
                 }catch(Exception ex){
                     
@@ -488,5 +524,15 @@ public final class EmployeePayrollCodeEditorTopComponent extends TopComponent im
             
         
     
+    }
+    
+    void fillFields(){
+        if(updateable != null){
+            jtCodeName.setText(updateable.getPayrollCodeID().getPayrollCodeName());
+            jtCurrency.setText(updateable.getCurrencyID().getCurrencyCode());
+            jftAmount.setValue(updateable.getAmount());
+            jcbIsActive.setSelected(updateable.getActive());
+            
+        }
     }
 }

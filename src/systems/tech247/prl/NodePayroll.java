@@ -7,12 +7,14 @@ package systems.tech247.prl;
 
 import java.awt.event.ActionEvent;
 import java.beans.IntrospectionException;
+import java.lang.reflect.InvocationTargetException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.AbstractAction;
 import javax.swing.Action;
-import org.openide.nodes.BeanNode;
+import org.openide.nodes.AbstractNode;
 import org.openide.nodes.Children;
+import org.openide.nodes.Node.Property;
 import org.openide.nodes.PropertySupport;
 import org.openide.nodes.Sheet;
 import org.openide.util.lookup.AbstractLookup;
@@ -20,6 +22,7 @@ import org.openide.util.lookup.InstanceContent;
 import org.openide.util.lookup.Lookups;
 import org.openide.util.lookup.ProxyLookup;
 import org.openide.windows.TopComponent;
+import systems.tech247.hr.TblPayroll;
 import systems.tech247.util.CapDeletable;
 import systems.tech247.util.CapEditable;
 
@@ -27,25 +30,27 @@ import systems.tech247.util.CapEditable;
  *
  * @author Admin
  */
-public class NodePayroll extends  BeanNode<PayrollCover>{
+public class NodePayroll extends  AbstractNode{
     
     private final InstanceContent instanceContent;
-    private PayrollCover payroll;
+    private TblPayroll payroll;
     
-    public NodePayroll(PayrollCover p) throws IntrospectionException {
+    public NodePayroll(TblPayroll p) throws IntrospectionException {
         this(p,new InstanceContent());
     }
     
-    private NodePayroll(PayrollCover p, InstanceContent ic) throws IntrospectionException{
-        super(p,Children.LEAF, new ProxyLookup(new AbstractLookup(ic),Lookups.singleton(p)));
+    private NodePayroll(TblPayroll p, InstanceContent ic) throws IntrospectionException{
+        super(Children.LEAF, new ProxyLookup(new AbstractLookup(ic),Lookups.singleton(p)));
         instanceContent = ic;
         instanceContent.add(p);
         this.payroll = p;
         instanceContent.add(new CapEditable() {
             @Override
             public void edit() {
-                //We shall edit you
-            }
+                TopComponent tc = new PayrollEditorTopComponent(payroll);
+                tc.open();
+                tc.requestActive();
+           }
         });
         
         instanceContent.add(new CapDeletable() {
@@ -55,16 +60,32 @@ public class NodePayroll extends  BeanNode<PayrollCover>{
             }
         });
         
-        setDisplayName(p.getName());
+        setDisplayName(p.getPayrollName());
         setIconBaseWithExtension("systems/tech247/util/icons/company.png");
     }
+
+    @Override
+    public Action[] getActions(boolean context) {
+        Action[] actions = new Action[]{
+            new AbstractAction("Run Payroll") {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    
+                }
+            }
+        };
+        return actions; //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    
+    
 
     @Override
     public Action getPreferredAction() {
         return new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                TopComponent tc =  new PayrollEditorTopComponent(payroll.getTier());
+                TopComponent tc =  new PayrollEditorTopComponent(payroll);
                 tc.open();
                 tc.requestActive();
             }
@@ -75,7 +96,7 @@ public class NodePayroll extends  BeanNode<PayrollCover>{
     
     @Override 
     protected Sheet createSheet(){
-        final PayrollCover bean = getLookup().lookup(PayrollCover.class);
+        final TblPayroll bean = getLookup().lookup(TblPayroll.class);
         Sheet basicPayroll = super.createSheet();
         
         Sheet.Set set = Sheet.createExpertSet();
@@ -84,28 +105,46 @@ public class NodePayroll extends  BeanNode<PayrollCover>{
         set.setDisplayName("Details");
         
         try{
-            Property susProperty;
-            susProperty = new PropertySupport.Reflection(
-                    bean, 
-                    Boolean.class,
-                    "getSuspendPosting", 
-                    null);
-            susProperty.setDisplayName("Suspended Posting");
             
-            /*Property formularProperty;
-            formularProperty = new PropertySupport("formular", String.class, "Formular", "Formular For Calculating this code", true, false) {
+            Property number = new PropertySupport("number",String.class, "Number Employees", "Number Of Employees", true, false) {
                 @Override
                 public Object getValue() throws IllegalAccessException, InvocationTargetException {
-                    return bean.getFormular();
+                    return bean.getEmployeesCollection().size()+"";
                 }
                 
                 @Override
                 public void setValue(Object val) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
-                    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                    //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
                 }
             };
             
-            Property activeProperty;
+            Property casual = new PropertySupport("casual", Boolean.class, "Casual", "Casual", true, false) {
+                @Override
+                public Object getValue() throws IllegalAccessException, InvocationTargetException {
+                    return bean.getIsCasual();
+                }
+                
+                @Override
+                public void setValue(Object val) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+                    //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                }
+            };
+
+            
+            Property suspend;
+            suspend = new PropertySupport("suspend", Boolean.class, "Suspend Posting", "Suspend Posting", true, false) {
+                @Override
+                public Object getValue() throws IllegalAccessException, InvocationTargetException {
+                    return bean.getSuspendTransactionPosting();
+                }
+                
+                @Override
+                public void setValue(Object val) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+                    //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                }
+            };
+            
+            /*Property activeProperty;
             activeProperty = new PropertySupport("active", String.class, "Active", "Is this Code Active", true, false) {
                 @Override
                 public Object getValue() throws IllegalAccessException, InvocationTargetException {
@@ -249,7 +288,9 @@ public class NodePayroll extends  BeanNode<PayrollCover>{
             };
             
             */
-            set.put(susProperty);
+            set.put(number);
+            set.put(casual);
+            set.put(suspend);
             /*set.put(activeProperty);
             
             set.put(formularProperty);
@@ -265,7 +306,7 @@ public class NodePayroll extends  BeanNode<PayrollCover>{
             set.put(increasingBalanceLimitProperty);*/
             
             
-        }catch(NoSuchMethodException ex){
+        }catch(Exception ex){
             Logger.getLogger(NodePayrollCode.class.getName()).log(Level.SEVERE, null, ex);
         }
         

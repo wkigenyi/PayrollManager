@@ -10,8 +10,6 @@ import java.util.List;
 import org.openide.nodes.ChildFactory;
 import org.openide.nodes.Node;
 import systems.tech247.hr.Employees;
-import systems.tech247.util.AddTool;
-import systems.tech247.util.NodeAddTool;
 
 import systems.tech247.api.ReloadableQueryCapability;
 

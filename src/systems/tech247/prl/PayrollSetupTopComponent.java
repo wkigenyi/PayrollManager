@@ -11,11 +11,17 @@ import org.openide.awt.ActionID;
 import org.openide.awt.ActionReference;
 import org.openide.awt.StatusDisplayer;
 import org.openide.explorer.ExplorerManager;
-import org.openide.explorer.ExplorerUtils;
 import org.openide.explorer.view.BeanTreeView;
+import org.openide.util.Lookup;
 import org.openide.windows.TopComponent;
 import org.openide.util.NbBundle.Messages;
 import org.openide.util.RequestProcessor;
+import org.openide.util.lookup.AbstractLookup;
+import org.openide.util.lookup.InstanceContent;
+import systems.tech247.dbaccess.DataAccess;
+import systems.tech247.hr.TblPeriods;
+import systems.tech247.util.CapClosePeriod;
+import systems.tech247.util.CetusUTL;
 
 /**
  * Top component which displays something.
@@ -44,15 +50,32 @@ import org.openide.util.RequestProcessor;
 public final class PayrollSetupTopComponent extends TopComponent implements ExplorerManager.Provider{
     
     ExplorerManager em = UtilityPLR.emPLRsetup;
+    InstanceContent content = new InstanceContent();
+    Lookup lookup = new AbstractLookup(content);
+    final TblPeriods period = DataAccess.getCurrentMonth();
     public PayrollSetupTopComponent() {
         initComponents();
         setName(Bundle.CTL_PayrollSetupTopComponent());
         setToolTipText(Bundle.HINT_PayrollSetupTopComponent());
+        putClientProperty(TopComponent.PROP_CLOSING_DISABLED, Boolean.TRUE);
         setLayout(new BorderLayout());
         BeanTreeView btv = new BeanTreeView();
         btv.setRootVisible(false);
         add(btv);
-        associateLookup(ExplorerUtils.createLookup(em, getActionMap()));
+        
+        //There should be a condition for this, check for the right
+        if(CetusUTL.userRights.contains(335)){
+            content.add(new CapClosePeriod() {
+            @Override
+            public void closePeriod() {
+                UtilityPLR.getInstance().closePeriod(period);
+            }
+        });
+        }
+        
+        
+        
+        associateLookup(lookup);
 
     }
 
