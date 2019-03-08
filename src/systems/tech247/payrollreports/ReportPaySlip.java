@@ -113,7 +113,7 @@ public class ReportPaySlip {
 			report.setTemplate(ReportTemplate.reportTemplate);
                         try{
                             report.title(
-                                    ReportTemplate.createTitleComponent(DataAccess.getDefaultCompany(),period,"Payslip"),
+                                    ReportTemplate.createTitleComponent(DataAccess.getDefaultCompany(),period,"Payslip",emp.getPayrollid().getPayrollName()),
                                     employeeDetails
                             );
                         }catch(IOException ex){

@@ -144,11 +144,12 @@ public class NodePayroll extends  AbstractNode{
                 }
             };
             
-            /*Property activeProperty;
-            activeProperty = new PropertySupport("active", String.class, "Active", "Is this Code Active", true, false) {
+            /*
+            Property casual;
+            casual = new PropertySupport("casual", String.class, "Casual", "Casual Payroll?", true, false) {
                 @Override
                 public Object getValue() throws IllegalAccessException, InvocationTargetException {
-                    return bean.getActive();
+                    return bean.getIsCasual();
                 }
                 
                 @Override

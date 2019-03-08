@@ -23,7 +23,6 @@ import org.netbeans.spi.actions.AbstractSavable;
 import org.openide.DialogDescriptor;
 import org.openide.DialogDisplayer;
 import org.openide.awt.ActionID;
-import org.openide.awt.ActionReference;
 import org.openide.awt.StatusDisplayer;
 import org.openide.util.Lookup;
 import org.openide.util.LookupEvent;
@@ -54,11 +53,11 @@ import systems.tech247.view.CategoriesTopComponent;
 )
 @TopComponent.Registration(mode = "editor", openAtStartup = false)
 @ActionID(category = "Window", id = "systems.tech247.prl.TransactionEditorTopComponent")
-@ActionReference(path = "Menu/Window" /*, position = 333 */)
-@TopComponent.OpenActionRegistration(
-        displayName = "#CTL_TransactionEditorAction",
-        preferredID = "TransactionEditorTopComponent"
-)
+//@ActionReference(path = "Menu/Window" /*, position = 333 */)
+//@TopComponent.OpenActionRegistration(
+//        displayName = "#CTL_TransactionEditorAction",
+//        preferredID = "TransactionEditorTopComponent"
+//)
 @Messages({
     "CTL_TransactionEditorAction=TransactionEditor",
     "CTL_TransactionEditorTopComponent=New Transaction",
@@ -72,6 +71,7 @@ public final class TransactionEditorTopComponent extends TopComponent implements
     String message = null;
     List<Employees> empList = new ArrayList<>();
     
+    Boolean postBasic = false;
     
     
     TopComponent currencyTC = WindowManager.getDefault().findTopComponent("CurrenciesTopComponent");
@@ -88,39 +88,54 @@ public final class TransactionEditorTopComponent extends TopComponent implements
         //String sql="SELECT e FROM Employees e WHERE e.isDisengaged =0";
         //empList = DataAccess.searchEmployees(sql);
         
-        jtReference.addKeyListener(new KeyListener() {
+
+        
+        jtReference.getDocument().addDocumentListener(new DocumentListener() {
             @Override
-            public void keyTyped(KeyEvent e) {
-                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            public void insertUpdate(DocumentEvent e) {
+                message = jtReference.getText();
+                empList = DataAccess.getSelectedEmployees();
+                modify();
             }
 
             @Override
-            public void keyPressed(KeyEvent e) {
-                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            public void removeUpdate(DocumentEvent e) {
+                message = jtReference.getText();
+                empList = DataAccess.getSelectedEmployees();
+                modify();
             }
 
             @Override
-            public void keyReleased(KeyEvent e) {
+            public void changedUpdate(DocumentEvent e) {
                 message = jtReference.getText();
                 empList = DataAccess.getSelectedEmployees();
                 modify();
             }
         });
         
+        
+        
+        
         jtAmount.getDocument().addDocumentListener(new DocumentListener() {
             @Override
             public void insertUpdate(DocumentEvent e) {
                 setTheAmount();
+                empList = DataAccess.getSelectedEmployees();
+                modify();
             }
 
             @Override
             public void removeUpdate(DocumentEvent e) {
                 setTheAmount();
+                empList = DataAccess.getSelectedEmployees();
+                modify();
             }
 
             @Override
             public void changedUpdate(DocumentEvent e) {
                 setTheAmount();
+                empList = DataAccess.getSelectedEmployees();
+                modify();
             }
         });
         
@@ -183,6 +198,26 @@ public final class TransactionEditorTopComponent extends TopComponent implements
                 //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             }
         });
+        
+        jtTransactionCode.addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                DialogDisplayer.getDefault().notify(new DialogDescriptor(codeSelect, "Select A Transaction Code"));
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+                
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+                
+            }
+        });
+        
+        
+        
     }
     
     void setTheAmount(){
@@ -212,6 +247,7 @@ public final class TransactionEditorTopComponent extends TopComponent implements
         jLabel4 = new javax.swing.JLabel();
         jtReference = new javax.swing.JTextField();
         jbCategorySelector = new javax.swing.JButton();
+        jcbPostBasic = new javax.swing.JCheckBox();
 
         org.openide.awt.Mnemonics.setLocalizedText(jLabel1, org.openide.util.NbBundle.getMessage(TransactionEditorTopComponent.class, "TransactionEditorTopComponent.jLabel1.text")); // NOI18N
 
@@ -245,6 +281,13 @@ public final class TransactionEditorTopComponent extends TopComponent implements
             }
         });
 
+        org.openide.awt.Mnemonics.setLocalizedText(jcbPostBasic, org.openide.util.NbBundle.getMessage(TransactionEditorTopComponent.class, "TransactionEditorTopComponent.jcbPostBasic.text")); // NOI18N
+        jcbPostBasic.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcbPostBasicActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -266,7 +309,9 @@ public final class TransactionEditorTopComponent extends TopComponent implements
                             .addComponent(jtCurrency, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jtReference, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jbCategorySelector, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(131, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jcbPostBasic)
+                .addContainerGap(50, Short.MAX_VALUE))
         );
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jtAmount, jtCurrency, jtTransactionCode});
@@ -285,7 +330,8 @@ public final class TransactionEditorTopComponent extends TopComponent implements
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jtAmount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jtAmount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jcbPostBasic))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
@@ -312,6 +358,18 @@ public final class TransactionEditorTopComponent extends TopComponent implements
         CetusUTL.loadSelectableEmployees("SELECT e FROM Employees e WHERE e.isDisengaged = 0",false);
     }//GEN-LAST:event_jbCategorySelectorActionPerformed
 
+    private void jcbPostBasicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbPostBasicActionPerformed
+        postBasic = jcbPostBasic.isSelected();
+                if(postBasic){
+                    jtAmount.setEnabled(false);
+                }
+                
+               
+                empList = DataAccess.getSelectedEmployees();
+                
+                modify();
+    }//GEN-LAST:event_jcbPostBasicActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -319,6 +377,7 @@ public final class TransactionEditorTopComponent extends TopComponent implements
     private javax.swing.JLabel jLabel4;
     private javax.swing.JButton jbCategorySelector;
     private javax.swing.JButton jbEmployeeSelector;
+    private javax.swing.JCheckBox jcbPostBasic;
     private javax.swing.JFormattedTextField jtAmount;
     private javax.swing.JTextField jtCurrency;
     private javax.swing.JTextField jtReference;
@@ -355,6 +414,11 @@ public final class TransactionEditorTopComponent extends TopComponent implements
                 
                 selectedCode = (TblPayrollCode)((PayrollCodeSelectable) o).getCode();
                 jtTransactionCode.setText(selectedCode.getPayrollCodeName());
+                
+                
+                
+                empList = DataAccess.getSelectedEmployees();
+               
                 modify();
             }
         }
@@ -388,13 +452,28 @@ public final class TransactionEditorTopComponent extends TopComponent implements
                     
                     final ProgressHandle ph = ProgressHandleFactory.createHandle("Sending Transactions");
                     ph.start();
-                    for(int i=0;i<empList.size();i++){
-                        Employees e = empList.get(i);
-                        int j = i+1;
-                        DataAccess.saveEmployeeTransaction(e, selectedCode, amount, selectedCurrency, message, new DataAccess().getCurrentPeriod());
-                        StatusDisplayer.getDefault().setStatusText("Processing For: "+j+"/"+empList.size()+" "+e.getSurName()+" "+ e.getOtherNames());
-                        //ph.progress(i+"/"+empList.size()+" "+e.getSurName()+" "+e.getOtherNames());
+                    if(postBasic){
+                        for(int i=0;i<empList.size();i++){
+                            Employees e = empList.get(i);
+                            int j = i+1;
+                            DataAccess.saveEmployeeTransaction(e, selectedCode, e.getBasicPay(), selectedCurrency, message, new DataAccess().getCurrentPeriod());
+                            StatusDisplayer.getDefault().setStatusText("Processing For: "+j+"/"+empList.size()+" "+e.getSurName()+" "+ e.getOtherNames());
+                            //ph.progress(i+"/"+empList.size()+" "+e.getSurName()+" "+e.getOtherNames());
+                        }
+                        
+                    }else{
+                        for(int i=0;i<empList.size();i++){
+                            Employees e = empList.get(i);
+                            int j = i+1;
+                            DataAccess.saveEmployeeTransaction(e, selectedCode, amount, selectedCurrency, message, new DataAccess().getCurrentPeriod());
+                            StatusDisplayer.getDefault().setStatusText("Processing For: "+j+"/"+empList.size()+" "+e.getSurName()+" "+ e.getOtherNames());
+                            //ph.progress(i+"/"+empList.size()+" "+e.getSurName()+" "+e.getOtherNames());
+                        }
+                        
                     }
+                    
+                    resetFields();
+                    
                     ph.finish();
                     UtilityPLR.prlIC.set(Arrays.asList(new NodeRefreshEmployeeTransaction()), null);
                     //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -424,17 +503,24 @@ public final class TransactionEditorTopComponent extends TopComponent implements
     }
     
     public void modify(){
-        if(!empList.isEmpty() && amount!=BigDecimal.ZERO && selectedCode!=null){
+        if(empList.isEmpty()){
+            StatusDisplayer.getDefault().setStatusText("Select Employee(s)");
+        }else if(selectedCode==null){
+            StatusDisplayer.getDefault().setStatusText("Select A Transaction Code");
+        }else if(amount == BigDecimal.ZERO){
+            if(postBasic){
+                if(getLookup().lookup(TransactionSavable.class)==null){
+                    ic.add(new TransactionSavable());
+                }
+            }else{
+               StatusDisplayer.getDefault().setStatusText("Amount is 0.0"); 
+            }
+        }else{
             if(getLookup().lookup(TransactionSavable.class)==null){
                 ic.add(new TransactionSavable());
             }
-        }else if(amount==BigDecimal.ZERO){
-            StatusDisplayer.getDefault().setStatusText("Amount is 0.0");
-        }else if(selectedCode==null){
-            StatusDisplayer.getDefault().setStatusText("Select A Transaction Code");
-        }else if(empList.isEmpty()){
-            StatusDisplayer.getDefault().setStatusText("Select Employee(s)");
         }
+     
     } 
     
     public void resetFields(){

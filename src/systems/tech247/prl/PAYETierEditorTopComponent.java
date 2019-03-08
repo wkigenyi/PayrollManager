@@ -449,7 +449,7 @@ public final class PAYETierEditorTopComponent extends TopComponent {
                     .addComponent(jtRate)
                     .addComponent(jtStandingAmount)
                     .addComponent(jtAdditionalRate))
-                .addContainerGap(130, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jtLevel, jtLower});

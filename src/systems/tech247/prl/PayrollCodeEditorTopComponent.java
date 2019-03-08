@@ -72,6 +72,7 @@ public final class PayrollCodeEditorTopComponent extends TopComponent implements
     Boolean deduction = false;
     Boolean displayOnPayslip = false;
     Boolean active = false;
+    Boolean varied = false;
     
     TopComponent codeGrpTc = WindowManager.getDefault().findTopComponent("PCodeGroupsTopComponent");
     Lookup.Result<TblPayrollCodeGroups> codeGroupResult = codeGrpTc.getLookup().lookupResult(TblPayrollCodeGroups.class);
@@ -324,7 +325,7 @@ public final class PayrollCodeEditorTopComponent extends TopComponent implements
             
             jtCodeID.setText(updateable.getPayrollCodeID()+"");
             jtReportLabel.setText(updateable.getReportLabel());
-                  
+            jcbVaried.setSelected(updateable.getVaried());
             
         }catch(NullPointerException ex){
             //Creating new
@@ -360,6 +361,7 @@ public final class PayrollCodeEditorTopComponent extends TopComponent implements
         jtReportLabel = new javax.swing.JTextField();
         jftFactor = new javax.swing.JFormattedTextField();
         jcbPayment = new javax.swing.JCheckBox();
+        jcbVaried = new javax.swing.JCheckBox();
 
         org.openide.awt.Mnemonics.setLocalizedText(jLabel1, org.openide.util.NbBundle.getMessage(PayrollCodeEditorTopComponent.class, "PayrollCodeEditorTopComponent.jLabel1.text")); // NOI18N
 
@@ -422,6 +424,13 @@ public final class PayrollCodeEditorTopComponent extends TopComponent implements
             }
         });
 
+        org.openide.awt.Mnemonics.setLocalizedText(jcbVaried, org.openide.util.NbBundle.getMessage(PayrollCodeEditorTopComponent.class, "PayrollCodeEditorTopComponent.jcbVaried.text")); // NOI18N
+        jcbVaried.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcbVariedActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -447,8 +456,9 @@ public final class PayrollCodeEditorTopComponent extends TopComponent implements
                     .addComponent(jcbDisplayOnPayslip)
                     .addComponent(jcbIsActive)
                     .addComponent(jftFactor)
-                    .addComponent(jcbPayment))
-                .addContainerGap(110, Short.MAX_VALUE))
+                    .addComponent(jcbPayment)
+                    .addComponent(jcbVaried))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jtCodeGroup, jtCodeName});
@@ -490,7 +500,9 @@ public final class PayrollCodeEditorTopComponent extends TopComponent implements
                 .addComponent(jcbDisplayOnPayslip)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jcbIsActive)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jcbVaried)
+                .addContainerGap(15, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -554,6 +566,17 @@ public final class PayrollCodeEditorTopComponent extends TopComponent implements
         }
     }//GEN-LAST:event_jcbPaymentActionPerformed
 
+    private void jcbVariedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbVariedActionPerformed
+        varied = jcbVaried.isSelected();
+        try{
+            updateable.setVaried(varied);
+            modify();
+                    
+        }catch(NullPointerException ex){
+            
+        }
+    }//GEN-LAST:event_jcbVariedActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup bgCodeType;
     private javax.swing.JLabel jLabel1;
@@ -567,6 +590,7 @@ public final class PayrollCodeEditorTopComponent extends TopComponent implements
     private javax.swing.JCheckBox jcbPayment;
     private javax.swing.JCheckBox jcbProcessInPayment;
     private javax.swing.JCheckBox jcbTable;
+    private javax.swing.JCheckBox jcbVaried;
     private javax.swing.JFormattedTextField jftFactor;
     private javax.swing.JTextField jtCodeCode;
     private javax.swing.JTextField jtCodeGroup;

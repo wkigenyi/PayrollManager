@@ -29,11 +29,11 @@ import org.openide.util.NbBundle.Messages;
 )
 @TopComponent.Registration(mode = "explorer", openAtStartup = false)
 @ActionID(category = "Window", id = "systems.tech247.prl.PCodeGroupsTopComponent")
-@ActionReference(path = "Menu/Window" /*, position = 333 */)
-@TopComponent.OpenActionRegistration(
-        displayName = "#CTL_PCodeGroupsAction",
-        preferredID = "PCodeGroupsTopComponent"
-)
+//@ActionReference(path = "Menu/Window" /*, position = 333 */)
+//@TopComponent.OpenActionRegistration(
+//        displayName = "#CTL_PCodeGroupsAction",
+//        preferredID = "PCodeGroupsTopComponent"
+//)
 @Messages({
     "CTL_PCodeGroupsAction=PCodeGroups",
     "CTL_PCodeGroupsTopComponent=PCodeGroups Window",

@@ -22,6 +22,7 @@ import net.sf.dynamicreports.report.constant.PageType;
 import net.sf.dynamicreports.report.datasource.DRDataSource;
 import net.sf.dynamicreports.report.exception.DRException;
 import systems.tech247.dbaccess.DataAccess;
+import systems.tech247.hr.TblPayroll;
 import systems.tech247.hr.TblPayrollCode;
 import systems.tech247.hr.TblPeriods;
 
@@ -31,6 +32,7 @@ import systems.tech247.hr.TblPeriods;
  */
 public class ReportPayroll {
     
+    TblPayroll payroll;
     TblPeriods period;
     List<TblPayrollCode> codes;
     ColumnBuilder[] columns;
@@ -44,7 +46,7 @@ public class ReportPayroll {
     AggregationSubtotalBuilder[] subtotalsG;
     JasperReportBuilder reportBuilder;
 
-    public ReportPayroll(ColumnBuilder[] columns,String[] columnNames,SubtotalBuilder[] subtotals,AggregationSubtotalBuilder[] subtotalsG,DRDataSource data,Boolean sort,Boolean subTotalsAtGroup, Boolean subTotalsAtSummary,TblPeriods p) {
+    public ReportPayroll(ColumnBuilder[] columns,String[] columnNames,SubtotalBuilder[] subtotals,AggregationSubtotalBuilder[] subtotalsG,DRDataSource data,Boolean sort,Boolean subTotalsAtGroup, Boolean subTotalsAtSummary,TblPeriods p, TblPayroll payroll) {
         this.columnNames = columnNames;
         this.columns = columns;
         this.data = data;
@@ -55,6 +57,7 @@ public class ReportPayroll {
         this.subTotalsAtGroup = subTotalsAtGroup;
         this.subTotalsAtSummary = subTotalsAtSummary;
         this.period = p;
+        this.payroll = payroll;
         build();
     }
     
@@ -83,6 +86,9 @@ public class ReportPayroll {
                 if(true){
                     reportBuilder.subtotalsAtSummary(subtotalsG);
                 }
+                if(columns.length >= 13){
+                    reportBuilder.setPageFormat(PageType.A3,PageOrientation.LANDSCAPE);
+                }
             
             }catch(DRException ex){
                 
@@ -102,7 +108,7 @@ public class ReportPayroll {
 			super.customize(report, adhocReport);
 			// default report values
                         try{
-                            report.title(ReportTemplate.createTitleComponent(DataAccess.getDefaultCompany(), period,"Payroll Report"));
+                            report.title(ReportTemplate.createTitleComponent(DataAccess.getDefaultCompany(), period,"Payroll Report",payroll.getPayrollName()));
                         }catch(IOException ex){
                         }
 			report.setTemplate(ReportTemplate.reportTemplate);

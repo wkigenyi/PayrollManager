@@ -37,11 +37,11 @@ import systems.tech247.util.CetusUTL;
 )
 @TopComponent.Registration(mode = "explorer", openAtStartup = false /*, roles = {"Payroll"}*/)
 @ActionID(category = "Window", id = "systems.tech247.prl.PayrollSetupTopComponent")
-@ActionReference(path = "Menu/Window" /*, position = 333 */)
-@TopComponent.OpenActionRegistration(
-        displayName = "#CTL_PayrollSetupAction",
-        preferredID = "PayrollSetupTopComponent"
-)
+//@ActionReference(path = "Menu/Window" /*, position = 333 */)
+//@TopComponent.OpenActionRegistration(
+//        displayName = "#CTL_PayrollSetupAction",
+//        preferredID = "PayrollSetupTopComponent"
+//)
 @Messages({
     "CTL_PayrollSetupAction=PayrollSetup",
     "CTL_PayrollSetupTopComponent=Payroll Setup",

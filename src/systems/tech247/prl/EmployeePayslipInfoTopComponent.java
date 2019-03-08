@@ -28,6 +28,8 @@ import javax.mail.internet.MimeMultipart;
 import net.sf.dynamicreports.jasper.builder.JasperReportBuilder;
 import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
+import org.netbeans.api.progress.ProgressHandle;
+import org.netbeans.api.progress.ProgressHandleFactory;
 import org.netbeans.api.settings.ConvertAsProperties;
 import org.openide.DialogDescriptor;
 import org.openide.DialogDisplayer;
@@ -72,11 +74,11 @@ import systems.tech247.util.NotifyUtil;
 )
 @TopComponent.Registration(mode = "editor", openAtStartup = false)
 @ActionID(category = "Window", id = "systems.tech247.prl.EmployeePayslipInfoTopComponent")
-@ActionReference(path = "Menu/Window" /*, position = 333 */)
-@TopComponent.OpenActionRegistration(
-        displayName = "#CTL_EmployeePayslipInfoAction",
-        preferredID = "EmployeePayslipInfoTopComponent"
-)
+//@ActionReference(path = "Menu/Window" /*, position = 333 */)
+//@TopComponent.OpenActionRegistration(
+//        displayName = "#CTL_EmployeePayslipInfoAction",
+//        preferredID = "EmployeePayslipInfoTopComponent"
+//)
 @Messages({
     "CTL_EmployeePayslipInfoAction=EmployeePayslipInfo",
     "CTL_EmployeePayslipInfoTopComponent=EmployeePayslipInfo Window",
@@ -117,7 +119,15 @@ public final class EmployeePayslipInfoTopComponent extends TopComponent implemen
             public void email() {
                 //Do the emailing
                 //Set up the email address of the user
-                List<Contacts> list = DataAccess.searchEmployeeContacts(emp);
+                //Post a task:
+                ProgressHandle ph = ProgressHandleFactory.createHandle("Getting Info Required to email payslip..");
+                
+                RequestProcessor.getDefault().post(new Runnable() {
+                    @Override
+                    public void run() {
+                        ph.start();
+                        ph.progress("Checking contact info..");
+                        List<Contacts> list = DataAccess.searchEmployeeContacts(emp);
                 List<Contacts> emails = new ArrayList();
                 for(Contacts c: list){
                     if(CetusUTL.validateEmail(c.getContact())){
@@ -128,6 +138,8 @@ public final class EmployeePayslipInfoTopComponent extends TopComponent implemen
                 
                 if(emails.size()>=1){
                     //Create the report
+                    ph.progress("Putting info together..");
+                            
                 JasperReportBuilder report = (new ReportPaySlip(emp,payslipData,period)).getReport();    
                     // The smtp Server
                 String host ="smtp.gmail.com";
@@ -161,6 +173,7 @@ public final class EmployeePayslipInfoTopComponent extends TopComponent implemen
                         
                 
                 //Create an  Email Message
+                ph.progress("Creating the email");
                 try{
                     
                     for(Contacts c: emails){
@@ -209,6 +222,7 @@ public final class EmployeePayslipInfoTopComponent extends TopComponent implemen
                         }catch(IOException ex){
                             NotifyUtil.error(from, userName, ex, false);
                         }
+                        ph.progress("Sending email.. ");
                         Transport.send(message);
                         StatusDisplayer.getDefault().setStatusText("Payslip sent to: "+emp.getSurName()+" "+emp.getOtherNames()+"("+c.getContact()+")");
                     }
@@ -219,6 +233,12 @@ public final class EmployeePayslipInfoTopComponent extends TopComponent implemen
             }else{
                 StatusDisplayer.getDefault().setStatusText("Employee has no valid email address");
             }
+                    ph.finish();
+                    }
+                    
+                });
+                
+                
                     
         }
     });
@@ -229,13 +249,24 @@ public final class EmployeePayslipInfoTopComponent extends TopComponent implemen
             @Override
             public void preview() {
                 //Preview
-                JasperReportBuilder report = (new ReportPaySlip(emp,payslipData,period)).getReport();
+                RequestProcessor.getDefault().post(new Runnable() {
+                    ProgressHandle ph = ProgressHandleFactory.createHandle("Compiling Payslip Info..");
+                    @Override
+                    public void run() {
+                        ph.start();
+                        ph.progress("Building the report..");
+                                
+                        JasperReportBuilder report = (new ReportPaySlip(emp,payslipData,period)).getReport();
                 try {
                     report.show(false);
                    
                 } catch (DRException ex) {
                     Exceptions.printStackTrace(ex);
                 }
+                ph.finish();
+                    }
+                });
+                
             }
         });
         content.add(new CapPrint() {
@@ -243,13 +274,23 @@ public final class EmployeePayslipInfoTopComponent extends TopComponent implemen
             public void print() {
                 //Print
                 //Preview
-                JasperReportBuilder report = (new ReportPaySlip(emp,payslipData,period)).getReport();
+                ProgressHandle ph = ProgressHandleFactory.createHandle("Building the report");
+                RequestProcessor.getDefault().post(new Runnable() {
+                    @Override
+                    public void run() {
+                        ph.start();
+                        ph.progress("Putting the data together");
+                        JasperReportBuilder report = (new ReportPaySlip(emp,payslipData,period)).getReport();
                 try {
                     report.print(true);
                    
                 } catch (DRException ex) {
                     Exceptions.printStackTrace(ex);
                 }
+                ph.finish();
+                    }
+                });
+                
                 
                 
                 

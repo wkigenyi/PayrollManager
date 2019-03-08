@@ -2,688 +2,14 @@
 <!DOCTYPE filesystem PUBLIC "-//NetBeans//DTD Filesystem 1.2//EN"
                             "http://www.netbeans.org/dtds/filesystem-1_2.dtd">
 <filesystem>
-    <folder name="Menu">
-        <folder name="Window">
-            <file name="systems-tech247-payrollreports-PayrollReportsTopComponent.shadow">
-                <!--systems.tech247.payrollreports.PayrollReportsTopComponent-->
-                <attr name="originalFile" stringvalue="Actions/Window/systems-tech247-payrollreports-PayrollReportsTopComponent.instance"/>
-            </file>
-            <file name="systems-tech247-prl-AssignCodesTopComponent.shadow">
-                <!--systems.tech247.prl.AssignCodesTopComponent-->
-                <attr name="originalFile" stringvalue="Actions/Window/systems-tech247-prl-AssignCodesTopComponent.instance"/>
-            </file>
-            <file name="systems-tech247-prl-CostCentersTopComponent.shadow">
-                <!--systems.tech247.prl.CostCentersTopComponent-->
-                <attr name="originalFile" stringvalue="Actions/Window/systems-tech247-prl-CostCentersTopComponent.instance"/>
-            </file>
-            <file name="systems-tech247-prl-EmailerTopComponent.shadow">
-                <!--systems.tech247.prl.EmailerTopComponent-->
-                <attr name="originalFile" stringvalue="Actions/Window/systems-tech247-prl-EmailerTopComponent.instance"/>
-            </file>
-            <file name="systems-tech247-prl-EmployeePayrollCodesTopComponent.shadow">
-                <!--systems.tech247.prl.EmployeePayrollCodesTopComponent-->
-                <attr name="originalFile" stringvalue="Actions/Window/systems-tech247-prl-EmployeePayrollCodesTopComponent.instance"/>
-            </file>
-            <file name="systems-tech247-prl-EmployeePayslipInfoTopComponent.shadow">
-                <!--systems.tech247.prl.EmployeePayslipInfoTopComponent-->
-                <attr name="originalFile" stringvalue="Actions/Window/systems-tech247-prl-EmployeePayslipInfoTopComponent.instance"/>
-            </file>
-            <file name="systems-tech247-prl-EmployeePeriodTransactionsTopComponent.shadow">
-                <!--systems.tech247.prl.EmployeePeriodTransactionsTopComponent-->
-                <attr name="originalFile" stringvalue="Actions/Window/systems-tech247-prl-EmployeePeriodTransactionsTopComponent.instance"/>
-            </file>
-            <file name="systems-tech247-prl-LSTTopComponent.shadow">
-                <!--systems.tech247.prl.LSTTopComponent-->
-                <attr name="originalFile" stringvalue="Actions/Window/systems-tech247-prl-LSTTopComponent.instance"/>
-            </file>
-            <file name="systems-tech247-prl-NSSFTopComponent.shadow">
-                <!--systems.tech247.prl.NSSFTopComponent-->
-                <attr name="originalFile" stringvalue="Actions/Window/systems-tech247-prl-NSSFTopComponent.instance"/>
-            </file>
-            <file name="systems-tech247-prl-PAYETopComponent.shadow">
-                <!--systems.tech247.prl.PAYETopComponent-->
-                <attr name="originalFile" stringvalue="Actions/Window/systems-tech247-prl-PAYETopComponent.instance"/>
-            </file>
-            <file name="systems-tech247-prl-PCodeGroupsTopComponent.shadow">
-                <!--systems.tech247.prl.PCodeGroupsTopComponent-->
-                <attr name="originalFile" stringvalue="Actions/Window/systems-tech247-prl-PCodeGroupsTopComponent.instance"/>
-            </file>
-            <file name="systems-tech247-prl-PayPointsTopComponent.shadow">
-                <!--systems.tech247.prl.PayPointsTopComponent-->
-                <attr name="originalFile" stringvalue="Actions/Window/systems-tech247-prl-PayPointsTopComponent.instance"/>
-            </file>
-            <file name="systems-tech247-prl-PayrollCodeGroupsTopComponent.shadow">
-                <!--systems.tech247.prl.PayrollCodeGroupsTopComponent-->
-                <attr name="originalFile" stringvalue="Actions/Window/systems-tech247-prl-PayrollCodeGroupsTopComponent.instance"/>
-            </file>
-            <file name="systems-tech247-prl-PayrollDashBoardTopComponent.shadow">
-                <!--systems.tech247.prl.PayrollDashBoardTopComponent-->
-                <attr name="originalFile" stringvalue="Actions/Window/systems-tech247-prl-PayrollDashBoardTopComponent.instance"/>
-            </file>
-            <file name="systems-tech247-prl-PayrollEditorTopComponent.shadow">
-                <!--systems.tech247.prl.PayrollEditorTopComponent-->
-                <attr name="originalFile" stringvalue="Actions/Window/systems-tech247-prl-PayrollEditorTopComponent.instance"/>
-            </file>
-            <file name="systems-tech247-prl-PayrollSetupTopComponent.shadow">
-                <!--systems.tech247.prl.PayrollSetupTopComponent-->
-                <attr name="originalFile" stringvalue="Actions/Window/systems-tech247-prl-PayrollSetupTopComponent.instance"/>
-            </file>
-            <file name="systems-tech247-prl-PayrollsTopComponent.shadow">
-                <!--systems.tech247.prl.PayrollsTopComponent-->
-                <attr name="originalFile" stringvalue="Actions/Window/systems-tech247-prl-PayrollsTopComponent.instance"/>
-            </file>
-            <file name="systems-tech247-prl-ReportEditorTopComponent.shadow">
-                <!--systems.tech247.prl.ReportEditorTopComponent-->
-                <attr name="originalFile" stringvalue="Actions/Window/systems-tech247-prl-ReportEditorTopComponent.instance"/>
-            </file>
-            <file name="systems-tech247-prl-SalaryCalculatorTopComponent.shadow">
-                <!--systems.tech247.prl.SalaryCalculatorTopComponent-->
-                <attr name="originalFile" stringvalue="Actions/Window/systems-tech247-prl-SalaryCalculatorTopComponent.instance"/>
-            </file>
-            <file name="systems-tech247-prl-TransactionEditorTopComponent.shadow">
-                <!--systems.tech247.prl.TransactionEditorTopComponent-->
-                <attr name="originalFile" stringvalue="Actions/Window/systems-tech247-prl-TransactionEditorTopComponent.instance"/>
-            </file>
-        </folder>
-    </folder>
-    <folder name="xml">
-        <folder name="entities">
-            <folder name="systems_tech247_payrollreports">
-                <file name="PayrollReports" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
-                    <!--systems.tech247.payrollreports.PayrollReportsTopComponent-->
-                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.payrollreports//PayrollReports//EN"/>
-                </file>
-            </folder>
-            <folder name="systems_tech247_prl">
-                <file name="AssignCodes" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
-                    <!--systems.tech247.prl.AssignCodesTopComponent-->
-                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//AssignCodes//EN"/>
-                </file>
-                <file name="CostCenters" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
-                    <!--systems.tech247.prl.CostCentersTopComponent-->
-                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//CostCenters//EN"/>
-                </file>
-                <file name="Emailer" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
-                    <!--systems.tech247.prl.EmailerTopComponent-->
-                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//Emailer//EN"/>
-                </file>
-                <file name="EmployeePayrollCodeEditor" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
-                    <!--systems.tech247.prl.EmployeePayrollCodeEditorTopComponent-->
-                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//EmployeePayrollCodeEditor//EN"/>
-                </file>
-                <file name="EmployeePayrollCodes" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
-                    <!--systems.tech247.prl.EmployeePayrollCodesTopComponent-->
-                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//EmployeePayrollCodes//EN"/>
-                </file>
-                <file name="EmployeePayslipInfo" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
-                    <!--systems.tech247.prl.EmployeePayslipInfoTopComponent-->
-                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//EmployeePayslipInfo//EN"/>
-                </file>
-                <file name="EmployeePeriodTransactions" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
-                    <!--systems.tech247.prl.EmployeePeriodTransactionsTopComponent-->
-                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//EmployeePeriodTransactions//EN"/>
-                </file>
-                <file name="EmployeeTransactionEditor" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
-                    <!--systems.tech247.prl.EmployeeTransactionEditorTopComponent-->
-                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//EmployeeTransactionEditor//EN"/>
-                </file>
-                <file name="LSTTierEditor" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
-                    <!--systems.tech247.prl.LSTTierEditorTopComponent-->
-                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//LSTTierEditor//EN"/>
-                </file>
-                <file name="LST" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
-                    <!--systems.tech247.prl.LSTTopComponent-->
-                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//LST//EN"/>
-                </file>
-                <file name="NSSF" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
-                    <!--systems.tech247.prl.NSSFTopComponent-->
-                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//NSSF//EN"/>
-                </file>
-                <file name="PAYETierEditor" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
-                    <!--systems.tech247.prl.PAYETierEditorTopComponent-->
-                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//PAYETierEditor//EN"/>
-                </file>
-                <file name="PAYE" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
-                    <!--systems.tech247.prl.PAYETopComponent-->
-                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//PAYE//EN"/>
-                </file>
-                <file name="PCodeGroups" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
-                    <!--systems.tech247.prl.PCodeGroupsTopComponent-->
-                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//PCodeGroups//EN"/>
-                </file>
-                <file name="PLREmployeeList" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
-                    <!--systems.tech247.prl.PLREmployeeListTopComponent-->
-                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//PLREmployeeList//EN"/>
-                </file>
-                <file name="PayPointEditor" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
-                    <!--systems.tech247.prl.PayPointEditorTopComponent-->
-                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//PayPointEditor//EN"/>
-                </file>
-                <file name="PayPoints" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
-                    <!--systems.tech247.prl.PayPointsTopComponent-->
-                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//PayPoints//EN"/>
-                </file>
-                <file name="PayrollCodeEditor" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
-                    <!--systems.tech247.prl.PayrollCodeEditorTopComponent-->
-                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//PayrollCodeEditor//EN"/>
-                </file>
-                <file name="PayrollCodeGroupEditor" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
-                    <!--systems.tech247.prl.PayrollCodeGroupEditorTopComponent-->
-                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//PayrollCodeGroupEditor//EN"/>
-                </file>
-                <file name="PayrollCodeGroups" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
-                    <!--systems.tech247.prl.PayrollCodeGroupsTopComponent-->
-                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//PayrollCodeGroups//EN"/>
-                </file>
-                <file name="PayrollCodes" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
-                    <!--systems.tech247.prl.PayrollCodesTopComponent-->
-                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//PayrollCodes//EN"/>
-                </file>
-                <file name="PayrollDashBoard" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
-                    <!--systems.tech247.prl.PayrollDashBoardTopComponent-->
-                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//PayrollDashBoard//EN"/>
-                </file>
-                <file name="PayrollEditor" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
-                    <!--systems.tech247.prl.PayrollEditorTopComponent-->
-                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//PayrollEditor//EN"/>
-                </file>
-                <file name="PayrollSetup" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
-                    <!--systems.tech247.prl.PayrollSetupTopComponent-->
-                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//PayrollSetup//EN"/>
-                </file>
-                <file name="Payroll" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
-                    <!--systems.tech247.prl.PayrollTopComponent-->
-                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//Payroll//EN"/>
-                </file>
-                <file name="Payrolls" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
-                    <!--systems.tech247.prl.PayrollsTopComponent-->
-                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//Payrolls//EN"/>
-                </file>
-                <file name="Periods" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
-                    <!--systems.tech247.prl.PeriodsTopComponent-->
-                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//Periods//EN"/>
-                </file>
-                <file name="ReportEditor" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
-                    <!--systems.tech247.prl.ReportEditorTopComponent-->
-                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//ReportEditor//EN"/>
-                </file>
-                <file name="SalaryCalculator" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
-                    <!--systems.tech247.prl.SalaryCalculatorTopComponent-->
-                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//SalaryCalculator//EN"/>
-                </file>
-                <file name="TransactionEditor" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
-                    <!--systems.tech247.prl.TransactionEditorTopComponent-->
-                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//TransactionEditor//EN"/>
-                </file>
-                <file name="Years" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
-                    <!--systems.tech247.prl.YearsTopComponent-->
-                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//Years//EN"/>
-                </file>
-            </folder>
-        </folder>
-        <folder name="memory">
-            <folder name="systems">
-                <folder name="tech247">
-                    <folder name="payrollreports">
-                        <file name="PayrollReportsTopComponent">
-                            <!--systems.tech247.payrollreports.PayrollReportsTopComponent-->
-                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_payrollreports/PayrollReports.instance"/>
-                        </file>
-                    </folder>
-                    <folder name="prl">
-                        <file name="AssignCodesTopComponent">
-                            <!--systems.tech247.prl.AssignCodesTopComponent-->
-                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/AssignCodes.instance"/>
-                        </file>
-                        <file name="CostCentersTopComponent">
-                            <!--systems.tech247.prl.CostCentersTopComponent-->
-                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/CostCenters.instance"/>
-                        </file>
-                        <file name="EmailerTopComponent">
-                            <!--systems.tech247.prl.EmailerTopComponent-->
-                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/Emailer.instance"/>
-                        </file>
-                        <file name="EmployeePayrollCodeEditorTopComponent">
-                            <!--systems.tech247.prl.EmployeePayrollCodeEditorTopComponent-->
-                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/EmployeePayrollCodeEditor.instance"/>
-                        </file>
-                        <file name="EmployeePayrollCodesTopComponent">
-                            <!--systems.tech247.prl.EmployeePayrollCodesTopComponent-->
-                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/EmployeePayrollCodes.instance"/>
-                        </file>
-                        <file name="EmployeePayslipInfoTopComponent">
-                            <!--systems.tech247.prl.EmployeePayslipInfoTopComponent-->
-                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/EmployeePayslipInfo.instance"/>
-                        </file>
-                        <file name="EmployeePeriodTransactionsTopComponent">
-                            <!--systems.tech247.prl.EmployeePeriodTransactionsTopComponent-->
-                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/EmployeePeriodTransactions.instance"/>
-                        </file>
-                        <file name="EmployeeTransactionEditorTopComponent">
-                            <!--systems.tech247.prl.EmployeeTransactionEditorTopComponent-->
-                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/EmployeeTransactionEditor.instance"/>
-                        </file>
-                        <file name="LSTTierEditorTopComponent">
-                            <!--systems.tech247.prl.LSTTierEditorTopComponent-->
-                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/LSTTierEditor.instance"/>
-                        </file>
-                        <file name="LSTTopComponent">
-                            <!--systems.tech247.prl.LSTTopComponent-->
-                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/LST.instance"/>
-                        </file>
-                        <file name="NSSFTopComponent">
-                            <!--systems.tech247.prl.NSSFTopComponent-->
-                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/NSSF.instance"/>
-                        </file>
-                        <file name="PAYETierEditorTopComponent">
-                            <!--systems.tech247.prl.PAYETierEditorTopComponent-->
-                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/PAYETierEditor.instance"/>
-                        </file>
-                        <file name="PAYETopComponent">
-                            <!--systems.tech247.prl.PAYETopComponent-->
-                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/PAYE.instance"/>
-                        </file>
-                        <file name="PCodeGroupsTopComponent">
-                            <!--systems.tech247.prl.PCodeGroupsTopComponent-->
-                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/PCodeGroups.instance"/>
-                        </file>
-                        <file name="PLREmployeeListTopComponent">
-                            <!--systems.tech247.prl.PLREmployeeListTopComponent-->
-                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/PLREmployeeList.instance"/>
-                        </file>
-                        <file name="PayPointEditorTopComponent">
-                            <!--systems.tech247.prl.PayPointEditorTopComponent-->
-                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/PayPointEditor.instance"/>
-                        </file>
-                        <file name="PayPointsTopComponent">
-                            <!--systems.tech247.prl.PayPointsTopComponent-->
-                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/PayPoints.instance"/>
-                        </file>
-                        <file name="PayrollCodeEditorTopComponent">
-                            <!--systems.tech247.prl.PayrollCodeEditorTopComponent-->
-                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/PayrollCodeEditor.instance"/>
-                        </file>
-                        <file name="PayrollCodeGroupEditorTopComponent">
-                            <!--systems.tech247.prl.PayrollCodeGroupEditorTopComponent-->
-                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/PayrollCodeGroupEditor.instance"/>
-                        </file>
-                        <file name="PayrollCodeGroupsTopComponent">
-                            <!--systems.tech247.prl.PayrollCodeGroupsTopComponent-->
-                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/PayrollCodeGroups.instance"/>
-                        </file>
-                        <file name="PayrollCodesTopComponent">
-                            <!--systems.tech247.prl.PayrollCodesTopComponent-->
-                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/PayrollCodes.instance"/>
-                        </file>
-                        <file name="PayrollDashBoardTopComponent">
-                            <!--systems.tech247.prl.PayrollDashBoardTopComponent-->
-                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/PayrollDashBoard.instance"/>
-                        </file>
-                        <file name="PayrollEditorTopComponent">
-                            <!--systems.tech247.prl.PayrollEditorTopComponent-->
-                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/PayrollEditor.instance"/>
-                        </file>
-                        <file name="PayrollSetupTopComponent">
-                            <!--systems.tech247.prl.PayrollSetupTopComponent-->
-                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/PayrollSetup.instance"/>
-                        </file>
-                        <file name="PayrollTopComponent">
-                            <!--systems.tech247.prl.PayrollTopComponent-->
-                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/Payroll.instance"/>
-                        </file>
-                        <file name="PayrollsTopComponent">
-                            <!--systems.tech247.prl.PayrollsTopComponent-->
-                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/Payrolls.instance"/>
-                        </file>
-                        <file name="PeriodsTopComponent">
-                            <!--systems.tech247.prl.PeriodsTopComponent-->
-                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/Periods.instance"/>
-                        </file>
-                        <file name="ReportEditorTopComponent">
-                            <!--systems.tech247.prl.ReportEditorTopComponent-->
-                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/ReportEditor.instance"/>
-                        </file>
-                        <file name="SalaryCalculatorTopComponent">
-                            <!--systems.tech247.prl.SalaryCalculatorTopComponent-->
-                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/SalaryCalculator.instance"/>
-                        </file>
-                        <file name="TransactionEditorTopComponent">
-                            <!--systems.tech247.prl.TransactionEditorTopComponent-->
-                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/TransactionEditor.instance"/>
-                        </file>
-                        <file name="YearsTopComponent">
-                            <!--systems.tech247.prl.YearsTopComponent-->
-                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/Years.instance"/>
-                        </file>
-                    </folder>
-                </folder>
-            </folder>
-        </folder>
-        <folder name="lookups">
-            <folder name="systems_tech247_payrollreports">
-                <file name="PayrollReports.instance">
-                    <!--systems.tech247.payrollreports.PayrollReportsTopComponent-->
-                    <attr
-                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
-                    <attr
-                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
-                    <attr name="settings.instanceClass" stringvalue="systems.tech247.payrollreports.PayrollReportsTopComponent"/>
-                    <attr name="settings.instanceOf" stringvalue="systems.tech247.payrollreports.PayrollReportsTopComponent"/>
-                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
-                </file>
-            </folder>
-            <folder name="systems_tech247_prl">
-                <file name="AssignCodes.instance">
-                    <!--systems.tech247.prl.AssignCodesTopComponent-->
-                    <attr
-                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
-                    <attr
-                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
-                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.AssignCodesTopComponent"/>
-                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.AssignCodesTopComponent"/>
-                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
-                </file>
-                <file name="CostCenters.instance">
-                    <!--systems.tech247.prl.CostCentersTopComponent-->
-                    <attr
-                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
-                    <attr
-                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
-                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.CostCentersTopComponent"/>
-                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.CostCentersTopComponent"/>
-                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
-                </file>
-                <file name="Emailer.instance">
-                    <!--systems.tech247.prl.EmailerTopComponent-->
-                    <attr
-                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
-                    <attr
-                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
-                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.EmailerTopComponent"/>
-                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.EmailerTopComponent"/>
-                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
-                </file>
-                <file name="EmployeePayrollCodeEditor.instance">
-                    <!--systems.tech247.prl.EmployeePayrollCodeEditorTopComponent-->
-                    <attr
-                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
-                    <attr
-                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
-                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.EmployeePayrollCodeEditorTopComponent"/>
-                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.EmployeePayrollCodeEditorTopComponent"/>
-                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
-                </file>
-                <file name="EmployeePayrollCodes.instance">
-                    <!--systems.tech247.prl.EmployeePayrollCodesTopComponent-->
-                    <attr
-                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
-                    <attr
-                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
-                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.EmployeePayrollCodesTopComponent"/>
-                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.EmployeePayrollCodesTopComponent"/>
-                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
-                </file>
-                <file name="EmployeePayslipInfo.instance">
-                    <!--systems.tech247.prl.EmployeePayslipInfoTopComponent-->
-                    <attr
-                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
-                    <attr
-                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
-                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.EmployeePayslipInfoTopComponent"/>
-                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.EmployeePayslipInfoTopComponent"/>
-                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
-                </file>
-                <file name="EmployeePeriodTransactions.instance">
-                    <!--systems.tech247.prl.EmployeePeriodTransactionsTopComponent-->
-                    <attr
-                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
-                    <attr
-                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
-                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.EmployeePeriodTransactionsTopComponent"/>
-                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.EmployeePeriodTransactionsTopComponent"/>
-                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
-                </file>
-                <file name="EmployeeTransactionEditor.instance">
-                    <!--systems.tech247.prl.EmployeeTransactionEditorTopComponent-->
-                    <attr
-                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
-                    <attr
-                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
-                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.EmployeeTransactionEditorTopComponent"/>
-                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.EmployeeTransactionEditorTopComponent"/>
-                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
-                </file>
-                <file name="LSTTierEditor.instance">
-                    <!--systems.tech247.prl.LSTTierEditorTopComponent-->
-                    <attr
-                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
-                    <attr
-                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
-                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.LSTTierEditorTopComponent"/>
-                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.LSTTierEditorTopComponent"/>
-                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
-                </file>
-                <file name="LST.instance">
-                    <!--systems.tech247.prl.LSTTopComponent-->
-                    <attr
-                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
-                    <attr
-                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
-                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.LSTTopComponent"/>
-                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.LSTTopComponent"/>
-                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
-                </file>
-                <file name="NSSF.instance">
-                    <!--systems.tech247.prl.NSSFTopComponent-->
-                    <attr
-                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
-                    <attr
-                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
-                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.NSSFTopComponent"/>
-                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.NSSFTopComponent"/>
-                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
-                </file>
-                <file name="PAYETierEditor.instance">
-                    <!--systems.tech247.prl.PAYETierEditorTopComponent-->
-                    <attr
-                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
-                    <attr
-                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
-                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.PAYETierEditorTopComponent"/>
-                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.PAYETierEditorTopComponent"/>
-                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
-                </file>
-                <file name="PAYE.instance">
-                    <!--systems.tech247.prl.PAYETopComponent-->
-                    <attr
-                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
-                    <attr
-                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
-                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.PAYETopComponent"/>
-                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.PAYETopComponent"/>
-                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
-                </file>
-                <file name="PCodeGroups.instance">
-                    <!--systems.tech247.prl.PCodeGroupsTopComponent-->
-                    <attr
-                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
-                    <attr
-                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
-                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.PCodeGroupsTopComponent"/>
-                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.PCodeGroupsTopComponent"/>
-                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
-                </file>
-                <file name="PLREmployeeList.instance">
-                    <!--systems.tech247.prl.PLREmployeeListTopComponent-->
-                    <attr
-                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
-                    <attr
-                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
-                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.PLREmployeeListTopComponent"/>
-                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.PLREmployeeListTopComponent"/>
-                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
-                </file>
-                <file name="PayPointEditor.instance">
-                    <!--systems.tech247.prl.PayPointEditorTopComponent-->
-                    <attr
-                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
-                    <attr
-                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
-                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.PayPointEditorTopComponent"/>
-                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.PayPointEditorTopComponent"/>
-                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
-                </file>
-                <file name="PayPoints.instance">
-                    <!--systems.tech247.prl.PayPointsTopComponent-->
-                    <attr
-                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
-                    <attr
-                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
-                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.PayPointsTopComponent"/>
-                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.PayPointsTopComponent"/>
-                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
-                </file>
-                <file name="PayrollCodeEditor.instance">
-                    <!--systems.tech247.prl.PayrollCodeEditorTopComponent-->
-                    <attr
-                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
-                    <attr
-                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
-                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.PayrollCodeEditorTopComponent"/>
-                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.PayrollCodeEditorTopComponent"/>
-                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
-                </file>
-                <file name="PayrollCodeGroupEditor.instance">
-                    <!--systems.tech247.prl.PayrollCodeGroupEditorTopComponent-->
-                    <attr
-                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
-                    <attr
-                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
-                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.PayrollCodeGroupEditorTopComponent"/>
-                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.PayrollCodeGroupEditorTopComponent"/>
-                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
-                </file>
-                <file name="PayrollCodeGroups.instance">
-                    <!--systems.tech247.prl.PayrollCodeGroupsTopComponent-->
-                    <attr
-                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
-                    <attr
-                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
-                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.PayrollCodeGroupsTopComponent"/>
-                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.PayrollCodeGroupsTopComponent"/>
-                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
-                </file>
-                <file name="PayrollCodes.instance">
-                    <!--systems.tech247.prl.PayrollCodesTopComponent-->
-                    <attr
-                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
-                    <attr
-                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
-                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.PayrollCodesTopComponent"/>
-                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.PayrollCodesTopComponent"/>
-                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
-                </file>
-                <file name="PayrollDashBoard.instance">
-                    <!--systems.tech247.prl.PayrollDashBoardTopComponent-->
-                    <attr
-                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
-                    <attr
-                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
-                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.PayrollDashBoardTopComponent"/>
-                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.PayrollDashBoardTopComponent"/>
-                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
-                </file>
-                <file name="PayrollEditor.instance">
-                    <!--systems.tech247.prl.PayrollEditorTopComponent-->
-                    <attr
-                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
-                    <attr
-                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
-                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.PayrollEditorTopComponent"/>
-                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.PayrollEditorTopComponent"/>
-                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
-                </file>
-                <file name="PayrollSetup.instance">
-                    <!--systems.tech247.prl.PayrollSetupTopComponent-->
-                    <attr
-                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
-                    <attr
-                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
-                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.PayrollSetupTopComponent"/>
-                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.PayrollSetupTopComponent"/>
-                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
-                </file>
-                <file name="Payroll.instance">
-                    <!--systems.tech247.prl.PayrollTopComponent-->
-                    <attr
-                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
-                    <attr
-                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
-                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.PayrollTopComponent"/>
-                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.PayrollTopComponent"/>
-                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
-                </file>
-                <file name="Payrolls.instance">
-                    <!--systems.tech247.prl.PayrollsTopComponent-->
-                    <attr
-                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
-                    <attr
-                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
-                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.PayrollsTopComponent"/>
-                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.PayrollsTopComponent"/>
-                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
-                </file>
-                <file name="Periods.instance">
-                    <!--systems.tech247.prl.PeriodsTopComponent-->
-                    <attr
-                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
-                    <attr
-                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
-                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.PeriodsTopComponent"/>
-                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.PeriodsTopComponent"/>
-                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
-                </file>
-                <file name="ReportEditor.instance">
-                    <!--systems.tech247.prl.ReportEditorTopComponent-->
-                    <attr
-                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
-                    <attr
-                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
-                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.ReportEditorTopComponent"/>
-                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.ReportEditorTopComponent"/>
-                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
-                </file>
-                <file name="SalaryCalculator.instance">
-                    <!--systems.tech247.prl.SalaryCalculatorTopComponent-->
-                    <attr
-                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
-                    <attr
-                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
-                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.SalaryCalculatorTopComponent"/>
-                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.SalaryCalculatorTopComponent"/>
-                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
-                </file>
-                <file name="TransactionEditor.instance">
-                    <!--systems.tech247.prl.TransactionEditorTopComponent-->
-                    <attr
-                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
-                    <attr
-                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
-                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.TransactionEditorTopComponent"/>
-                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.TransactionEditorTopComponent"/>
-                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
-                </file>
-                <file name="Years.instance">
-                    <!--systems.tech247.prl.YearsTopComponent-->
-                    <attr
-                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
-                    <attr
-                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
-                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.YearsTopComponent"/>
-                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.YearsTopComponent"/>
-                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
-                </file>
-            </folder>
+    <folder name="Services">
+        <folder name="JavaHelp">
+            <file name="systems-tech247-prl-docs.xml">
+                <!--systems.tech247.prl.docs-->
+                <attr intvalue="3500" name="position"/><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE helpsetref PUBLIC "-//NetBeans//DTD JavaHelp Help Set Reference 1.0//EN" "http://www.netbeans.org/dtds/helpsetref-1_0.dtd">
+<helpsetref url="nbdocs:/systems/tech247/prl/docs/prl-hs.xml" merge="true"/>
+]]></file>
         </folder>
     </folder>
     <folder name="Windows2">
@@ -1162,214 +488,587 @@
 ]]></file>
             </folder>
         </folder>
-        <folder name="Roles">
-            <folder name="Payroll">
-                <folder name="Components">
-                    <file name="PayrollTopComponent.settings">
-                        <!--systems.tech247.prl.PayrollTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE settings PUBLIC "-//NetBeans//DTD Session settings 1.0//EN" "http://www.netbeans.org/dtds/sessionsettings-1_0.dtd">
-<settings version="1.0">
-  <instance class="systems.tech247.prl.PayrollTopComponent"/>
-</settings>
-]]></file>
-                </folder>
-                <folder name="Modes">
-                    <folder name="editor">
-                        <file name="PayrollTopComponent.wstcref">
-                            <!--systems.tech247.prl.PayrollTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE tc-ref PUBLIC "-//NetBeans//DTD Top Component in Mode Properties 2.0//EN" "http://www.netbeans.org/dtds/tc-ref2_0.dtd">
-<tc-ref version="2.0">
-  <tc-id id="PayrollTopComponent"/>
-  <state opened="true"/>
-</tc-ref>
-]]></file>
+    </folder>
+    <folder name="xml">
+        <folder name="entities">
+            <folder name="systems_tech247_payrollreports">
+                <file name="PayrollReports" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--systems.tech247.payrollreports.PayrollReportsTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.payrollreports//PayrollReports//EN"/>
+                </file>
+            </folder>
+            <folder name="systems_tech247_prl">
+                <file name="AssignCodes" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--systems.tech247.prl.AssignCodesTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//AssignCodes//EN"/>
+                </file>
+                <file name="CostCenters" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--systems.tech247.prl.CostCentersTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//CostCenters//EN"/>
+                </file>
+                <file name="Emailer" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--systems.tech247.prl.EmailerTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//Emailer//EN"/>
+                </file>
+                <file name="EmployeePayrollCodeEditor" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--systems.tech247.prl.EmployeePayrollCodeEditorTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//EmployeePayrollCodeEditor//EN"/>
+                </file>
+                <file name="EmployeePayrollCodes" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--systems.tech247.prl.EmployeePayrollCodesTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//EmployeePayrollCodes//EN"/>
+                </file>
+                <file name="EmployeePayslipInfo" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--systems.tech247.prl.EmployeePayslipInfoTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//EmployeePayslipInfo//EN"/>
+                </file>
+                <file name="EmployeePeriodTransactions" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--systems.tech247.prl.EmployeePeriodTransactionsTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//EmployeePeriodTransactions//EN"/>
+                </file>
+                <file name="EmployeeTransactionEditor" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--systems.tech247.prl.EmployeeTransactionEditorTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//EmployeeTransactionEditor//EN"/>
+                </file>
+                <file name="LSTTierEditor" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--systems.tech247.prl.LSTTierEditorTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//LSTTierEditor//EN"/>
+                </file>
+                <file name="LST" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--systems.tech247.prl.LSTTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//LST//EN"/>
+                </file>
+                <file name="NSSF" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--systems.tech247.prl.NSSFTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//NSSF//EN"/>
+                </file>
+                <file name="PAYETierEditor" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--systems.tech247.prl.PAYETierEditorTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//PAYETierEditor//EN"/>
+                </file>
+                <file name="PAYE" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--systems.tech247.prl.PAYETopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//PAYE//EN"/>
+                </file>
+                <file name="PCodeGroups" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--systems.tech247.prl.PCodeGroupsTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//PCodeGroups//EN"/>
+                </file>
+                <file name="PLREmployeeList" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--systems.tech247.prl.PLREmployeeListTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//PLREmployeeList//EN"/>
+                </file>
+                <file name="PayPointEditor" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--systems.tech247.prl.PayPointEditorTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//PayPointEditor//EN"/>
+                </file>
+                <file name="PayPoints" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--systems.tech247.prl.PayPointsTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//PayPoints//EN"/>
+                </file>
+                <file name="PayrollCodeEditor" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--systems.tech247.prl.PayrollCodeEditorTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//PayrollCodeEditor//EN"/>
+                </file>
+                <file name="PayrollCodeGroupEditor" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--systems.tech247.prl.PayrollCodeGroupEditorTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//PayrollCodeGroupEditor//EN"/>
+                </file>
+                <file name="PayrollCodeGroups" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--systems.tech247.prl.PayrollCodeGroupsTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//PayrollCodeGroups//EN"/>
+                </file>
+                <file name="PayrollCodes" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--systems.tech247.prl.PayrollCodesTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//PayrollCodes//EN"/>
+                </file>
+                <file name="PayrollDashBoard" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--systems.tech247.prl.PayrollDashBoardTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//PayrollDashBoard//EN"/>
+                </file>
+                <file name="PayrollEditor" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--systems.tech247.prl.PayrollEditorTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//PayrollEditor//EN"/>
+                </file>
+                <file name="PayrollSetup" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--systems.tech247.prl.PayrollSetupTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//PayrollSetup//EN"/>
+                </file>
+                <file name="Payrolls" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--systems.tech247.prl.PayrollsTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//Payrolls//EN"/>
+                </file>
+                <file name="Periods" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--systems.tech247.prl.PeriodsTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//Periods//EN"/>
+                </file>
+                <file name="ReportEditor" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--systems.tech247.prl.ReportEditorTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//ReportEditor//EN"/>
+                </file>
+                <file name="SalaryCalculator" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--systems.tech247.prl.SalaryCalculatorTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//SalaryCalculator//EN"/>
+                </file>
+                <file name="TransactionEditor" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--systems.tech247.prl.TransactionEditorTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//TransactionEditor//EN"/>
+                </file>
+                <file name="Years" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--systems.tech247.prl.YearsTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//Years//EN"/>
+                </file>
+            </folder>
+        </folder>
+        <folder name="memory">
+            <folder name="systems">
+                <folder name="tech247">
+                    <folder name="payrollreports">
+                        <file name="PayrollReportsTopComponent">
+                            <!--systems.tech247.payrollreports.PayrollReportsTopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_payrollreports/PayrollReports.instance"/>
+                        </file>
+                    </folder>
+                    <folder name="prl">
+                        <file name="AssignCodesTopComponent">
+                            <!--systems.tech247.prl.AssignCodesTopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/AssignCodes.instance"/>
+                        </file>
+                        <file name="CostCentersTopComponent">
+                            <!--systems.tech247.prl.CostCentersTopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/CostCenters.instance"/>
+                        </file>
+                        <file name="EmailerTopComponent">
+                            <!--systems.tech247.prl.EmailerTopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/Emailer.instance"/>
+                        </file>
+                        <file name="EmployeePayrollCodeEditorTopComponent">
+                            <!--systems.tech247.prl.EmployeePayrollCodeEditorTopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/EmployeePayrollCodeEditor.instance"/>
+                        </file>
+                        <file name="EmployeePayrollCodesTopComponent">
+                            <!--systems.tech247.prl.EmployeePayrollCodesTopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/EmployeePayrollCodes.instance"/>
+                        </file>
+                        <file name="EmployeePayslipInfoTopComponent">
+                            <!--systems.tech247.prl.EmployeePayslipInfoTopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/EmployeePayslipInfo.instance"/>
+                        </file>
+                        <file name="EmployeePeriodTransactionsTopComponent">
+                            <!--systems.tech247.prl.EmployeePeriodTransactionsTopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/EmployeePeriodTransactions.instance"/>
+                        </file>
+                        <file name="EmployeeTransactionEditorTopComponent">
+                            <!--systems.tech247.prl.EmployeeTransactionEditorTopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/EmployeeTransactionEditor.instance"/>
+                        </file>
+                        <file name="LSTTierEditorTopComponent">
+                            <!--systems.tech247.prl.LSTTierEditorTopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/LSTTierEditor.instance"/>
+                        </file>
+                        <file name="LSTTopComponent">
+                            <!--systems.tech247.prl.LSTTopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/LST.instance"/>
+                        </file>
+                        <file name="NSSFTopComponent">
+                            <!--systems.tech247.prl.NSSFTopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/NSSF.instance"/>
+                        </file>
+                        <file name="PAYETierEditorTopComponent">
+                            <!--systems.tech247.prl.PAYETierEditorTopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/PAYETierEditor.instance"/>
+                        </file>
+                        <file name="PAYETopComponent">
+                            <!--systems.tech247.prl.PAYETopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/PAYE.instance"/>
+                        </file>
+                        <file name="PCodeGroupsTopComponent">
+                            <!--systems.tech247.prl.PCodeGroupsTopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/PCodeGroups.instance"/>
+                        </file>
+                        <file name="PLREmployeeListTopComponent">
+                            <!--systems.tech247.prl.PLREmployeeListTopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/PLREmployeeList.instance"/>
+                        </file>
+                        <file name="PayPointEditorTopComponent">
+                            <!--systems.tech247.prl.PayPointEditorTopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/PayPointEditor.instance"/>
+                        </file>
+                        <file name="PayPointsTopComponent">
+                            <!--systems.tech247.prl.PayPointsTopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/PayPoints.instance"/>
+                        </file>
+                        <file name="PayrollCodeEditorTopComponent">
+                            <!--systems.tech247.prl.PayrollCodeEditorTopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/PayrollCodeEditor.instance"/>
+                        </file>
+                        <file name="PayrollCodeGroupEditorTopComponent">
+                            <!--systems.tech247.prl.PayrollCodeGroupEditorTopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/PayrollCodeGroupEditor.instance"/>
+                        </file>
+                        <file name="PayrollCodeGroupsTopComponent">
+                            <!--systems.tech247.prl.PayrollCodeGroupsTopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/PayrollCodeGroups.instance"/>
+                        </file>
+                        <file name="PayrollCodesTopComponent">
+                            <!--systems.tech247.prl.PayrollCodesTopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/PayrollCodes.instance"/>
+                        </file>
+                        <file name="PayrollDashBoardTopComponent">
+                            <!--systems.tech247.prl.PayrollDashBoardTopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/PayrollDashBoard.instance"/>
+                        </file>
+                        <file name="PayrollEditorTopComponent">
+                            <!--systems.tech247.prl.PayrollEditorTopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/PayrollEditor.instance"/>
+                        </file>
+                        <file name="PayrollSetupTopComponent">
+                            <!--systems.tech247.prl.PayrollSetupTopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/PayrollSetup.instance"/>
+                        </file>
+                        <file name="PayrollsTopComponent">
+                            <!--systems.tech247.prl.PayrollsTopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/Payrolls.instance"/>
+                        </file>
+                        <file name="PeriodsTopComponent">
+                            <!--systems.tech247.prl.PeriodsTopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/Periods.instance"/>
+                        </file>
+                        <file name="ReportEditorTopComponent">
+                            <!--systems.tech247.prl.ReportEditorTopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/ReportEditor.instance"/>
+                        </file>
+                        <file name="SalaryCalculatorTopComponent">
+                            <!--systems.tech247.prl.SalaryCalculatorTopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/SalaryCalculator.instance"/>
+                        </file>
+                        <file name="TransactionEditorTopComponent">
+                            <!--systems.tech247.prl.TransactionEditorTopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/TransactionEditor.instance"/>
+                        </file>
+                        <file name="YearsTopComponent">
+                            <!--systems.tech247.prl.YearsTopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/Years.instance"/>
+                        </file>
                     </folder>
                 </folder>
             </folder>
         </folder>
-    </folder>
-    <folder name="Actions">
-        <folder name="Window">
-            <file name="systems-tech247-payrollreports-PayrollReportsTopComponent.instance">
-                <!--systems.tech247.payrollreports.PayrollReportsTopComponent-->
-                <attr
-                    methodvalue="org.openide.windows.TopComponent.openAction" name="instanceCreate"/>
-                <attr name="component" newvalue="systems.tech247.payrollreports.PayrollReportsTopComponent"/>
-                <attr name="preferredID" stringvalue="PayrollReportsTopComponent"/>
-                <attr
-                    bundlevalue="systems.tech247.payrollreports.Bundle#CTL_PayrollReportsAction" name="displayName"/>
-            </file>
-            <file name="systems-tech247-prl-AssignCodesTopComponent.instance">
-                <!--systems.tech247.prl.AssignCodesTopComponent-->
-                <attr
-                    methodvalue="org.openide.windows.TopComponent.openAction" name="instanceCreate"/>
-                <attr name="component" newvalue="systems.tech247.prl.AssignCodesTopComponent"/>
-                <attr name="preferredID" stringvalue="AssignCodesTopComponent"/>
-                <attr
-                    bundlevalue="systems.tech247.prl.Bundle#CTL_AssignCodesAction" name="displayName"/>
-            </file>
-            <file name="systems-tech247-prl-CostCentersTopComponent.instance">
-                <!--systems.tech247.prl.CostCentersTopComponent-->
-                <attr
-                    methodvalue="org.openide.windows.TopComponent.openAction" name="instanceCreate"/>
-                <attr name="component" newvalue="systems.tech247.prl.CostCentersTopComponent"/>
-                <attr name="preferredID" stringvalue="CostCentersTopComponent"/>
-                <attr
-                    bundlevalue="systems.tech247.prl.Bundle#CTL_CostCentersAction" name="displayName"/>
-            </file>
-            <file name="systems-tech247-prl-EmailerTopComponent.instance">
-                <!--systems.tech247.prl.EmailerTopComponent-->
-                <attr
-                    methodvalue="org.openide.windows.TopComponent.openAction" name="instanceCreate"/>
-                <attr name="component" newvalue="systems.tech247.prl.EmailerTopComponent"/>
-                <attr name="preferredID" stringvalue="EmailerTopComponent"/>
-                <attr
-                    bundlevalue="systems.tech247.prl.Bundle#CTL_EmailerAction" name="displayName"/>
-            </file>
-            <file name="systems-tech247-prl-EmployeePayrollCodesTopComponent.instance">
-                <!--systems.tech247.prl.EmployeePayrollCodesTopComponent-->
-                <attr
-                    methodvalue="org.openide.windows.TopComponent.openAction" name="instanceCreate"/>
-                <attr name="component" newvalue="systems.tech247.prl.EmployeePayrollCodesTopComponent"/>
-                <attr name="preferredID" stringvalue="EmployeePayrollCodesTopComponent"/>
-                <attr
-                    bundlevalue="systems.tech247.prl.Bundle#CTL_EmployeePayrollCodesAction" name="displayName"/>
-            </file>
-            <file name="systems-tech247-prl-EmployeePayslipInfoTopComponent.instance">
-                <!--systems.tech247.prl.EmployeePayslipInfoTopComponent-->
-                <attr
-                    methodvalue="org.openide.windows.TopComponent.openAction" name="instanceCreate"/>
-                <attr name="component" newvalue="systems.tech247.prl.EmployeePayslipInfoTopComponent"/>
-                <attr name="preferredID" stringvalue="EmployeePayslipInfoTopComponent"/>
-                <attr
-                    bundlevalue="systems.tech247.prl.Bundle#CTL_EmployeePayslipInfoAction" name="displayName"/>
-            </file>
-            <file name="systems-tech247-prl-EmployeePeriodTransactionsTopComponent.instance">
-                <!--systems.tech247.prl.EmployeePeriodTransactionsTopComponent-->
-                <attr
-                    methodvalue="org.openide.windows.TopComponent.openAction" name="instanceCreate"/>
-                <attr name="component" newvalue="systems.tech247.prl.EmployeePeriodTransactionsTopComponent"/>
-                <attr name="preferredID" stringvalue="EmployeePeriodTransactionsTopComponent"/>
-                <attr
-                    bundlevalue="systems.tech247.prl.Bundle#CTL_EmployeePeriodTransactionsAction" name="displayName"/>
-            </file>
-            <file name="systems-tech247-prl-LSTTopComponent.instance">
-                <!--systems.tech247.prl.LSTTopComponent-->
-                <attr
-                    methodvalue="org.openide.windows.TopComponent.openAction" name="instanceCreate"/>
-                <attr name="component" newvalue="systems.tech247.prl.LSTTopComponent"/>
-                <attr name="preferredID" stringvalue="LSTTopComponent"/>
-                <attr
-                    bundlevalue="systems.tech247.prl.Bundle#CTL_LSTAction" name="displayName"/>
-            </file>
-            <file name="systems-tech247-prl-NSSFTopComponent.instance">
-                <!--systems.tech247.prl.NSSFTopComponent-->
-                <attr
-                    methodvalue="org.openide.windows.TopComponent.openAction" name="instanceCreate"/>
-                <attr name="component" newvalue="systems.tech247.prl.NSSFTopComponent"/>
-                <attr name="preferredID" stringvalue="NSSFTopComponent"/>
-                <attr
-                    bundlevalue="systems.tech247.prl.Bundle#CTL_NSSFAction" name="displayName"/>
-            </file>
-            <file name="systems-tech247-prl-PAYETopComponent.instance">
-                <!--systems.tech247.prl.PAYETopComponent-->
-                <attr
-                    methodvalue="org.openide.windows.TopComponent.openAction" name="instanceCreate"/>
-                <attr name="component" newvalue="systems.tech247.prl.PAYETopComponent"/>
-                <attr name="preferredID" stringvalue="PAYETopComponent"/>
-                <attr
-                    bundlevalue="systems.tech247.prl.Bundle#CTL_PAYEAction" name="displayName"/>
-            </file>
-            <file name="systems-tech247-prl-PCodeGroupsTopComponent.instance">
-                <!--systems.tech247.prl.PCodeGroupsTopComponent-->
-                <attr
-                    methodvalue="org.openide.windows.TopComponent.openAction" name="instanceCreate"/>
-                <attr name="component" newvalue="systems.tech247.prl.PCodeGroupsTopComponent"/>
-                <attr name="preferredID" stringvalue="PCodeGroupsTopComponent"/>
-                <attr
-                    bundlevalue="systems.tech247.prl.Bundle#CTL_PCodeGroupsAction" name="displayName"/>
-            </file>
-            <file name="systems-tech247-prl-PayPointsTopComponent.instance">
-                <!--systems.tech247.prl.PayPointsTopComponent-->
-                <attr
-                    methodvalue="org.openide.windows.TopComponent.openAction" name="instanceCreate"/>
-                <attr name="component" newvalue="systems.tech247.prl.PayPointsTopComponent"/>
-                <attr name="preferredID" stringvalue="PayPointsTopComponent"/>
-                <attr
-                    bundlevalue="systems.tech247.prl.Bundle#CTL_PayPointsAction" name="displayName"/>
-            </file>
-            <file name="systems-tech247-prl-PayrollCodeGroupsTopComponent.instance">
-                <!--systems.tech247.prl.PayrollCodeGroupsTopComponent-->
-                <attr
-                    methodvalue="org.openide.windows.TopComponent.openAction" name="instanceCreate"/>
-                <attr name="component" newvalue="systems.tech247.prl.PayrollCodeGroupsTopComponent"/>
-                <attr name="preferredID" stringvalue="PayrollCodeGroupsTopComponent"/>
-                <attr
-                    bundlevalue="systems.tech247.prl.Bundle#CTL_PayrollCodeGroupsAction" name="displayName"/>
-            </file>
-            <file name="systems-tech247-prl-PayrollDashBoardTopComponent.instance">
-                <!--systems.tech247.prl.PayrollDashBoardTopComponent-->
-                <attr
-                    methodvalue="org.openide.windows.TopComponent.openAction" name="instanceCreate"/>
-                <attr name="component" newvalue="systems.tech247.prl.PayrollDashBoardTopComponent"/>
-                <attr name="preferredID" stringvalue="PayrollDashBoardTopComponent"/>
-                <attr
-                    bundlevalue="systems.tech247.prl.Bundle#CTL_PayrollDashBoardAction" name="displayName"/>
-            </file>
-            <file name="systems-tech247-prl-PayrollEditorTopComponent.instance">
-                <!--systems.tech247.prl.PayrollEditorTopComponent-->
-                <attr
-                    methodvalue="org.openide.windows.TopComponent.openAction" name="instanceCreate"/>
-                <attr name="component" newvalue="systems.tech247.prl.PayrollEditorTopComponent"/>
-                <attr name="preferredID" stringvalue="PayrollEditorTopComponent"/>
-                <attr
-                    bundlevalue="systems.tech247.prl.Bundle#CTL_PayrollEditorAction" name="displayName"/>
-            </file>
-            <file name="systems-tech247-prl-PayrollSetupTopComponent.instance">
-                <!--systems.tech247.prl.PayrollSetupTopComponent-->
-                <attr
-                    methodvalue="org.openide.windows.TopComponent.openAction" name="instanceCreate"/>
-                <attr name="component" newvalue="systems.tech247.prl.PayrollSetupTopComponent"/>
-                <attr name="preferredID" stringvalue="PayrollSetupTopComponent"/>
-                <attr
-                    bundlevalue="systems.tech247.prl.Bundle#CTL_PayrollSetupAction" name="displayName"/>
-            </file>
-            <file name="systems-tech247-prl-PayrollsTopComponent.instance">
-                <!--systems.tech247.prl.PayrollsTopComponent-->
-                <attr
-                    methodvalue="org.openide.windows.TopComponent.openAction" name="instanceCreate"/>
-                <attr name="component" newvalue="systems.tech247.prl.PayrollsTopComponent"/>
-                <attr name="preferredID" stringvalue="PayrollsTopComponent"/>
-                <attr
-                    bundlevalue="systems.tech247.prl.Bundle#CTL_PayrollsAction" name="displayName"/>
-            </file>
-            <file name="systems-tech247-prl-ReportEditorTopComponent.instance">
-                <!--systems.tech247.prl.ReportEditorTopComponent-->
-                <attr
-                    methodvalue="org.openide.windows.TopComponent.openAction" name="instanceCreate"/>
-                <attr name="component" newvalue="systems.tech247.prl.ReportEditorTopComponent"/>
-                <attr name="preferredID" stringvalue="ReportEditorTopComponent"/>
-                <attr
-                    bundlevalue="systems.tech247.prl.Bundle#CTL_ReportEditorAction" name="displayName"/>
-            </file>
-            <file name="systems-tech247-prl-SalaryCalculatorTopComponent.instance">
-                <!--systems.tech247.prl.SalaryCalculatorTopComponent-->
-                <attr
-                    methodvalue="org.openide.windows.TopComponent.openAction" name="instanceCreate"/>
-                <attr name="component" newvalue="systems.tech247.prl.SalaryCalculatorTopComponent"/>
-                <attr name="preferredID" stringvalue="SalaryCalculatorTopComponent"/>
-                <attr
-                    bundlevalue="systems.tech247.prl.Bundle#CTL_SalaryCalculatorAction" name="displayName"/>
-            </file>
-            <file name="systems-tech247-prl-TransactionEditorTopComponent.instance">
-                <!--systems.tech247.prl.TransactionEditorTopComponent-->
-                <attr
-                    methodvalue="org.openide.windows.TopComponent.openAction" name="instanceCreate"/>
-                <attr name="component" newvalue="systems.tech247.prl.TransactionEditorTopComponent"/>
-                <attr name="preferredID" stringvalue="TransactionEditorTopComponent"/>
-                <attr
-                    bundlevalue="systems.tech247.prl.Bundle#CTL_TransactionEditorAction" name="displayName"/>
-            </file>
+        <folder name="lookups">
+            <folder name="systems_tech247_payrollreports">
+                <file name="PayrollReports.instance">
+                    <!--systems.tech247.payrollreports.PayrollReportsTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="systems.tech247.payrollreports.PayrollReportsTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="systems.tech247.payrollreports.PayrollReportsTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+            </folder>
+            <folder name="systems_tech247_prl">
+                <file name="AssignCodes.instance">
+                    <!--systems.tech247.prl.AssignCodesTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.AssignCodesTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.AssignCodesTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+                <file name="CostCenters.instance">
+                    <!--systems.tech247.prl.CostCentersTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.CostCentersTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.CostCentersTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+                <file name="Emailer.instance">
+                    <!--systems.tech247.prl.EmailerTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.EmailerTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.EmailerTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+                <file name="EmployeePayrollCodeEditor.instance">
+                    <!--systems.tech247.prl.EmployeePayrollCodeEditorTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.EmployeePayrollCodeEditorTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.EmployeePayrollCodeEditorTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+                <file name="EmployeePayrollCodes.instance">
+                    <!--systems.tech247.prl.EmployeePayrollCodesTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.EmployeePayrollCodesTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.EmployeePayrollCodesTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+                <file name="EmployeePayslipInfo.instance">
+                    <!--systems.tech247.prl.EmployeePayslipInfoTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.EmployeePayslipInfoTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.EmployeePayslipInfoTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+                <file name="EmployeePeriodTransactions.instance">
+                    <!--systems.tech247.prl.EmployeePeriodTransactionsTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.EmployeePeriodTransactionsTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.EmployeePeriodTransactionsTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+                <file name="EmployeeTransactionEditor.instance">
+                    <!--systems.tech247.prl.EmployeeTransactionEditorTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.EmployeeTransactionEditorTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.EmployeeTransactionEditorTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+                <file name="LSTTierEditor.instance">
+                    <!--systems.tech247.prl.LSTTierEditorTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.LSTTierEditorTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.LSTTierEditorTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+                <file name="LST.instance">
+                    <!--systems.tech247.prl.LSTTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.LSTTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.LSTTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+                <file name="NSSF.instance">
+                    <!--systems.tech247.prl.NSSFTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.NSSFTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.NSSFTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+                <file name="PAYETierEditor.instance">
+                    <!--systems.tech247.prl.PAYETierEditorTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.PAYETierEditorTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.PAYETierEditorTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+                <file name="PAYE.instance">
+                    <!--systems.tech247.prl.PAYETopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.PAYETopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.PAYETopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+                <file name="PCodeGroups.instance">
+                    <!--systems.tech247.prl.PCodeGroupsTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.PCodeGroupsTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.PCodeGroupsTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+                <file name="PLREmployeeList.instance">
+                    <!--systems.tech247.prl.PLREmployeeListTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.PLREmployeeListTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.PLREmployeeListTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+                <file name="PayPointEditor.instance">
+                    <!--systems.tech247.prl.PayPointEditorTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.PayPointEditorTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.PayPointEditorTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+                <file name="PayPoints.instance">
+                    <!--systems.tech247.prl.PayPointsTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.PayPointsTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.PayPointsTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+                <file name="PayrollCodeEditor.instance">
+                    <!--systems.tech247.prl.PayrollCodeEditorTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.PayrollCodeEditorTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.PayrollCodeEditorTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+                <file name="PayrollCodeGroupEditor.instance">
+                    <!--systems.tech247.prl.PayrollCodeGroupEditorTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.PayrollCodeGroupEditorTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.PayrollCodeGroupEditorTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+                <file name="PayrollCodeGroups.instance">
+                    <!--systems.tech247.prl.PayrollCodeGroupsTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.PayrollCodeGroupsTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.PayrollCodeGroupsTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+                <file name="PayrollCodes.instance">
+                    <!--systems.tech247.prl.PayrollCodesTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.PayrollCodesTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.PayrollCodesTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+                <file name="PayrollDashBoard.instance">
+                    <!--systems.tech247.prl.PayrollDashBoardTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.PayrollDashBoardTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.PayrollDashBoardTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+                <file name="PayrollEditor.instance">
+                    <!--systems.tech247.prl.PayrollEditorTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.PayrollEditorTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.PayrollEditorTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+                <file name="PayrollSetup.instance">
+                    <!--systems.tech247.prl.PayrollSetupTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.PayrollSetupTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.PayrollSetupTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+                <file name="Payrolls.instance">
+                    <!--systems.tech247.prl.PayrollsTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.PayrollsTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.PayrollsTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+                <file name="Periods.instance">
+                    <!--systems.tech247.prl.PeriodsTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.PeriodsTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.PeriodsTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+                <file name="ReportEditor.instance">
+                    <!--systems.tech247.prl.ReportEditorTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.ReportEditorTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.ReportEditorTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+                <file name="SalaryCalculator.instance">
+                    <!--systems.tech247.prl.SalaryCalculatorTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.SalaryCalculatorTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.SalaryCalculatorTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+                <file name="TransactionEditor.instance">
+                    <!--systems.tech247.prl.TransactionEditorTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.TransactionEditorTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.TransactionEditorTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+                <file name="Years.instance">
+                    <!--systems.tech247.prl.YearsTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.YearsTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.YearsTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+            </folder>
         </folder>
     </folder>
 </filesystem>

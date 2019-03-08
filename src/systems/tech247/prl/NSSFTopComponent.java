@@ -27,11 +27,11 @@ import systems.tech247.hr.TblNSSF;
 )
 @TopComponent.Registration(mode = "editor", openAtStartup = false)
 @ActionID(category = "Window", id = "systems.tech247.prl.NSSFTopComponent")
-@ActionReference(path = "Menu/Window" /*, position = 333 */)
-@TopComponent.OpenActionRegistration(
-        displayName = "#CTL_NSSFAction",
-        preferredID = "NSSFTopComponent"
-)
+//@ActionReference(path = "Menu/Window" /*, position = 333 */)
+//@TopComponent.OpenActionRegistration(
+//        displayName = "#CTL_NSSFAction",
+//        preferredID = "NSSFTopComponent"
+//)
 @Messages({
     "CTL_NSSFAction=NSSF",
     "CTL_NSSFTopComponent=NSSF Setup",
@@ -142,7 +142,7 @@ public final class NSSFTopComponent extends TopComponent {
                     .addComponent(jtfMaximumContribution)
                     .addComponent(jtBasicPercentage, javax.swing.GroupLayout.DEFAULT_SIZE, 167, Short.MAX_VALUE)
                     .addComponent(jtGrossPercentage, javax.swing.GroupLayout.DEFAULT_SIZE, 167, Short.MAX_VALUE))
-                .addContainerGap(54, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

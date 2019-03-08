@@ -42,11 +42,11 @@ import systems.tech247.util.CapCreatable;
 )
 @TopComponent.Registration(mode = "editor", openAtStartup = false)
 @ActionID(category = "Window", id = "systems.tech247.prl.EmployeePayrollCodesTopComponent")
-@ActionReference(path = "Menu/Window" /*, position = 333 */)
-@TopComponent.OpenActionRegistration(
-        displayName = "#CTL_EmployeePayrollCodesAction",
-        preferredID = "EmployeePayrollCodesTopComponent"
-)
+//@ActionReference(path = "Menu/Window" /*, position = 333 */)
+//@TopComponent.OpenActionRegistration(
+//        displayName = "#CTL_EmployeePayrollCodesAction",
+//        preferredID = "EmployeePayrollCodesTopComponent"
+//)
 @Messages({
     "CTL_EmployeePayrollCodesAction=Employee Payroll Codes",
     "CTL_EmployeePayrollCodesTopComponent= Payroll Codes",

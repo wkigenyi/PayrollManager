@@ -325,7 +325,7 @@ public final class LSTTierEditorTopComponent extends TopComponent {
                     .addComponent(jtYear)
                     .addComponent(jtUpper)
                     .addComponent(jtRate))
-                .addContainerGap(130, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jtLevel, jtLower});

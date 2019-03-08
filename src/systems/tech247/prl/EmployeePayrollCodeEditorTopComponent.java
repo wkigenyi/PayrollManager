@@ -308,7 +308,7 @@ public final class EmployeePayrollCodeEditorTopComponent extends TopComponent im
                     .addComponent(jftAmount)
                     .addComponent(jftAmount1)
                     .addComponent(jtCurrency))
-                .addContainerGap(89, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -391,7 +391,7 @@ public final class EmployeePayrollCodeEditorTopComponent extends TopComponent im
             if(o instanceof Currencies){
                 curr = (Currencies)o;
                 try{
-                    jtCurrency.setText(curr.getCurrencySymbol());
+                    jtCurrency.setText(curr.getCurrencyName());
                 updateable.setCurrencyID(curr);
                 
                 }catch(Exception ex){

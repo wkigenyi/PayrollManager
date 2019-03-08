@@ -52,8 +52,8 @@ import systems.tech247.hr.TblPayrollCode;
         preferredID = "PayrollCodeEditorTopComponent"
 )*/
 @Messages({
-    "CTL_PayPointEditorAction=PayPointEditor",
-    "CTL_PayPointEditorTopComponent=PayPoint Editor",
+    "CTL_PayPointEditorAction=Pay Point Editor",
+    "CTL_PayPointEditorTopComponent=Pay Point Editor",
     "HINT_PayPointEditorTopComponent="
 })
 public final class PayPointEditorTopComponent extends TopComponent implements LookupListener {
@@ -308,7 +308,7 @@ public final class PayPointEditorTopComponent extends TopComponent implements Lo
                     .addComponent(jftAmount)
                     .addComponent(jftAmount1)
                     .addComponent(jtCurrency))
-                .addContainerGap(89, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

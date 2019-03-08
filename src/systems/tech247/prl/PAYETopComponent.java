@@ -52,11 +52,11 @@ import systems.tech247.util.NotifyUtil;
         persistenceType = TopComponent.PERSISTENCE_NEVER)
 @TopComponent.Registration(mode = "editor", openAtStartup = false)
 @ActionID(category = "Window", id = "systems.tech247.prl.PAYETopComponent")
-@ActionReference(path = "Menu/Window" /*, position = 333 */)
-@TopComponent.OpenActionRegistration(
-        displayName = "#CTL_PAYEAction",
-        preferredID = "PAYETopComponent"
-)
+//@ActionReference(path = "Menu/Window" /*, position = 333 */)
+//@TopComponent.OpenActionRegistration(
+//        displayName = "#CTL_PAYEAction",
+//        preferredID = "PAYETopComponent"
+//)
 @Messages({
     "CTL_PAYEAction=PAYE",
     "CTL_PAYETopComponent=PAYE Tiers",

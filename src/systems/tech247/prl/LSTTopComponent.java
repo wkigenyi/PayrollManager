@@ -52,11 +52,11 @@ import systems.tech247.util.NotifyUtil;
         persistenceType = TopComponent.PERSISTENCE_NEVER)
 @TopComponent.Registration(mode = "editor", openAtStartup = false)
 @ActionID(category = "Window", id = "systems.tech247.prl.LSTTopComponent")
-@ActionReference(path = "Menu/Window" /*, position = 333 */)
-@TopComponent.OpenActionRegistration(
-        displayName = "#CTL_LSTAction",
-        preferredID = "LSTTopComponent"
-)
+//@ActionReference(path = "Menu/Window" /*, position = 333 */)
+//@TopComponent.OpenActionRegistration(
+//        displayName = "#CTL_LSTAction",
+//        preferredID = "LSTTopComponent"
+//)
 @Messages({
     "CTL_LSTAction=Local Service Tax Tiers",
     "CTL_LSTTopComponent=Local Service Tax Tiers",

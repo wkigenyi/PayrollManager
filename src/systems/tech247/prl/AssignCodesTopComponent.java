@@ -44,11 +44,11 @@ import systems.tech247.util.CetusUTL;
 )
 @TopComponent.Registration(mode = "editor", openAtStartup = false)
 @ActionID(category = "Window", id = "systems.tech247.prl.AssignCodesTopComponent")
-@ActionReference(path = "Menu/Window" /*, position = 333 */)
-@TopComponent.OpenActionRegistration(
-        displayName = "#CTL_AssignCodesAction",
-        preferredID = "AssignCodesTopComponent"
-)
+//@ActionReference(path = "Menu/Window" /*, position = 333 */)
+//@TopComponent.OpenActionRegistration(
+//        displayName = "#CTL_AssignCodesAction",
+//        preferredID = "AssignCodesTopComponent"
+//)
 @Messages({
     "CTL_AssignCodesAction=Assign Codes",
     "CTL_AssignCodesTopComponent=Assign Codes",

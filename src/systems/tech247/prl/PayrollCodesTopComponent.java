@@ -17,6 +17,10 @@ import org.openide.nodes.AbstractNode;
 import org.openide.nodes.Children;
 import org.openide.windows.TopComponent;
 import org.openide.util.NbBundle.Messages;
+import org.openide.util.lookup.AbstractLookup;
+import org.openide.util.lookup.InstanceContent;
+import org.openide.util.lookup.ProxyLookup;
+import systems.tech247.util.CapCreatable;
 
 /**
  * Top component which displays something.
@@ -46,11 +50,15 @@ public final class PayrollCodesTopComponent extends TopComponent implements Expl
     
     ExplorerManager em = new ExplorerManager();
     QueryPayrollCodes query = new QueryPayrollCodes();
+    InstanceContent content = new InstanceContent();
+    AbstractLookup lkp = new AbstractLookup(content);
    
     String searchString;
     String sqlString;
     Boolean edit;
     Boolean select;
+    
+    CapCreatable enableAdd;
 
     public PayrollCodesTopComponent() {
         this("",false,false);
@@ -64,6 +72,13 @@ public final class PayrollCodesTopComponent extends TopComponent implements Expl
         initComponents();
         setName(Bundle.CTL_PayrollCodesTopComponent());
         setToolTipText(Bundle.HINT_PayrollCodesTopComponent());
+        
+        enableAdd = () -> {
+            TopComponent tc = new PayrollCodeEditorTopComponent();
+            tc.open();
+            tc.requestActive();
+        };
+        
         OutlineView ov = new OutlineView("Payroll Code Name");
         ov.getOutline().setRootVisible(false);
         viewPanel.setLayout(new BorderLayout());
@@ -76,6 +91,7 @@ public final class PayrollCodesTopComponent extends TopComponent implements Expl
             ov.addPropertyColumn("group", "Code Group");
             ov.addPropertyColumn("sops", "Show ON PS");
             ov.addPropertyColumn("active", "Process");
+            content.add(enableAdd);
             //ov.addPropertyColumn("isSelected", "Select");
         }else if(select){
             ov.addPropertyColumn("group", "Code Group");
@@ -93,7 +109,7 @@ public final class PayrollCodesTopComponent extends TopComponent implements Expl
         //query.setSqlString(sqlString);
         //UtilityPLR.loadPayrollCodes(query,false);
              
-        associateLookup(ExplorerUtils.createLookup(em, getActionMap()));
+        associateLookup(new ProxyLookup(ExplorerUtils.createLookup(em, getActionMap()),lkp));
         
         search.addKeyListener(new KeyListener() {
             @Override

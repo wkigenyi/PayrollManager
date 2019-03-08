@@ -30,11 +30,11 @@ import org.openide.util.NbBundle.Messages;
 )
 @TopComponent.Registration(mode = "editor", openAtStartup = false)
 @ActionID(category = "Window", id = "systems.tech247.prl.CostCentersTopComponent")
-@ActionReference(path = "Menu/Window" /*, position = 333 */)
-@TopComponent.OpenActionRegistration(
-        displayName = "#CTL_CostCentersAction",
-        preferredID = "CostCentersTopComponent"
-)
+//@ActionReference(path = "Menu/Window" /*, position = 333 */)
+//@TopComponent.OpenActionRegistration(
+//        displayName = "#CTL_CostCentersAction",
+//        preferredID = "CostCentersTopComponent"
+//)
 @Messages({
     "CTL_CostCentersAction=CostCenters",
     "CTL_CostCentersTopComponent=CostCenters Window",

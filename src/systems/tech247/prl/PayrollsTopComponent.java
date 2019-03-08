@@ -31,11 +31,11 @@ import org.openide.util.NbBundle.Messages;
 )
 @TopComponent.Registration(mode = "editor", openAtStartup = false)
 @ActionID(category = "Window", id = "systems.tech247.prl.PayrollsTopComponent")
-@ActionReference(path = "Menu/Window" /*, position = 333 */)
-@TopComponent.OpenActionRegistration(
-        displayName = "#CTL_PayrollsAction",
-        preferredID = "PayrollsTopComponent"
-)
+//@ActionReference(path = "Menu/Window" /*, position = 333 */)
+//@TopComponent.OpenActionRegistration(
+//        displayName = "#CTL_PayrollsAction",
+//        preferredID = "PayrollsTopComponent"
+//)
 @Messages({
     "CTL_PayrollsAction=Payrolls",
     "CTL_PayrollsTopComponent=Payrolls Window",

@@ -31,11 +31,11 @@ import systems.tech247.prl.FactoryPLRReports;
 )
 @TopComponent.Registration(mode = "explorer", openAtStartup = false)
 @ActionID(category = "Window", id = "systems.tech247.payrollreports.PayrollReportsTopComponent")
-@ActionReference(path = "Menu/Window" /*, position = 333 */)
-@TopComponent.OpenActionRegistration(
-        displayName = "#CTL_PayrollReportsAction",
-        preferredID = "PayrollReportsTopComponent"
-)
+//@ActionReference(path = "Menu/Window" /*, position = 333 */)
+//@TopComponent.OpenActionRegistration(
+//        displayName = "#CTL_PayrollReportsAction",
+//        preferredID = "PayrollReportsTopComponent"
+//)
 @Messages({
     "CTL_PayrollReportsAction=PayrollReports",
     "CTL_PayrollReportsTopComponent=Payroll Reports",

@@ -66,6 +66,7 @@ public class NodePayrollCode extends  AbstractNode implements LookupListener{
         
         instanceContent.add(p);
         ic.add(p.getCode());
+        ic.add(p);
                 
         this.edit = edit;
         if(edit){

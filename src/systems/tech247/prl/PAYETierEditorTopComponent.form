@@ -37,7 +37,7 @@
                   <Component id="jtStandingAmount" max="32767" attributes="0"/>
                   <Component id="jtAdditionalRate" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace pref="130" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>

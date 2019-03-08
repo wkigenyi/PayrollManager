@@ -213,14 +213,14 @@ class Bundle {
         return org.openide.util.NbBundle.getMessage(Bundle.class, "CTL_PLREmployeeListTopComponent");
     }
     /**
-     * @return <i>PayPointEditor</i>
+     * @return <i>Pay Point Editor</i>
      * @see PayPointEditorTopComponent
      */
     static String CTL_PayPointEditorAction() {
         return org.openide.util.NbBundle.getMessage(Bundle.class, "CTL_PayPointEditorAction");
     }
     /**
-     * @return <i>PayPoint Editor</i>
+     * @return <i>Pay Point Editor</i>
      * @see PayPointEditorTopComponent
      */
     static String CTL_PayPointEditorTopComponent() {
@@ -239,13 +239,6 @@ class Bundle {
      */
     static String CTL_PayPointsTopComponent() {
         return org.openide.util.NbBundle.getMessage(Bundle.class, "CTL_PayPointsTopComponent");
-    }
-    /**
-     * @return <i>Payroll</i>
-     * @see PayrollTopComponent
-     */
-    static String CTL_PayrollAction() {
-        return org.openide.util.NbBundle.getMessage(Bundle.class, "CTL_PayrollAction");
     }
     /**
      * @return <i>PayrollCodeEditor</i>
@@ -325,7 +318,7 @@ class Bundle {
         return org.openide.util.NbBundle.getMessage(Bundle.class, "CTL_PayrollEditorAction");
     }
     /**
-     * @return <i>New Payroll</i>
+     * @return <i>Payroll Editor</i>
      * @see PayrollEditorTopComponent
      */
     static String CTL_PayrollEditorTopComponent() {
@@ -344,13 +337,6 @@ class Bundle {
      */
     static String CTL_PayrollSetupTopComponent() {
         return org.openide.util.NbBundle.getMessage(Bundle.class, "CTL_PayrollSetupTopComponent");
-    }
-    /**
-     * @return <i>Payroll</i>
-     * @see PayrollTopComponent
-     */
-    static String CTL_PayrollTopComponent() {
-        return org.openide.util.NbBundle.getMessage(Bundle.class, "CTL_PayrollTopComponent");
     }
     /**
      * @return <i>Payrolls</i>
@@ -603,13 +589,6 @@ class Bundle {
      */
     static String HINT_PayrollSetupTopComponent() {
         return org.openide.util.NbBundle.getMessage(Bundle.class, "HINT_PayrollSetupTopComponent");
-    }
-    /**
-     * @return <i> </i>
-     * @see PayrollTopComponent
-     */
-    static String HINT_PayrollTopComponent() {
-        return org.openide.util.NbBundle.getMessage(Bundle.class, "HINT_PayrollTopComponent");
     }
     /**
      * @return <i>This is a Payrolls window</i>

@@ -5,10 +5,6 @@
  */
 package systems.tech247.prl;
 
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.Date;
@@ -19,14 +15,12 @@ import javax.swing.event.DocumentListener;
 import org.netbeans.api.settings.ConvertAsProperties;
 import org.netbeans.spi.actions.AbstractSavable;
 import org.openide.awt.ActionID;
-import org.openide.awt.ActionReference;
 import org.openide.awt.StatusDisplayer;
 import org.openide.windows.TopComponent;
 import org.openide.util.NbBundle.Messages;
 import org.openide.util.lookup.InstanceContent;
 import systems.tech247.dbaccess.DataAccess;
 import systems.tech247.hr.TblPayroll;
-import systems.tech247.util.NotifyUtil;
 
 /**
  * Top component which displays something.
@@ -42,14 +36,14 @@ import systems.tech247.util.NotifyUtil;
 )
 @TopComponent.Registration(mode = "editor", openAtStartup = false)
 @ActionID(category = "Window", id = "systems.tech247.prl.PayrollEditorTopComponent")
-@ActionReference(path = "Menu/Window" /*, position = 333 */)
-@TopComponent.OpenActionRegistration(
-        displayName = "#CTL_PayrollEditorAction",
-        preferredID = "PayrollEditorTopComponent"
-)
+//@ActionReference(path = "Menu/Window" /*, position = 333 */)
+//@TopComponent.OpenActionRegistration(
+//        displayName = "#CTL_PayrollEditorAction",
+//        preferredID = "PayrollEditorTopComponent"
+//)
 @Messages({
     "CTL_PayrollEditorAction=Payroll Editor",
-    "CTL_PayrollEditorTopComponent=New Payroll",
+    "CTL_PayrollEditorTopComponent=Payroll Editor",
     "HINT_PayrollEditorTopComponent=This is a PayrollEditor window"
 })
 public final class PayrollEditorTopComponent extends TopComponent {
@@ -84,6 +78,11 @@ public final class PayrollEditorTopComponent extends TopComponent {
         }catch(NullPointerException ex){
             
         }
+        
+        fillFields(updateable);
+        
+        
+        
         jtPayrollCode.getDocument().addDocumentListener(new DocumentListener() {
             @Override
             public void insertUpdate(DocumentEvent e) {
@@ -301,7 +300,7 @@ public final class PayrollEditorTopComponent extends TopComponent {
                     .addComponent(jcbSuspendTransactions)
                     .addComponent(jdcDateEntered, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jftRounding))
-                .addContainerGap(124, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -369,7 +368,7 @@ public final class PayrollEditorTopComponent extends TopComponent {
     // End of variables declaration//GEN-END:variables
     @Override
     public void componentOpened() {
-        fillFields(updateable);
+        
     }
 
     @Override

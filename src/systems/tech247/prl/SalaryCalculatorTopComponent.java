@@ -40,11 +40,11 @@ import systems.tech247.hr.Currencies;
 )
 @TopComponent.Registration(mode = "editor", openAtStartup = false)
 @ActionID(category = "Window", id = "systems.tech247.prl.SalaryCalculatorTopComponent")
-@ActionReference(path = "Menu/Window" /*, position = 333 */)
-@TopComponent.OpenActionRegistration(
-        displayName = "#CTL_SalaryCalculatorAction",
-        preferredID = "SalaryCalculatorTopComponent"
-)
+//@ActionReference(path = "Menu/Window" /*, position = 333 */)
+//@TopComponent.OpenActionRegistration(
+//        displayName = "#CTL_SalaryCalculatorAction",
+//        preferredID = "SalaryCalculatorTopComponent"
+//)
 @Messages({
     "CTL_SalaryCalculatorAction=SalaryCalculator",
     "CTL_SalaryCalculatorTopComponent=Salary Calculator",
@@ -257,7 +257,7 @@ public final class SalaryCalculatorTopComponent extends TopComponent implements 
                                 .addComponent(jLabel8)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jtCurrency)))))
-                .addContainerGap(109, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

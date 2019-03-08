@@ -51,11 +51,11 @@ import systems.tech247.view.CategoriesTopComponent;
 )
 @TopComponent.Registration(mode = "editor", openAtStartup = false)
 @ActionID(category = "Window", id = "systems.tech247.prl.EmailerTopComponent")
-@ActionReference(path = "Menu/Window" /*, position = 333 */)
-@TopComponent.OpenActionRegistration(
-        displayName = "#CTL_EmailerAction",
-        preferredID = "EmailerTopComponent"
-)
+//@ActionReference(path = "Menu/Window" /*, position = 333 */)
+//@TopComponent.OpenActionRegistration(
+//        displayName = "#CTL_EmailerAction",
+//        preferredID = "EmailerTopComponent"
+//)
 @Messages({
     "CTL_EmailerAction=Emailer",
     "CTL_EmailerTopComponent=Emailer",
