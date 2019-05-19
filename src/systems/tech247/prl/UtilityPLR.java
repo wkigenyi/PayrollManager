@@ -324,7 +324,11 @@ public class UtilityPLR implements Lookup.Provider,LookupListener {
                                     
                                     if(!processed.contains(t.getPayrollCodeID())){
                                         ph.progress("Posting Fixed Transactions "+t.getPayrollCodeID().getPayrollCodeName()+" "+e.getSurName()+"--"+e.getOtherNames());
-                                        DataAccess.postPayrollTransaction(e, t.getPayrollCodeID(), p);
+                                        try{
+                                            DataAccess.postPayrollTransaction(e, t.getPayrollCodeID(), p);
+                                        }catch(Exception ex){
+                                            NotifyUtil.error("Error", "Error While Precessing for" + e.getSurName()+" "+e.getOtherNames(), ex, false);
+                                        }
                                     }
                                     processed.add(t.getPayrollCodeID());
                                 }

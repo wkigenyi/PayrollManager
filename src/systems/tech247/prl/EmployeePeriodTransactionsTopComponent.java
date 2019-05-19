@@ -8,7 +8,6 @@ package systems.tech247.prl;
 import java.awt.BorderLayout;
 import org.netbeans.api.settings.ConvertAsProperties;
 import org.openide.awt.ActionID;
-import org.openide.awt.ActionReference;
 import org.openide.explorer.ExplorerManager;
 import org.openide.explorer.ExplorerUtils;
 import org.openide.explorer.view.OutlineView;
@@ -78,13 +77,10 @@ public final class EmployeePeriodTransactionsTopComponent extends TopComponent i
         //content.add();
         associateLookup(new ProxyLookup(lookup,ExplorerUtils.createLookup(em, getActionMap())));
         
-        content.add(new CapCreatable() {
-            @Override
-            public void create() {
-                TopComponent tc = new EmployeeTransactionEditorTopComponent(emp);
-                tc.open();
-                tc.requestActive();
-            }
+        content.add((CapCreatable) () -> {
+            TopComponent tc = new EmployeeTransactionEditorTopComponent(emp);
+            tc.open();
+            tc.requestActive();
         });
         
         rslt.addLookupListener(this);

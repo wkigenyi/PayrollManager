@@ -17,14 +17,14 @@ class Bundle {
         return org.openide.util.NbBundle.getMessage(Bundle.class, "CTL_AssignCodesTopComponent");
     }
     /**
-     * @return <i>CostCenters</i>
+     * @return <i>Cost Centers</i>
      * @see CostCentersTopComponent
      */
     static String CTL_CostCentersAction() {
         return org.openide.util.NbBundle.getMessage(Bundle.class, "CTL_CostCentersAction");
     }
     /**
-     * @return <i>CostCenters Window</i>
+     * @return <i>Cost Centers</i>
      * @see CostCentersTopComponent
      */
     static String CTL_CostCentersTopComponent() {
@@ -113,6 +113,20 @@ class Bundle {
      */
     static String CTL_EmployeeTransactionEditorTopComponent() {
         return org.openide.util.NbBundle.getMessage(Bundle.class, "CTL_EmployeeTransactionEditorTopComponent");
+    }
+    /**
+     * @return <i>Export To Financials</i>
+     * @see ExportToFinancialsTopComponent
+     */
+    static String CTL_ExportToFinancialsAction() {
+        return org.openide.util.NbBundle.getMessage(Bundle.class, "CTL_ExportToFinancialsAction");
+    }
+    /**
+     * @return <i>Export To Financials</i>
+     * @see ExportToFinancialsTopComponent
+     */
+    static String CTL_ExportToFinancialsTopComponent() {
+        return org.openide.util.NbBundle.getMessage(Bundle.class, "CTL_ExportToFinancialsTopComponent");
     }
     /**
      * @return <i>Local Service Tax Tiers</i>
@@ -430,7 +444,7 @@ class Bundle {
         return org.openide.util.NbBundle.getMessage(Bundle.class, "HINT_AssignCodesTopComponent");
     }
     /**
-     * @return <i>This is a CostCenters window</i>
+     * @return 
      * @see CostCentersTopComponent
      */
     static String HINT_CostCentersTopComponent() {
@@ -477,6 +491,13 @@ class Bundle {
      */
     static String HINT_EmployeeTransactionEditorTopComponent() {
         return org.openide.util.NbBundle.getMessage(Bundle.class, "HINT_EmployeeTransactionEditorTopComponent");
+    }
+    /**
+     * @return <i>Export To Financials</i>
+     * @see ExportToFinancialsTopComponent
+     */
+    static String HINT_ExportToFinancialsTopComponent() {
+        return org.openide.util.NbBundle.getMessage(Bundle.class, "HINT_ExportToFinancialsTopComponent");
     }
     /**
      * @return 

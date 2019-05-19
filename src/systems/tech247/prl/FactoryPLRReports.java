@@ -32,10 +32,22 @@ public class FactoryPLRReports extends ChildFactory<SetupItem> {
                 tc.requestActive();
             }
         },"systems/tech247/util/icons/capex.png"));
-        toPopulate.add(new SetupItem("Employee Payslips",new AbstractAction() {
+        
+        toPopulate.add(new SetupItem("Bank Transfer",new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                TopComponent tc = new ReportEditorTopComponent();
+                tc.open();
+                tc.requestActive();
+            }
+        },"systems/tech247/util/icons/capex.png"));
+        
+        toPopulate.add(new SetupItem("Export To Finacials",new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                TopComponent tc = new ExportToFinancialsTopComponent();
+                tc.open();
+                tc.requestActive();
             }
         },"systems/tech247/util/icons/capex.png"));
         toPopulate.add(new SetupItem("Payroll Code Variance",new AbstractAction() {

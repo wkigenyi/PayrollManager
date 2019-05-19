@@ -224,6 +224,63 @@ public class NodePayrollCode extends  AbstractNode implements LookupListener{
             };
             set.put(pcode);
             
+            Property dc = new PropertySupport("dc", String.class, "Debit/Credit","Debit/Credit", true, false) {
+                @Override
+                public Object getValue() throws IllegalAccessException, InvocationTargetException {
+                    String doc = "";
+                    if(bean.code.getDebit() == 1){
+                        doc= "Debit";
+                    }else if(bean.code.getDebit() == 0){
+                        doc= "Credit";
+                    }
+                    
+                    
+                    return doc;
+                }
+                
+                @Override
+                public void setValue(Object val) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+                    //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                }
+            };
+            set.put(dc);
+            
+            
+            
+            
+            
+            
+            Property acc = new PropertySupport("acc", String.class, "Financials Account","Financials A/C", true, false) {
+                @Override
+                public Object getValue() throws IllegalAccessException, InvocationTargetException {
+                    return bean.code.getAccount();
+                }
+                
+                @Override
+                public void setValue(Object val) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+                    //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                }
+            };
+            set.put(acc);
+            
+            Property export = new PropertySupport("export", Boolean.class, "Export","Export", true, false) {
+                @Override
+                public Object getValue() throws IllegalAccessException, InvocationTargetException {
+                    
+                    return bean.code.getExport();
+                }
+                
+                @Override
+                public void setValue(Object val) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+                    //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                }
+            };
+            set.put(export);
+            
+            
+            
+            
+            
             final PropertySupport.Reflection test;
             Property isSelected;
             

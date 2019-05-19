@@ -8,7 +8,6 @@ package systems.tech247.prl;
 import java.awt.BorderLayout;
 import org.netbeans.api.settings.ConvertAsProperties;
 import org.openide.awt.ActionID;
-import org.openide.awt.ActionReference;
 import org.openide.explorer.ExplorerManager;
 import org.openide.explorer.view.OutlineView;
 import org.openide.nodes.AbstractNode;
@@ -26,7 +25,7 @@ import org.openide.util.NbBundle.Messages;
 @TopComponent.Description(
         preferredID = "CostCentersTopComponent",
         //iconBase="SET/PATH/TO/ICON/HERE", 
-        persistenceType = TopComponent.PERSISTENCE_ALWAYS
+        persistenceType = TopComponent.PERSISTENCE_NEVER
 )
 @TopComponent.Registration(mode = "editor", openAtStartup = false)
 @ActionID(category = "Window", id = "systems.tech247.prl.CostCentersTopComponent")
@@ -36,9 +35,9 @@ import org.openide.util.NbBundle.Messages;
 //        preferredID = "CostCentersTopComponent"
 //)
 @Messages({
-    "CTL_CostCentersAction=CostCenters",
-    "CTL_CostCentersTopComponent=CostCenters Window",
-    "HINT_CostCentersTopComponent=This is a CostCenters window"
+    "CTL_CostCentersAction=Cost Centers",
+    "CTL_CostCentersTopComponent=Cost Centers",
+    "HINT_CostCentersTopComponent="
 })
 public final class CostCentersTopComponent extends TopComponent implements ExplorerManager.Provider {
 

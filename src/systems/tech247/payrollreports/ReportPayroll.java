@@ -45,19 +45,21 @@ public class ReportPayroll {
     Boolean subTotalsAtSummary;
     AggregationSubtotalBuilder[] subtotalsG;
     JasperReportBuilder reportBuilder;
+    boolean includePageNumbers;
 
-    public ReportPayroll(ColumnBuilder[] columns,String[] columnNames,SubtotalBuilder[] subtotals,AggregationSubtotalBuilder[] subtotalsG,DRDataSource data,Boolean sort,Boolean subTotalsAtGroup, Boolean subTotalsAtSummary,TblPeriods p, TblPayroll payroll) {
+    public ReportPayroll(ColumnBuilder[] columns,String[] columnNames,SubtotalBuilder[] subtotals,AggregationSubtotalBuilder[] subtotalsG,DRDataSource data,Boolean sort,Boolean subTotalsAtGroup, Boolean subTotalsAtSummary,TblPeriods p, TblPayroll payroll,boolean includePageNumbers) {
         this.columnNames = columnNames;
         this.columns = columns;
         this.data = data;
         this.sort= sort;
-        this.groupBy = (TextColumnBuilder)columns[3];
+        this.groupBy = (TextColumnBuilder)columns[4];
         this.subTotals = subtotals;
         this.subtotalsG = subtotalsG;
         this.subTotalsAtGroup = subTotalsAtGroup;
         this.subTotalsAtSummary = subTotalsAtSummary;
         this.period = p;
         this.payroll = payroll;
+        this.includePageNumbers = includePageNumbers;
         build();
     }
     
@@ -112,7 +114,9 @@ public class ReportPayroll {
                         }catch(IOException ex){
                         }
 			report.setTemplate(ReportTemplate.reportTemplate);
-			report.pageFooter(ReportTemplate.footerComponent);
+                        if(includePageNumbers){
+                            report.pageFooter(ReportTemplate.footerComponent);
+                        }    
 		}
 
 		

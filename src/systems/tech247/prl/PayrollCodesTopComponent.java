@@ -91,6 +91,9 @@ public final class PayrollCodesTopComponent extends TopComponent implements Expl
             ov.addPropertyColumn("group", "Code Group");
             ov.addPropertyColumn("sops", "Show ON PS");
             ov.addPropertyColumn("active", "Process");
+            ov.addPropertyColumn("acc", "Financials A/C");
+            ov.addPropertyColumn("dc", "Debit / Credit");
+            ov.addPropertyColumn("export", "Export");
             content.add(enableAdd);
             //ov.addPropertyColumn("isSelected", "Select");
         }else if(select){

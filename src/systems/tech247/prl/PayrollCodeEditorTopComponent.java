@@ -73,6 +73,10 @@ public final class PayrollCodeEditorTopComponent extends TopComponent implements
     Boolean displayOnPayslip = false;
     Boolean active = false;
     Boolean varied = false;
+    String account = "";
+    String debitcredit = "";
+    int debit = 1;
+    boolean export = false;
     
     TopComponent codeGrpTc = WindowManager.getDefault().findTopComponent("PCodeGroupsTopComponent");
     Lookup.Result<TblPayrollCodeGroups> codeGroupResult = codeGrpTc.getLookup().lookupResult(TblPayrollCodeGroups.class);
@@ -164,6 +168,12 @@ public final class PayrollCodeEditorTopComponent extends TopComponent implements
                 modify();
             }
         });
+        
+        
+        
+        
+        
+        
         //jtFormular.getDocument().putProperty("owner", jtFormular);
         jftFactor.getDocument().addDocumentListener(new DocumentListener() {
             @Override
@@ -248,6 +258,41 @@ public final class PayrollCodeEditorTopComponent extends TopComponent implements
             }
         });
         
+        jtFinancials.getDocument().addDocumentListener(new DocumentListener() {
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                account = jtFinancials.getText();
+                try{
+                    updateable.setAccount(account);
+                }catch(Exception ex){
+                    
+                }
+                modify();
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                account = jtFinancials.getText();
+                try{
+                    updateable.setAccount(account);
+                }catch(Exception ex){
+                    
+                }
+                modify();
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                account = jtFinancials.getText();
+                try{
+                    updateable.setAccount(account);
+                }catch(Exception ex){
+                    
+                }
+                modify();
+            }
+        });
+        
         jtCodeGroup.addKeyListener(new KeyListener() {
             @Override
             public void keyTyped(KeyEvent e) {
@@ -326,10 +371,28 @@ public final class PayrollCodeEditorTopComponent extends TopComponent implements
             jtCodeID.setText(updateable.getPayrollCodeID()+"");
             jtReportLabel.setText(updateable.getReportLabel());
             jcbVaried.setSelected(updateable.getVaried());
+            jtFinancials.setText(updateable.getAccount());
+            
+            if( null == updateable.getDebit()){
+                
+            }else switch (updateable.getDebit()) {
+                    case 1:
+                        jrbDebit.setSelected(true);
+                        break;
+                    case 0:
+                        jrbCredit.setSelected(true);
+                        break;
+                    default:
+                        
+                        break;
+                }
+            jcbExport.setSelected(updateable.getExport());
             
         }catch(NullPointerException ex){
             //Creating new
         }
+            
+            
             
         }
         
@@ -344,6 +407,7 @@ public final class PayrollCodeEditorTopComponent extends TopComponent implements
     private void initComponents() {
 
         bgCodeType = new javax.swing.ButtonGroup();
+        bgDebitCredit = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         jtCodeName = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -362,6 +426,11 @@ public final class PayrollCodeEditorTopComponent extends TopComponent implements
         jftFactor = new javax.swing.JFormattedTextField();
         jcbPayment = new javax.swing.JCheckBox();
         jcbVaried = new javax.swing.JCheckBox();
+        jLabel8 = new javax.swing.JLabel();
+        jtFinancials = new javax.swing.JTextField();
+        jrbDebit = new javax.swing.JRadioButton();
+        jrbCredit = new javax.swing.JRadioButton();
+        jcbExport = new javax.swing.JCheckBox();
 
         org.openide.awt.Mnemonics.setLocalizedText(jLabel1, org.openide.util.NbBundle.getMessage(PayrollCodeEditorTopComponent.class, "PayrollCodeEditorTopComponent.jLabel1.text")); // NOI18N
 
@@ -431,6 +500,34 @@ public final class PayrollCodeEditorTopComponent extends TopComponent implements
             }
         });
 
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel8, org.openide.util.NbBundle.getMessage(PayrollCodeEditorTopComponent.class, "PayrollCodeEditorTopComponent.jLabel8.text")); // NOI18N
+
+        jtFinancials.setText(org.openide.util.NbBundle.getMessage(PayrollCodeEditorTopComponent.class, "PayrollCodeEditorTopComponent.jtFinancials.text")); // NOI18N
+
+        bgDebitCredit.add(jrbDebit);
+        jrbDebit.setSelected(true);
+        org.openide.awt.Mnemonics.setLocalizedText(jrbDebit, org.openide.util.NbBundle.getMessage(PayrollCodeEditorTopComponent.class, "PayrollCodeEditorTopComponent.jrbDebit.text")); // NOI18N
+        jrbDebit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jrbDebitActionPerformed(evt);
+            }
+        });
+
+        bgDebitCredit.add(jrbCredit);
+        org.openide.awt.Mnemonics.setLocalizedText(jrbCredit, org.openide.util.NbBundle.getMessage(PayrollCodeEditorTopComponent.class, "PayrollCodeEditorTopComponent.jrbCredit.text")); // NOI18N
+        jrbCredit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jrbCreditActionPerformed(evt);
+            }
+        });
+
+        org.openide.awt.Mnemonics.setLocalizedText(jcbExport, org.openide.util.NbBundle.getMessage(PayrollCodeEditorTopComponent.class, "PayrollCodeEditorTopComponent.jcbExport.text")); // NOI18N
+        jcbExport.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcbExportActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -443,21 +540,29 @@ public final class PayrollCodeEditorTopComponent extends TopComponent implements
                     .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jcbTable)
-                    .addComponent(jtCodeName, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
-                    .addComponent(jtCodeGroup, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
-                    .addComponent(jtCodeCode)
-                    .addComponent(jtCodeID)
-                    .addComponent(jtReportLabel)
-                    .addComponent(jcbProcessInPayment)
-                    .addComponent(jcbDisplayOnPayslip)
-                    .addComponent(jcbIsActive)
-                    .addComponent(jftFactor)
-                    .addComponent(jcbPayment)
-                    .addComponent(jcbVaried))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jrbDebit)
+                        .addGap(18, 18, 18)
+                        .addComponent(jrbCredit))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jcbTable)
+                        .addComponent(jtCodeName, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
+                        .addComponent(jtCodeGroup, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
+                        .addComponent(jtCodeCode)
+                        .addComponent(jtCodeID)
+                        .addComponent(jtReportLabel)
+                        .addComponent(jcbProcessInPayment)
+                        .addComponent(jcbDisplayOnPayslip)
+                        .addComponent(jcbIsActive)
+                        .addComponent(jftFactor)
+                        .addComponent(jcbPayment)
+                        .addComponent(jcbVaried)
+                        .addComponent(jtFinancials)
+                        .addComponent(jcbExport)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -478,6 +583,14 @@ public final class PayrollCodeEditorTopComponent extends TopComponent implements
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(jtCodeCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(jtFinancials, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jrbDebit)
+                    .addComponent(jrbCredit))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
@@ -502,7 +615,9 @@ public final class PayrollCodeEditorTopComponent extends TopComponent implements
                 .addComponent(jcbIsActive)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jcbVaried)
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jcbExport)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -577,25 +692,65 @@ public final class PayrollCodeEditorTopComponent extends TopComponent implements
         }
     }//GEN-LAST:event_jcbVariedActionPerformed
 
+    private void jrbDebitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrbDebitActionPerformed
+        if(jrbDebit.isSelected()){
+            debit = 1;
+            try{
+                updateable.setDebit(debit);
+            }catch(NullPointerException ex){
+                
+            }
+        }
+        modify();
+    }//GEN-LAST:event_jrbDebitActionPerformed
+
+    private void jrbCreditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrbCreditActionPerformed
+        if(jrbCredit.isSelected()){
+            debit = 0;
+            try{
+                updateable.setDebit(debit);
+            }catch(NullPointerException ex){
+                
+            }
+        }
+        modify();
+    }//GEN-LAST:event_jrbCreditActionPerformed
+
+    private void jcbExportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbExportActionPerformed
+        export = jcbExport.isSelected();
+        try{
+            updateable.setExport(export);
+        }catch(NullPointerException ex){
+            
+        }
+        modify();
+    }//GEN-LAST:event_jcbExportActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup bgCodeType;
+    private javax.swing.ButtonGroup bgDebitCredit;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JCheckBox jcbDisplayOnPayslip;
+    private javax.swing.JCheckBox jcbExport;
     private javax.swing.JCheckBox jcbIsActive;
     private javax.swing.JCheckBox jcbPayment;
     private javax.swing.JCheckBox jcbProcessInPayment;
     private javax.swing.JCheckBox jcbTable;
     private javax.swing.JCheckBox jcbVaried;
     private javax.swing.JFormattedTextField jftFactor;
+    private javax.swing.JRadioButton jrbCredit;
+    private javax.swing.JRadioButton jrbDebit;
     private javax.swing.JTextField jtCodeCode;
     private javax.swing.JTextField jtCodeGroup;
     private javax.swing.JTextField jtCodeID;
     private javax.swing.JTextField jtCodeName;
+    private javax.swing.JTextField jtFinancials;
     private javax.swing.JTextField jtReportLabel;
     // End of variables declaration//GEN-END:variables
     @Override

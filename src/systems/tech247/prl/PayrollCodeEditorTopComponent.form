@@ -4,6 +4,8 @@
   <NonVisualComponents>
     <Component class="javax.swing.ButtonGroup" name="bgCodeType">
     </Component>
+    <Component class="javax.swing.ButtonGroup" name="bgDebitCredit">
+    </Component>
   </NonVisualComponents>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="1"/>
@@ -29,21 +31,31 @@
                   <Component id="jLabel5" alignment="1" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel6" alignment="1" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel7" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel8" alignment="1" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="jcbTable" min="-2" max="-2" attributes="0"/>
-                  <Component id="jtCodeName" linkSize="1" alignment="0" pref="176" max="32767" attributes="0"/>
-                  <Component id="jtCodeGroup" linkSize="1" alignment="0" pref="176" max="32767" attributes="0"/>
-                  <Component id="jtCodeCode" alignment="0" max="32767" attributes="0"/>
-                  <Component id="jtCodeID" alignment="0" max="32767" attributes="0"/>
-                  <Component id="jtReportLabel" alignment="0" max="32767" attributes="0"/>
-                  <Component id="jcbProcessInPayment" min="-2" max="-2" attributes="0"/>
-                  <Component id="jcbDisplayOnPayslip" min="-2" max="-2" attributes="0"/>
-                  <Component id="jcbIsActive" min="-2" max="-2" attributes="0"/>
-                  <Component id="jftFactor" alignment="0" max="32767" attributes="0"/>
-                  <Component id="jcbPayment" min="-2" max="-2" attributes="0"/>
-                  <Component id="jcbVaried" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="jrbDebit" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jrbCredit" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="jcbTable" min="-2" max="-2" attributes="0"/>
+                      <Component id="jtCodeName" linkSize="1" alignment="0" pref="176" max="32767" attributes="0"/>
+                      <Component id="jtCodeGroup" linkSize="1" alignment="0" pref="176" max="32767" attributes="0"/>
+                      <Component id="jtCodeCode" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jtCodeID" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jtReportLabel" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jcbProcessInPayment" min="-2" max="-2" attributes="0"/>
+                      <Component id="jcbDisplayOnPayslip" min="-2" max="-2" attributes="0"/>
+                      <Component id="jcbIsActive" min="-2" max="-2" attributes="0"/>
+                      <Component id="jftFactor" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jcbPayment" min="-2" max="-2" attributes="0"/>
+                      <Component id="jcbVaried" min="-2" max="-2" attributes="0"/>
+                      <Component id="jtFinancials" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jcbExport" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
@@ -66,6 +78,16 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jtCodeCode" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jtFinancials" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jrbDebit" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jrbCredit" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -94,7 +116,9 @@
               <Component id="jcbIsActive" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jcbVaried" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="15" max="32767" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="jcbExport" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -246,6 +270,57 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jcbVariedActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel8">
+      <Properties>
+        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
+          <ResourceString bundle="systems/tech247/prl/Bundle.properties" key="PayrollCodeEditorTopComponent.jLabel8.text" replaceFormat="org.openide.util.NbBundle.getMessage({sourceFileName}.class, &quot;{key}&quot;)"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtFinancials">
+      <Properties>
+        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
+          <ResourceString bundle="systems/tech247/prl/Bundle.properties" key="PayrollCodeEditorTopComponent.jtFinancials.text" replaceFormat="org.openide.util.NbBundle.getMessage({sourceFileName}.class, &quot;{key}&quot;)"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="jrbDebit">
+      <Properties>
+        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+          <ComponentRef name="bgDebitCredit"/>
+        </Property>
+        <Property name="selected" type="boolean" value="true"/>
+        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
+          <ResourceString bundle="systems/tech247/prl/Bundle.properties" key="PayrollCodeEditorTopComponent.jrbDebit.text" replaceFormat="org.openide.util.NbBundle.getMessage({sourceFileName}.class, &quot;{key}&quot;)"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jrbDebitActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="jrbCredit">
+      <Properties>
+        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+          <ComponentRef name="bgDebitCredit"/>
+        </Property>
+        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
+          <ResourceString bundle="systems/tech247/prl/Bundle.properties" key="PayrollCodeEditorTopComponent.jrbCredit.text" replaceFormat="org.openide.util.NbBundle.getMessage({sourceFileName}.class, &quot;{key}&quot;)"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jrbCreditActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="jcbExport">
+      <Properties>
+        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
+          <ResourceString bundle="systems/tech247/prl/Bundle.properties" key="PayrollCodeEditorTopComponent.jcbExport.text" replaceFormat="org.openide.util.NbBundle.getMessage({sourceFileName}.class, &quot;{key}&quot;)"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jcbExportActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

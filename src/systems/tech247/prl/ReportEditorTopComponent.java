@@ -89,6 +89,8 @@ public final class ReportEditorTopComponent extends TopComponent implements Look
     Boolean subTotalsAtGroup = false;
     Boolean subTotalsAtSummary = false;
     Boolean includeAttendance = false;
+    Boolean includePageNumbers = false;
+    Boolean repeatColumnHeaders = false;
     
     
     InstanceContent ic = new InstanceContent();
@@ -265,6 +267,7 @@ public final class ReportEditorTopComponent extends TopComponent implements Look
         jLabel1 = new javax.swing.JLabel();
         jdcTo = new com.toedter.calendar.JDateChooser();
         jlCount = new javax.swing.JLabel();
+        jcbIncludePageNumbers = new javax.swing.JCheckBox();
 
         org.openide.awt.Mnemonics.setLocalizedText(jbPayrollCodeSelector, org.openide.util.NbBundle.getMessage(ReportEditorTopComponent.class, "ReportEditorTopComponent.jbPayrollCodeSelector.text")); // NOI18N
         jbPayrollCodeSelector.addActionListener(new java.awt.event.ActionListener() {
@@ -397,6 +400,13 @@ public final class ReportEditorTopComponent extends TopComponent implements Look
 
         org.openide.awt.Mnemonics.setLocalizedText(jlCount, org.openide.util.NbBundle.getMessage(ReportEditorTopComponent.class, "ReportEditorTopComponent.jlCount.text")); // NOI18N
 
+        org.openide.awt.Mnemonics.setLocalizedText(jcbIncludePageNumbers, org.openide.util.NbBundle.getMessage(ReportEditorTopComponent.class, "ReportEditorTopComponent.jcbIncludePageNumbers.text")); // NOI18N
+        jcbIncludePageNumbers.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcbIncludePageNumbersActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -414,10 +424,11 @@ public final class ReportEditorTopComponent extends TopComponent implements Look
                         .addComponent(jbPayrollCodeSelector, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jcbSubTotalPerDepartment)
                         .addComponent(jcbSubTotalAtSummary)
-                        .addComponent(jbReportRunner, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                    .addComponent(jlCount))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addComponent(jcbIncludePageNumbers))
+                    .addComponent(jlCount)
+                    .addComponent(jbReportRunner, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -438,11 +449,13 @@ public final class ReportEditorTopComponent extends TopComponent implements Look
                 .addComponent(jcbSubTotalPerDepartment)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jcbSubTotalAtSummary)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jbReportRunner)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jcbIncludePageNumbers)
                 .addGap(18, 18, 18)
+                .addComponent(jbReportRunner)
+                .addGap(31, 31, 31)
                 .addComponent(jlCount)
-                .addContainerGap(71, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -450,7 +463,7 @@ public final class ReportEditorTopComponent extends TopComponent implements Look
         
         selectedCodes.clear();
        
-        jlCount.setText("Code list is empty");
+        jlCount.setText("List Of Codes Has Been Cleared");
         
         DialogDisplayer.getDefault().notify(new DialogDescriptor(new PayrollCodesTopComponent("", Boolean.FALSE,Boolean.TRUE), "Select Transaction Codes"));
         
@@ -521,6 +534,10 @@ public final class ReportEditorTopComponent extends TopComponent implements Look
         }
     }//GEN-LAST:event_jcbWithCurrencyActionPerformed
 
+    private void jcbIncludePageNumbersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbIncludePageNumbersActionPerformed
+        includePageNumbers = jcbIncludePageNumbers.isSelected();
+    }//GEN-LAST:event_jcbIncludePageNumbersActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -529,6 +546,7 @@ public final class ReportEditorTopComponent extends TopComponent implements Look
     private javax.swing.JButton jbPayrollCodeSelector;
     private javax.swing.JButton jbReportRunner;
     private javax.swing.JCheckBox jcbIncludeAttendance;
+    private javax.swing.JCheckBox jcbIncludePageNumbers;
     private javax.swing.JCheckBox jcbSortByDept;
     private javax.swing.JCheckBox jcbSubTotalAtSummary;
     private javax.swing.JCheckBox jcbSubTotalPerDepartment;
@@ -658,28 +676,30 @@ public final class ReportEditorTopComponent extends TopComponent implements Look
                         //5. Basic Pay
                         //6. Attendance
                         //7. Net Currency (optional)
-                        ColumnBuilder[] columns = new ColumnBuilder[codesLength+6];
-                        String[] columnNames = new String[codesLength+6];
+                        ColumnBuilder[] columns = new ColumnBuilder[codesLength+7];
+                        String[] columnNames = new String[codesLength+7];
                         
                         if(includeCurrency){
-                            columns = new ColumnBuilder[codesLength+6+currencyList.size()];
-                            columnNames = new String[codesLength+6+currencyList.size()];
+                            columns = new ColumnBuilder[codesLength+7+currencyList.size()];
+                            columnNames = new String[codesLength+7+currencyList.size()];
                         }
                         
                         
                         handle.progress("Setting up report columns");
                         TextColumnBuilder<Integer> rowNumber = DynamicReports.col.column("No.","no",DynamicReports.type.integerType()).setStyle(alignLeft).setFixedWidth(22);
                         columns[0] = rowNumber;
+                        TextColumnBuilder pcode = DynamicReports.col.column("PR Code","code",DynamicReports.type.stringType());
+                        columns[1] = pcode;
                         TextColumnBuilder lname = DynamicReports.col.column("Sur-Name","surname",DynamicReports.type.stringType());
-                        columns[1] = lname;
+                        columns[2] = lname;
                         TextColumnBuilder fname = DynamicReports.col.column("Other Name","fname",DynamicReports.type.stringType());
-                        columns[2] = fname;
+                        columns[3] = fname;
                         TextColumnBuilder dept = DynamicReports.col.column("Dep't","dept",DynamicReports.type.stringType());
-                        columns[3] = dept;
+                        columns[4] = dept;
                         TextColumnBuilder basic = DynamicReports.col.column("Basic","basic",DynamicReports.type.bigDecimalType());
-                        columns[4] = basic;
+                        columns[5] = basic;
                         TextColumnBuilder att = DynamicReports.col.column("Days","att",DynamicReports.type.integerType());
-                        columns[5] = att;
+                        columns[6] = att;
                         
                         
                         
@@ -691,21 +711,21 @@ public final class ReportEditorTopComponent extends TopComponent implements Look
                             subtotalsG = new AggregationSubtotalBuilder[selectedCodes.size()+1+currencyList.size()];
                         }
                         //subtotal for basic
-                        subtotals[0]= sbt.sum((TextColumnBuilder)columns[4]);
-                        subtotalsG[0] = sbt.sum((TextColumnBuilder)columns[4]);
+                        subtotals[0]= sbt.sum((TextColumnBuilder)columns[5]);
+                        subtotalsG[0] = sbt.sum((TextColumnBuilder)columns[5]);
                         for(int i=0; i<selectedCodes.size(); i++){
-                            columns[i+6] = DynamicReports.col.column(selectedCodes.get(i).getReportLabel(),selectedCodes.get(i).getPayrollCodeCode(),DynamicReports.type.doubleType());
-                            subtotals[i+1] = sbt.sum((TextColumnBuilder)columns[i+6]);
-                            subtotalsG[i+1] = sbt.sum((TextColumnBuilder)columns[i+6]);
+                            columns[i+7] = DynamicReports.col.column(selectedCodes.get(i).getReportLabel(),selectedCodes.get(i).getPayrollCodeCode(),DynamicReports.type.doubleType());
+                            subtotals[i+1] = sbt.sum((TextColumnBuilder)columns[i+7]);
+                            subtotalsG[i+1] = sbt.sum((TextColumnBuilder)columns[i+7]);
                         }
                         if(includeCurrency){
-                            int counter=0;
+                            
                             String code = selectedcode.getPayrollCodeName().substring(0, 5);
                             for(int i=1; i<= currencyList.size(); i++){
-                                columns[codesLength+5+i] = DynamicReports.col.column(code+"-"+currencyList.get(i-1).getCurrencyCode(),currencyList.get(i-1).getCurrencyCode(),DynamicReports.type.doubleType());
-                                subtotals[codesLength+i] = sbt.sum((TextColumnBuilder)columns[codesLength+5+i]);
-                                subtotalsG[codesLength+i] = sbt.sum((TextColumnBuilder)columns[codesLength+5+i]);
-                                counter = i;
+                                columns[codesLength+6+i] = DynamicReports.col.column(code+"-"+currencyList.get(i-1).getCurrencyCode(),currencyList.get(i-1).getCurrencyCode(),DynamicReports.type.doubleType());
+                                subtotals[codesLength+i] = sbt.sum((TextColumnBuilder)columns[codesLength+6+i]);
+                                subtotalsG[codesLength+i] = sbt.sum((TextColumnBuilder)columns[codesLength+6+i]);
+                                
                             }
                             //NotifyUtil.info("Currency Columns", counter+" Columns", false);
                             
@@ -714,22 +734,23 @@ public final class ReportEditorTopComponent extends TopComponent implements Look
                     
                         handle.progress("Creating Data Source");
                         columnNames[0]="no";
-                        columnNames[1]="surname";
-                        columnNames[2]="fname"; //Filling in the initial fields
-                        columnNames[3]="dept";
-                        columnNames[4]="basic";
-                        columnNames[5]="att";
+                        columnNames[1]="code";
+                        columnNames[2]="surname";
+                        columnNames[3]="fname"; //Filling in the initial fields
+                        columnNames[4]="dept";
+                        columnNames[5]="basic";
+                        columnNames[6]="att";
                         if(includeCurrency){
-                            int counter=0;
+                            
                             for(int i=1; i<= currencyList.size(); i++){
-                                columnNames[codesLength+5+i] = currencyList.get(i-1).getCurrencyCode();
-                                counter = i;
+                                columnNames[codesLength+6+i] = currencyList.get(i-1).getCurrencyCode();
+                                
                             }
                             //NotifyUtil.info("Currency Column Names", counter+"", false);
                         }
                         
                         for(int i=0;i<selectedCodes.size();i++){
-                            columnNames[i+6] = selectedCodes.get(i).getPayrollCodeCode();
+                            columnNames[i+7] = selectedCodes.get(i).getPayrollCodeCode();
                         }
                         NotifyUtil.info("Columns Added", columnNames.length+ " Columns", false);
                         handle.progress("Adding The Data");
@@ -737,37 +758,39 @@ public final class ReportEditorTopComponent extends TopComponent implements Look
                     
                         if(sortByDepartment){
                             int i = 0;
-                            List<OrganizationUnits> list = DataAccess.searchDepartments("SELECT o FROM OrganizationUnits o");
+                            List list = DataAccess.getDepartmentIDInPayrollPeriod(period, prl.getPayrollID());
                             //Process per OU
-                            for(OrganizationUnits u:list){
-                                List<Employees> liste = DataAccess.searchEmployeesPerDepartmentAndPayroll(u.getOrganizationUnitID(), prl.getPayrollID());
+                            for(Object o:list){
+                                OrganizationUnits u = DataAccess.entityManager.find(OrganizationUnits.class, o);
+                                List<Employees> liste = DataAccess.getEmployeesPerDepartmentIDInPayrollPeriod(period, prl.getPayrollID(), u.getOrganizationUnitID());
                                 for(Employees e: liste){
                                     counter = counter + 1;
                                     
                                     handle.progress(counter+" / "+total+" Data For " + e.getSurName()+" "+e.getOtherNames());
-                                    if(!e.getIsDisengaged()){
+                                    if(true){
                                         
-                                        Object[] data = new Object[selectedCodes.size()+6];
+                                        Object[] data = new Object[selectedCodes.size()+7];
                                         if(includeCurrency){
-                                            data = new Object[selectedCodes.size()+currencyList.size()+6];
+                                            data = new Object[selectedCodes.size()+currencyList.size()+7];
                                         }
                                         data[0] = i+1;
-                                        data[1] = e.getSurName();
-                                        data[2] = e.getOtherNames();
-                                        data[3] = e.getOrganizationUnitID().getOrganizationUnitName();
-                                        data[4] = e.getBasicPay();
+                                        data[1] = e.getEmpCode();
+                                        data[2] = e.getSurName();
+                                        data[3] = e.getOtherNames();
+                                        data[4] = u.getOrganizationUnitName();
+                                        data[5] = e.getBasicPay();
                                         handle.progress(counter+ " / "+ total+" Attendance For "+ e.getSurName()+" "+e.getOtherNames());
-                                        data[5] = DataAccess.getAttendanceDays(e.getEmployeeID(), from, to);
+                                        data[6] = DataAccess.getAttendanceDays(e.getEmployeeID(), from, to);
                                         
                                         
                                         for(int j=0;j<selectedCodes.size();j++){
-                                            data[j+6] = DataAccess.getPayrollAmount(e, selectedCodes.get(j).getPayrollCodeID().intValue(), period);
+                                            data[j+7] = DataAccess.getPayrollAmount(e, selectedCodes.get(j).getPayrollCodeID().intValue(), period);
                                         }
                                         
                                         if(includeCurrency){
                                             int counter = 0;
                                             for(int k = 1; k<=currencyList.size(); k++){
-                                                data[selectedCodes.size()+k+5] = DataAccess.getAmountInCodeCurrency(e.getEmployeeID(), selectedcode.getPayrollCodeID().intValue(), currencyList.get(k-1).getCurrencyID(), period);
+                                                data[selectedCodes.size()+k+6] = DataAccess.getAmountInCodeCurrency(e.getEmployeeID(), selectedcode.getPayrollCodeID().intValue(), currencyList.get(k-1).getCurrencyID(), period);
                                                 counter = k;
                                             }
                                             // NotifyUtil.info("Currency Data", counter+" Sets Added", false);
@@ -787,28 +810,27 @@ public final class ReportEditorTopComponent extends TopComponent implements Look
                             list.addAll(prl.getEmployeesCollection());
                     
                             for(int i=0; i<list.size(); i++){
-                                Object[] data = new Object[selectedCodes.size()+6];
+                                Object[] data = new Object[selectedCodes.size()+7];
                                 if(includeCurrency){
-                                    data = new Object[selectedCodes.size()+6+currencyList.size()];
+                                    data = new Object[selectedCodes.size()+7+currencyList.size()];
                                 }
                                 data[0] = i+1;
-                                data[1] = list.get(i).getSurName();
-                                data[2] = list.get(i).getOtherNames();
-                                data[3] = list.get(i).getOrganizationUnitID().getOrganizationUnitName();
-                                data[4] = list.get(i).getBasicPay();
-                                data[5] = DataAccess.getAttendanceDays(list.get(i).getEmployeeID(),from,to);
+                                data[1] = list.get(i).getEmpCode();
+                                data[2] = list.get(i).getSurName();
+                                data[3] = list.get(i).getOtherNames();
+                                data[4] = list.get(i).getOrganizationUnitID().getOrganizationUnitName();
+                                data[5] = list.get(i).getBasicPay();
+                                data[6] = DataAccess.getAttendanceDays(list.get(i).getEmployeeID(),from,to);
                                 
                                 if(includeCurrency){
                                     for(int k = 1; k<=currencyList.size(); k++){
-                                                data[selectedCodes.size()+k+5] = DataAccess.getAmountInCodeCurrency(list.get(i).getEmployeeID(), selectedcode.getPayrollCodeID().intValue(), currencyList.get(k-1).getCurrencyID(), period);
-                                                
-                                            }
+                                        data[selectedCodes.size()+k+6] = DataAccess.getAmountInCodeCurrency(list.get(i).getEmployeeID(), selectedcode.getPayrollCodeID().intValue(), currencyList.get(k-1).getCurrencyID(), period);
+                                    }
                                 }
                                 
-                                
-                                
+                                                        
                                 for(int j=0;j<selectedCodes.size();j++){
-                                    data[j+6]=DataAccess.getPayrollAmount(list.get(i), selectedCodes.get(j).getPayrollCodeID().intValue(), period);
+                                    data[j+7]=DataAccess.getPayrollAmount(list.get(i), selectedCodes.get(j).getPayrollCodeID().intValue(), period);
                                 }
                     
                             dataSource.add(data);
@@ -817,7 +839,7 @@ public final class ReportEditorTopComponent extends TopComponent implements Look
                     
                     handle.progress("Finalising");
                     
-                    ReportPayroll design = new ReportPayroll(columns, columnNames,subtotals,subtotalsG,dataSource,sortByDepartment,subTotalsAtGroup,subTotalsAtSummary,period,prl);
+                    ReportPayroll design = new ReportPayroll(columns, columnNames,subtotals,subtotalsG,dataSource,sortByDepartment,subTotalsAtGroup,subTotalsAtSummary,period,prl,includePageNumbers);
                     JasperReportBuilder report = design.getReport();
                     try {
                         report.show(false);
@@ -839,26 +861,28 @@ public final class ReportEditorTopComponent extends TopComponent implements Look
                         //5. Basic Pay
                         //6. Attendance
                         //7. Net Currency (optional)
-                        ColumnBuilder[] columns = new ColumnBuilder[codesLength+5];
-                        String[] columnNames = new String[codesLength+5];
+                        ColumnBuilder[] columns = new ColumnBuilder[codesLength+6];
+                        String[] columnNames = new String[codesLength+6];
                         
                         if(includeCurrency){
-                            columns = new ColumnBuilder[codesLength+5+currencyList.size()];
-                            columnNames = new String[codesLength+5+currencyList.size()];
+                            columns = new ColumnBuilder[codesLength+6+currencyList.size()];
+                            columnNames = new String[codesLength+6+currencyList.size()];
                         }
                         
                         
                         handle.progress("Setting up report columns");
                         TextColumnBuilder<Integer> rowNumber = DynamicReports.col.column("No.","no",DynamicReports.type.integerType()).setStyle(alignLeft).setFixedWidth(22);
                         columns[0] = rowNumber;
+                        TextColumnBuilder pcode = DynamicReports.col.column("PR Code","code",DynamicReports.type.stringType());
+                        columns[1] = pcode;
                         TextColumnBuilder lname = DynamicReports.col.column("Sur-Name","surname",DynamicReports.type.stringType());
-                        columns[1] = lname;
+                        columns[2] = lname;
                         TextColumnBuilder fname = DynamicReports.col.column("Other Name","fname",DynamicReports.type.stringType());
-                        columns[2] = fname;
+                        columns[3] = fname;
                         TextColumnBuilder dept = DynamicReports.col.column("Dep't","dept",DynamicReports.type.stringType());
-                        columns[3] = dept;
+                        columns[4] = dept;
                         TextColumnBuilder basic = DynamicReports.col.column("Basic","basic",DynamicReports.type.bigDecimalType());
-                        columns[4] = basic;
+                        columns[5] = basic;
                         //TextColumnBuilder att = DynamicReports.col.column("Days","att",DynamicReports.type.integerType());
                         //columns[5] = att;
                         
@@ -872,20 +896,20 @@ public final class ReportEditorTopComponent extends TopComponent implements Look
                             subtotalsG = new AggregationSubtotalBuilder[selectedCodes.size()+1+currencyList.size()];
                         }
                         //subtotal for basic
-                        subtotals[0]= sbt.sum((TextColumnBuilder)columns[4]);
-                        subtotalsG[0] = sbt.sum((TextColumnBuilder)columns[4]);
+                        subtotals[0]= sbt.sum((TextColumnBuilder)columns[5]);
+                        subtotalsG[0] = sbt.sum((TextColumnBuilder)columns[5]);
                         for(int i=0; i<selectedCodes.size(); i++){
-                            columns[i+5] = DynamicReports.col.column(selectedCodes.get(i).getReportLabel(),selectedCodes.get(i).getPayrollCodeCode(),DynamicReports.type.doubleType());
-                            subtotals[i+1] = sbt.sum((TextColumnBuilder)columns[i+5]);
-                            subtotalsG[i+1] = sbt.sum((TextColumnBuilder)columns[i+5]);
+                            columns[i+6] = DynamicReports.col.column(selectedCodes.get(i).getReportLabel(),selectedCodes.get(i).getPayrollCodeCode(),DynamicReports.type.doubleType());
+                            subtotals[i+1] = sbt.sum((TextColumnBuilder)columns[i+6]);
+                            subtotalsG[i+1] = sbt.sum((TextColumnBuilder)columns[i+6]);
                         }
                         if(includeCurrency){
                             int counter=0;
                             String code = selectedcode.getPayrollCodeName().substring(0, 5);
                             for(int i=1; i<= currencyList.size(); i++){
-                                columns[codesLength+4+i] = DynamicReports.col.column(code+"-"+currencyList.get(i-1).getCurrencyCode(),currencyList.get(i-1).getCurrencyCode(),DynamicReports.type.doubleType());
-                                subtotals[codesLength+i] = sbt.sum((TextColumnBuilder)columns[codesLength+4+i]);
-                                subtotalsG[codesLength+i] = sbt.sum((TextColumnBuilder)columns[codesLength+4+i]);
+                                columns[codesLength+5+i] = DynamicReports.col.column(code+"-"+currencyList.get(i-1).getCurrencyCode(),currencyList.get(i-1).getCurrencyCode(),DynamicReports.type.doubleType());
+                                subtotals[codesLength+i] = sbt.sum((TextColumnBuilder)columns[codesLength+5+i]);
+                                subtotalsG[codesLength+i] = sbt.sum((TextColumnBuilder)columns[codesLength+5+i]);
                                 counter = i;
                             }
                             //NotifyUtil.info("Currency Columns", counter+" Columns", false);
@@ -895,22 +919,23 @@ public final class ReportEditorTopComponent extends TopComponent implements Look
                     
                         handle.progress("Creating Data Source");
                         columnNames[0]="no";
-                        columnNames[1]="surname";
-                        columnNames[2]="fname"; //Filling in the initial fields
-                        columnNames[3]="dept";
-                        columnNames[4]="basic";
+                        columnNames[1]="code";
+                        columnNames[2]="surname";
+                        columnNames[3]="fname"; //Filling in the initial fields
+                        columnNames[4]="dept";
+                        columnNames[5]="basic";
                         //columnNames[5]="att";
                         if(includeCurrency){
                             int counter=0;
                             for(int i=1; i<= currencyList.size(); i++){
-                                columnNames[codesLength+4+i] = currencyList.get(i-1).getCurrencyCode();
+                                columnNames[codesLength+5+i] = currencyList.get(i-1).getCurrencyCode();
                                 counter = i;
                             }
                             NotifyUtil.info("Currency Column Names", counter+"", false);
                         }
                         
                         for(int i=0;i<selectedCodes.size();i++){
-                            columnNames[i+5] = selectedCodes.get(i).getPayrollCodeCode();
+                            columnNames[i+6] = selectedCodes.get(i).getPayrollCodeCode();
                         }
                         NotifyUtil.info("Columns Added", columnNames.length+ " Columns", false);
                         handle.progress("Adding The Data");
@@ -925,27 +950,28 @@ public final class ReportEditorTopComponent extends TopComponent implements Look
                                 for(Employees e: liste){
                                     handle.progress("Data For " + e.getSurName()+" "+e.getOtherNames());
                                     if(!e.getIsDisengaged()){
-                                        Object[] data = new Object[selectedCodes.size()+5];
+                                        Object[] data = new Object[selectedCodes.size()+6];
                                         if(includeCurrency){
-                                            data = new Object[selectedCodes.size()+currencyList.size()+5];
+                                            data = new Object[selectedCodes.size()+currencyList.size()+6];
                                         }
                                         data[0] = i+1;
-                                        data[1] = e.getSurName();
-                                        data[2] = e.getOtherNames();
-                                        data[3] = e.getOrganizationUnitID().getOrganizationUnitName();
-                                        data[4] = e.getBasicPay();
+                                        data[1] = e.getEmpCode();
+                                        data[2] = e.getSurName();
+                                        data[3] = e.getOtherNames();
+                                        data[4] = e.getOrganizationUnitID().getOrganizationUnitName();
+                                        data[5] = e.getBasicPay();
                                        // handle.progress("Attendance For "+ e.getSurName()+" "+e.getOtherNames());
                                        // data[4] = DataAccess.getAttendanceDays(e.getEmployeeID(), from, to);
                                         
                                         
                                         for(int j=0;j<selectedCodes.size();j++){
-                                            data[j+5] = DataAccess.getPayrollAmount(e, selectedCodes.get(j).getPayrollCodeID().intValue(), period);
+                                            data[j+6] = DataAccess.getPayrollAmount(e, selectedCodes.get(j).getPayrollCodeID().intValue(), period);
                                         }
                                         
                                         if(includeCurrency){
                                             int counter = 0;
                                             for(int k = 1; k<=currencyList.size(); k++){
-                                                data[selectedCodes.size()+k+4] = DataAccess.getAmountInCodeCurrency(e.getEmployeeID(), selectedcode.getPayrollCodeID().intValue(), currencyList.get(k-1).getCurrencyID(), period);
+                                                data[selectedCodes.size()+k+5] = DataAccess.getAmountInCodeCurrency(e.getEmployeeID(), selectedcode.getPayrollCodeID().intValue(), currencyList.get(k-1).getCurrencyID(), period);
                                                 counter = k;
                                             }
                                             NotifyUtil.info("Currency Data", counter+" Sets Added", false);
@@ -965,20 +991,21 @@ public final class ReportEditorTopComponent extends TopComponent implements Look
                             list.addAll(prl.getEmployeesCollection());
                     
                             for(int i=0; i<list.size(); i++){
-                                Object[] data = new Object[selectedCodes.size()+5];
+                                Object[] data = new Object[selectedCodes.size()+6];
                                 if(includeCurrency){
-                                    data = new Object[selectedCodes.size()+5+currencyList.size()];
+                                    data = new Object[selectedCodes.size()+6+currencyList.size()];
                                 }
                                 data[0] = i+1;
-                                data[1] = list.get(i).getSurName();
-                                data[2] = list.get(i).getOtherNames();
-                                data[3] = list.get(i).getOrganizationUnitID().getOrganizationUnitName();
-                                data[4] = list.get(i).getBasicPay();
+                                data[1] = list.get(i).getEmpCode();
+                                data[2] = list.get(i).getSurName();
+                                data[3] = list.get(i).getOtherNames();
+                                data[4] = list.get(i).getOrganizationUnitID().getOrganizationUnitName();
+                                data[5] = list.get(i).getBasicPay();
                                 //data[5] = DataAccess.getAttendanceDays(list.get(i).getEmployeeID(),from,to);
                                 
                                 if(includeCurrency){
                                     for(int k = 1; k<=currencyList.size(); k++){
-                                                data[selectedCodes.size()+k+4] = DataAccess.getAmountInCodeCurrency(list.get(i).getEmployeeID(), selectedcode.getPayrollCodeID().intValue(), currencyList.get(k-1).getCurrencyID(), period);
+                                                data[selectedCodes.size()+k+5] = DataAccess.getAmountInCodeCurrency(list.get(i).getEmployeeID(), selectedcode.getPayrollCodeID().intValue(), currencyList.get(k-1).getCurrencyID(), period);
                                                 
                                             }
                                 }
@@ -986,7 +1013,7 @@ public final class ReportEditorTopComponent extends TopComponent implements Look
                                 
                                 
                                 for(int j=0;j<selectedCodes.size();j++){
-                                    data[j+5]=DataAccess.getPayrollAmount(list.get(i), selectedCodes.get(j).getPayrollCodeID().intValue(), period);
+                                    data[j+6]=DataAccess.getPayrollAmount(list.get(i), selectedCodes.get(j).getPayrollCodeID().intValue(), period);
                                 }
                     
                             dataSource.add(data);
@@ -995,7 +1022,7 @@ public final class ReportEditorTopComponent extends TopComponent implements Look
                     
                     handle.progress("Finalising");
                     
-                    ReportPayroll design = new ReportPayroll(columns, columnNames,subtotals,subtotalsG,dataSource,sortByDepartment,subTotalsAtGroup,subTotalsAtSummary,period,prl);
+                    ReportPayroll design = new ReportPayroll(columns, columnNames,subtotals,subtotalsG,dataSource,sortByDepartment,subTotalsAtGroup,subTotalsAtSummary,period,prl,includePageNumbers);
                     JasperReportBuilder report = design.getReport();
                     try {
                         report.show(false);

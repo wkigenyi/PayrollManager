@@ -127,12 +127,19 @@ public class FactoryPLRSetup extends ChildFactory<SetupItem> {
                 lstTc.requestActive();
             }
         },ic));
-        toPopulate.add(new SetupItem("Match Departments TO SUN"));
+        toPopulate.add(new SetupItem("Match Departments To Financials",new AbstractAction() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        
+                    }
+                }));
         toPopulate.add(new SetupItem("Salary Calculator",new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 TopComponent salaryTc = WindowManager.getDefault().findTopComponent("SalaryCalculatorTopComponent");
                 salaryTc.open();
+                salaryTc.requestActive();
+                        
             }
         }));
         
@@ -144,6 +151,7 @@ public class FactoryPLRSetup extends ChildFactory<SetupItem> {
                     public void actionPerformed(ActionEvent e) {
                         TopComponent txEditor = WindowManager.getDefault().findTopComponent("TransactionEditorTopComponent");
                         txEditor.open();
+                        txEditor.requestActive();
                     }
             
         }));

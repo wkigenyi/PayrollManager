@@ -8,6 +8,8 @@ package systems.tech247.prl;
 import java.lang.reflect.InvocationTargetException;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
+import org.openide.DialogDisplayer;
+import org.openide.NotifyDescriptor;
 import org.openide.nodes.AbstractNode;
 import org.openide.nodes.Children;
 import org.openide.nodes.PropertySupport;
@@ -16,6 +18,7 @@ import org.openide.nodes.Sheet.Set;
 import org.openide.util.lookup.AbstractLookup;
 import org.openide.util.lookup.InstanceContent;
 import org.openide.windows.TopComponent;
+import systems.tech247.dbaccess.DataAccess;
 import systems.tech247.hr.TblEmployeeTransactions;
 import systems.tech247.util.CapDeletable;
 import systems.tech247.util.CapEditable;
@@ -48,7 +51,12 @@ public class NodeEmployeePeriodTransaction extends  AbstractNode{
         instanceContent.add(new CapDeletable() {
             @Override
             public void delete() {
-                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                Object result = DialogDisplayer.getDefault().notify(new NotifyDescriptor.Confirmation("Your About To Delete A transactiion", "Delete Transaction?"));
+                if(result == NotifyDescriptor.YES_OPTION){
+                    DataAccess.entityManager.getTransaction().begin();
+                    DataAccess.entityManager.remove(trans);
+                    DataAccess.entityManager.getTransaction().commit();
+                }
             }
         });
                 

@@ -15,7 +15,6 @@ import org.openide.util.lookup.AbstractLookup;
 import org.openide.util.lookup.InstanceContent;
 import systems.tech247.dbaccess.DataAccess;
 import systems.tech247.hr.Employees;
-import systems.tech247.hr.TblEmployeePeriodDetails;
 import systems.tech247.hr.TblEmployeeTransactions;
 import systems.tech247.hr.TblPeriods;
 import systems.tech247.util.CetusUTL;
@@ -43,22 +42,16 @@ public class QueryEmployeeTransaction implements Lookup.Provider {
         // create an abstract look to expose the contents of the instance content
         lookup = new AbstractLookup(ic);
         //Add a reloadable capabiliry to the instance content
-        ic.add(new ReloadableQueryCapability() {
-            @Override
-            public void reload() throws Exception {
-                
-                getList().removeAll(list);
-                ProgressHandle ph = ProgressHandleFactory.createHandle("Loading Employee Transactions..");
-                ph.start();
-                DataAccess da = new DataAccess();
-                List<TblEmployeeTransactions> list = da.getEmployeeTransactions(emp.getEmployeeID(), p.getPeriodYear(), CetusUTL.covertMonthsToInt(p.getPeriodMonth()));
-                        for (TblEmployeeTransactions e: list){
-                    
-                            getList().add(e);
-                    
-                        }
-                ph.finish();
-            }
+        ic.add((ReloadableQueryCapability) () -> {
+            getList().removeAll(list);
+            ProgressHandle ph = ProgressHandleFactory.createHandle("Loading Employee Transactions..");
+            ph.start();
+            DataAccess da = new DataAccess();
+            List<TblEmployeeTransactions> list1 = DataAccess.getEmployeeTransactions(emp.getEmployeeID(), p.getPeriodYear(), CetusUTL.covertMonthsToInt(p.getPeriodMonth()));
+            list1.forEach((e) -> {
+                getList().add(e);
+            });
+            ph.finish();
         });
     }
 

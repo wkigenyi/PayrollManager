@@ -15,6 +15,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.AbstractAction;
 import javax.swing.Action;
+import org.openide.DialogDisplayer;
+import org.openide.NotifyDescriptor;
 import org.openide.nodes.AbstractNode;
 import org.openide.nodes.Children;
 import org.openide.nodes.Node.Property;
@@ -67,15 +69,22 @@ public class NodeEmployeePayrollCode extends  AbstractNode implements LookupList
         instanceContent.add(new CapDeletable() {
             @Override
             public void delete() {
-                TblPayrollCode codes = DataAccess.entityManager.find(TblPayrollCode.class, code.getPayrollCodeID());
+                //Confirm intent to delete
+                Object result = DialogDisplayer.getDefault().notify(new NotifyDescriptor.Confirmation("Confirm Delete", "Do you want to delete this Employee Payroll Code?"));
+                if(result == NotifyDescriptor.YES_OPTION){
+                    TblEmployeePayrollCode codes = DataAccess.entityManager.find(TblEmployeePayrollCode.class, code.getEmployeeCodeID());
                 try{
                     DataAccess.entityManager.getTransaction().begin();
                     DataAccess.entityManager.remove(codes);
                     DataAccess.entityManager.getTransaction().commit();
                     UtilityPLR.prlIC.set(Arrays.asList(new NodeRefreshEmployeePayrollCode()), null);
-                }catch(NullPointerException ex){
+                }catch(Exception ex){
                     NotifyUtil.error("This Code has associations", "Cannot be deleted", ex, true);
                 }
+            }
+                
+                
+                
             }
         });
         rslt.addLookupListener(this);
@@ -231,10 +240,13 @@ public class NodeEmployeePayrollCode extends  AbstractNode implements LookupList
     public void resultChanged(LookupEvent ev) {
         Lookup.Result<NodeRefreshEmployeePayrollCode> rslt = (Lookup.Result<NodeRefreshEmployeePayrollCode>)ev.getSource();
         for(NodeRefreshEmployeePayrollCode e:rslt.allInstances()){
+            try{
             TblEmployeePayrollCode codes = DataAccess.entityManager.find(TblEmployeePayrollCode.class, code.getPayrollCodeID());
             try{
             setDisplayName(codes.getPayrollCodeID().getPayrollCodeName());
             }catch(NullPointerException ex){
+                
+            }}catch(Exception ex){
                 
             }
         }    

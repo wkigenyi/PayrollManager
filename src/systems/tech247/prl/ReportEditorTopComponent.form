@@ -30,12 +30,13 @@
                       <Component id="jbPayrollCodeSelector" alignment="1" max="32767" attributes="0"/>
                       <Component id="jcbSubTotalPerDepartment" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="jcbSubTotalAtSummary" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jbReportRunner" alignment="1" max="32767" attributes="0"/>
                       <Component id="jPanel2" alignment="0" pref="0" max="32767" attributes="0"/>
+                      <Component id="jcbIncludePageNumbers" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Component id="jlCount" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="jbReportRunner" alignment="0" min="-2" pref="215" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace pref="14" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -59,11 +60,13 @@
               <Component id="jcbSubTotalPerDepartment" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jcbSubTotalAtSummary" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="jbReportRunner" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="jcbIncludePageNumbers" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="jbReportRunner" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
               <Component id="jlCount" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="71" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -291,6 +294,16 @@
           <ResourceString bundle="systems/tech247/prl/Bundle.properties" key="ReportEditorTopComponent.jlCount.text" replaceFormat="org.openide.util.NbBundle.getMessage({sourceFileName}.class, &quot;{key}&quot;)"/>
         </Property>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="jcbIncludePageNumbers">
+      <Properties>
+        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
+          <ResourceString bundle="systems/tech247/prl/Bundle.properties" key="ReportEditorTopComponent.jcbIncludePageNumbers.text" replaceFormat="org.openide.util.NbBundle.getMessage({sourceFileName}.class, &quot;{key}&quot;)"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jcbIncludePageNumbersActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

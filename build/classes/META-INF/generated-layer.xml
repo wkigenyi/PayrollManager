@@ -77,6 +77,14 @@
   <instance class="systems.tech247.prl.EmployeeTransactionEditorTopComponent"/>
 </settings>
 ]]></file>
+            <file name="ReportEditorTopComponent.settings">
+                <!--systems.tech247.prl.ExportToFinancialsTopComponent-->
+                <!--systems.tech247.prl.ReportEditorTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE settings PUBLIC "-//NetBeans//DTD Session settings 1.0//EN" "http://www.netbeans.org/dtds/sessionsettings-1_0.dtd">
+<settings version="1.0">
+  <instance class="systems.tech247.prl.ReportEditorTopComponent"/>
+</settings>
+]]></file>
             <file name="LSTTierEditorTopComponent.settings">
                 <!--systems.tech247.prl.LSTTierEditorTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE settings PUBLIC "-//NetBeans//DTD Session settings 1.0//EN" "http://www.netbeans.org/dtds/sessionsettings-1_0.dtd">
@@ -201,13 +209,6 @@
 <!DOCTYPE settings PUBLIC "-//NetBeans//DTD Session settings 1.0//EN" "http://www.netbeans.org/dtds/sessionsettings-1_0.dtd">
 <settings version="1.0">
   <instance class="systems.tech247.prl.PeriodsTopComponent"/>
-</settings>
-]]></file>
-            <file name="ReportEditorTopComponent.settings">
-                <!--systems.tech247.prl.ReportEditorTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE settings PUBLIC "-//NetBeans//DTD Session settings 1.0//EN" "http://www.netbeans.org/dtds/sessionsettings-1_0.dtd">
-<settings version="1.0">
-  <instance class="systems.tech247.prl.ReportEditorTopComponent"/>
 </settings>
 ]]></file>
             <file name="SalaryCalculatorTopComponent.settings">
@@ -348,6 +349,15 @@
   <state opened="false"/>
 </tc-ref>
 ]]></file>
+                <file name="ReportEditorTopComponent.wstcref">
+                    <!--systems.tech247.prl.ExportToFinancialsTopComponent-->
+                    <!--systems.tech247.prl.ReportEditorTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tc-ref PUBLIC "-//NetBeans//DTD Top Component in Mode Properties 2.0//EN" "http://www.netbeans.org/dtds/tc-ref2_0.dtd">
+<tc-ref version="2.0">
+  <tc-id id="ReportEditorTopComponent"/>
+  <state opened="false"/>
+</tc-ref>
+]]></file>
                 <file name="LSTTierEditorTopComponent.wstcref">
                     <!--systems.tech247.prl.LSTTierEditorTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE tc-ref PUBLIC "-//NetBeans//DTD Top Component in Mode Properties 2.0//EN" "http://www.netbeans.org/dtds/tc-ref2_0.dtd">
@@ -452,14 +462,6 @@
   <state opened="false"/>
 </tc-ref>
 ]]></file>
-                <file name="ReportEditorTopComponent.wstcref">
-                    <!--systems.tech247.prl.ReportEditorTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE tc-ref PUBLIC "-//NetBeans//DTD Top Component in Mode Properties 2.0//EN" "http://www.netbeans.org/dtds/tc-ref2_0.dtd">
-<tc-ref version="2.0">
-  <tc-id id="ReportEditorTopComponent"/>
-  <state opened="false"/>
-</tc-ref>
-]]></file>
                 <file name="SalaryCalculatorTopComponent.wstcref">
                     <!--systems.tech247.prl.SalaryCalculatorTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE tc-ref PUBLIC "-//NetBeans//DTD Top Component in Mode Properties 2.0//EN" "http://www.netbeans.org/dtds/tc-ref2_0.dtd">
@@ -529,6 +531,11 @@
                 <file name="EmployeeTransactionEditor" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
                     <!--systems.tech247.prl.EmployeeTransactionEditorTopComponent-->
                     <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//EmployeeTransactionEditor//EN"/>
+                </file>
+                <file name="ReportEditor" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--systems.tech247.prl.ExportToFinancialsTopComponent-->
+                    <!--systems.tech247.prl.ReportEditorTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//ReportEditor//EN"/>
                 </file>
                 <file name="LSTTierEditor" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
                     <!--systems.tech247.prl.LSTTierEditorTopComponent-->
@@ -602,10 +609,6 @@
                     <!--systems.tech247.prl.PeriodsTopComponent-->
                     <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//Periods//EN"/>
                 </file>
-                <file name="ReportEditor" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
-                    <!--systems.tech247.prl.ReportEditorTopComponent-->
-                    <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//ReportEditor//EN"/>
-                </file>
                 <file name="SalaryCalculator" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
                     <!--systems.tech247.prl.SalaryCalculatorTopComponent-->
                     <attr name="hint.originalPublicID" stringvalue="-//systems.tech247.prl//SalaryCalculator//EN"/>
@@ -661,6 +664,10 @@
                         <file name="EmployeeTransactionEditorTopComponent">
                             <!--systems.tech247.prl.EmployeeTransactionEditorTopComponent-->
                             <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/EmployeeTransactionEditor.instance"/>
+                        </file>
+                        <file name="ExportToFinancialsTopComponent">
+                            <!--systems.tech247.prl.ExportToFinancialsTopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//systems_tech247_prl/ReportEditor.instance"/>
                         </file>
                         <file name="LSTTierEditorTopComponent">
                             <!--systems.tech247.prl.LSTTierEditorTopComponent-->
@@ -848,6 +855,17 @@
                     <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.EmployeeTransactionEditorTopComponent"/>
                     <attr boolvalue="true" name="xmlproperties.preventStoring"/>
                 </file>
+                <file name="ReportEditor.instance">
+                    <!--systems.tech247.prl.ExportToFinancialsTopComponent-->
+                    <!--systems.tech247.prl.ReportEditorTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.ReportEditorTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.ReportEditorTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
                 <file name="LSTTierEditor.instance">
                     <!--systems.tech247.prl.LSTTierEditorTopComponent-->
                     <attr
@@ -1026,16 +1044,6 @@
                         methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
                     <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.PeriodsTopComponent"/>
                     <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.PeriodsTopComponent"/>
-                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
-                </file>
-                <file name="ReportEditor.instance">
-                    <!--systems.tech247.prl.ReportEditorTopComponent-->
-                    <attr
-                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
-                    <attr
-                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
-                    <attr name="settings.instanceClass" stringvalue="systems.tech247.prl.ReportEditorTopComponent"/>
-                    <attr name="settings.instanceOf" stringvalue="systems.tech247.prl.ReportEditorTopComponent"/>
                     <attr boolvalue="true" name="xmlproperties.preventStoring"/>
                 </file>
                 <file name="SalaryCalculator.instance">
