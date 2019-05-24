@@ -51,7 +51,12 @@ public final class PLREmployeeListTopComponent extends TopComponent implements E
         initComponents();
         setName(Bundle.CTL_PLREmployeeListTopComponent());
         setToolTipText(Bundle.HINT_PLREmployeeListTopComponent());
+        putClientProperty(TopComponent.PROP_UNDOCKING_DISABLED, Boolean.TRUE);
         putClientProperty(TopComponent.PROP_CLOSING_DISABLED, Boolean.TRUE);
+        putClientProperty(TopComponent.PROP_DND_COPY_DISABLED, Boolean.TRUE);
+        putClientProperty(TopComponent.PROP_DRAGGING_DISABLED, Boolean.TRUE);
+        putClientProperty(TopComponent.PROP_MAXIMIZATION_DISABLED, Boolean.TRUE);
+        putClientProperty(TopComponent.PROP_SLIDING_DISABLED, Boolean.TRUE);
         vPanel.setLayout(new BorderLayout());
         BeanTreeView btv = new BeanTreeView();
         btv.setRootVisible(false);
@@ -164,13 +169,13 @@ public final class PLREmployeeListTopComponent extends TopComponent implements E
     // End of variables declaration//GEN-END:variables
     @Override
     public void componentOpened() {
-        StatusDisplayer.getDefault().setStatusText("Payroll Employee List Opened!");
+        //StatusDisplayer.getDefault().setStatusText("Payroll Employee List Opened!");
     }
 
     @Override
     public void componentClosed() {
         // TODO add custom code on component closing
-        StatusDisplayer.getDefault().setStatusText("Payroll Employee List Closed!");
+        //StatusDisplayer.getDefault().setStatusText("Payroll Employee List Closed!");
     }
 
     void writeProperties(java.util.Properties p) {

@@ -42,6 +42,12 @@ public final class PayrollDashBoardTopComponent extends TopComponent {
     TopComponentGroup group = WindowManager.getDefault().findTopComponentGroup("PLRGroup");
     public PayrollDashBoardTopComponent() {
         initComponents();
+        putClientProperty(TopComponent.PROP_UNDOCKING_DISABLED, Boolean.TRUE);
+        putClientProperty(TopComponent.PROP_CLOSING_DISABLED, Boolean.TRUE);
+        putClientProperty(TopComponent.PROP_DND_COPY_DISABLED, Boolean.TRUE);
+        putClientProperty(TopComponent.PROP_DRAGGING_DISABLED, Boolean.TRUE);
+        putClientProperty(TopComponent.PROP_MAXIMIZATION_DISABLED, Boolean.TRUE);
+        putClientProperty(TopComponent.PROP_SLIDING_DISABLED, Boolean.TRUE);
         setName(Bundle.CTL_PayrollDashBoardTopComponent());
         setToolTipText(Bundle.HINT_PayrollDashBoardTopComponent());
 
