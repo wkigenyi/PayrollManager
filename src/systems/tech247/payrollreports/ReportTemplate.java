@@ -150,13 +150,29 @@ public class ReportTemplate {
 	/**
 	 * Creates custom component which is possible to add to any report band component
 	 */
-	public static ComponentBuilder<?, ?> createTitleComponent(CompanyDetails company, TblPeriods period,String label,String desc)throws IOException {
+	public static ComponentBuilder<?, ?> createTitleComponent(CompanyDetails company, TblPeriods period,String desc,String label)throws IOException {
 		return cmp.horizontalList()
 				.add(
 						createDynamicComponent(company),
                                                 cmp.verticalList(
                                                         cmp.text(label).setStyle(bold18CenteredStyle).setHorizontalTextAlignment(HorizontalTextAlignment.RIGHT),
                                                         cmp.text(desc).setHorizontalTextAlignment(HorizontalTextAlignment.RIGHT),
+                                                        cmp.text(period.getPeriodMonth()+","+period.getPeriodYear()).setHorizontalTextAlignment(HorizontalTextAlignment.RIGHT)
+                                                )
+						)
+				.newRow()
+				.add(cmp.line())
+				.newRow()
+				.add(cmp.verticalGap(10));
+	}
+        
+        public static ComponentBuilder<?, ?> createTitleComponent2(CompanyDetails company, TblPeriods period,String desc)throws IOException {
+		return cmp.horizontalList()
+				.add(
+						createDynamicComponent(company),
+                                                cmp.verticalList(
+                                                        //cmp.text(label).setStyle(bold18CenteredStyle).setHorizontalTextAlignment(HorizontalTextAlignment.RIGHT),
+                                                        cmp.text(desc).setHorizontalTextAlignment(HorizontalTextAlignment.RIGHT).setStyle(bold18CenteredStyle),
                                                         cmp.text(period.getPeriodMonth()+","+period.getPeriodYear()).setHorizontalTextAlignment(HorizontalTextAlignment.RIGHT)
                                                 )
 						)
